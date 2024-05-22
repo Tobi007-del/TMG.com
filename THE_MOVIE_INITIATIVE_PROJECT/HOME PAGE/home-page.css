@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cedarville+Cursive&display=swap');
 *{
   box-sizing: border-box;
 }
@@ -197,7 +198,8 @@ footer pre.light{
 }
 #demo{
   color: bisque;
-  font-family:Impact, 'Arial Narrow Bold', sans-serif;
+  font-family: "Anton", sans-serif;
+  font-weight: 900;
   font-size: 2.75vh;
   pointer-events: none;
   opacity: 0;
@@ -238,9 +240,10 @@ footer pre.light{
 }
 #tmg{
   color: burlywood;
-  font-family:Impact, 'Arial Narrow Bold', sans-serif;
+  font-family: "Anton", sans-serif;
+  font-weight: 900;
   font-size: 4vh;
-  margin: 0.75vh 0vw 0.75vh 0;
+  margin: 0.3vh 0vw 0.75vh 0;
   position: relative;
   right: 2vw;
   pointer-events: none;
@@ -284,7 +287,8 @@ footer pre.light{
   position: absolute;
   color: burlywood;
   font-size: 12vh;
-  font-family: Impact, 'Arial Narrow Bold', sans-serif;
+  font-family:  "Anton", sans-serif;
+  font-weight: 900;
   text-shadow: 1vw 1vw 1vw rgba(0, 0, 0, 1);
   opacity: 0.5;
   pointer-events: none;
@@ -300,7 +304,7 @@ footer pre.light{
 }
 .moving-line{
   position: relative;
-  top: 30.5vh;
+  top: 32.5vh;
   background-color: rgb(171, 171, 171);
   width: 40vw;
   height: 0.75vh;
@@ -328,7 +332,7 @@ footer pre.light{
   color: whitesmoke;
   text-wrap: nowrap;
   font-size: 2.5vh;
-  font-family: cursive;
+  font-family:"Cedarville Cursive", cursive;
   animation: moving-word 20s infinite linear;
   z-index: 1;
 }
@@ -1128,7 +1132,7 @@ footer .footer-text p{
   height: 2.5vw;
   color: whitesmoke;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 1.3vw;
+  font-size: 1.5vw;
   position: relative;
   left: 3vw;
   letter-spacing: 0.075vw;
@@ -1148,7 +1152,7 @@ footer .bullet{
 footer pre{
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  font-size: 1.25vw;
+  font-size: 1.5vw;
   color: whitesmoke;
 }
 .footer-container{ 
@@ -1261,11 +1265,11 @@ footer pre{
     top: 6.5vh!important;
   }
   #tmg{
-    margin: 0.5vh 0vh 0.75vh 0vh!important;
+    margin: 0.3vh 0vh 0.75vh 0vh!important;
     right: 2vh;
   }
   .moving-line{
-    top: 25.5vh!important;
+    top: 27vh!important;
   }
   .moving-picture-title{
     top: 16vh!important;
@@ -1424,7 +1428,7 @@ footer pre{
     top: 10vh;
   }
   .moving-line{
-    top: 35vh;
+    top: 38.5vh;
   }
   #moving-container{
     top: 4.2vh;
@@ -1711,7 +1715,7 @@ footer pre{
   }
   #tmg{
     margin: 0.5vh 0vh 0.75vh 0vh;
-    right: 0.5vh;
+    right: 0.3vh;
   }
   .topnav{
     width: 30vw;
@@ -1726,7 +1730,7 @@ footer pre{
     top: 10vh;
   }
   .moving-line{
-    top: 35vh;
+    top: 38.5vh;
   }
   #moving-container{
     top: 4.2vh;
@@ -1976,14 +1980,14 @@ footer pre{
     top: 8vh;
   }
   #tmg{
-    margin: 0.5vh 0vh 0.75vh 0vh;
+    margin: 0.3vh 0vh 0.75vh 0vh;
     right: 4vh;
   }
   .topnav{
     width: 50vw;
   }
   .moving-line{
-    top: 28.5vh;
+    top: 30.5vh;
   }
   .moving-picture-title{
     top: 15vh;
@@ -2211,7 +2215,7 @@ footer pre{
   }
   #tmg{
     font-size: 3vh;
-    margin: 0.5vh 0vw 0.75vh 0;
+    margin: 0.3vh 0vw 0.75vh 0;
     right: 2vw;
   }
   #title{
@@ -2226,11 +2230,11 @@ footer pre{
     top: 9vh;
   }
   .moving-line{
-    top: 29.85vh;
+    top: 33.5vh;
     height: 0.45vh;
   }
   #moving-container{
-    top: 6vh;
+    top: 8vh;
   }
   #moving-word{
     font-size: 1.5vh;
@@ -2330,7 +2334,9 @@ footer pre{
     color: rgb(161, 201, 182);
   }
   #navigator{
-    height: 3vh; 
+    height: 5vh; 
+    position: relative;
+    top: 0;
   }
   #search {
     top:4.95vh;
@@ -2345,7 +2351,7 @@ footer pre{
     float:none;
     width:100vw;
     opacity: 0.9;
-    line-height: 2.5vh;
+    line-height: 3.5vh;
     background-color:white;
     transition: width ease 0.2s, opacity ease 0.4s;
     -webkit-transition: width ease 0.2s, opacity ease 0.4s;
@@ -2441,9 +2447,9 @@ footer pre{
     height: 28vh;
   }
   #Search{
-    font-size: 1.7vh;
-    text-indent: 3vh;
-    line-height: 4.5vh;
+    font-size: 2.25vh;
+    text-indent: 3.5vh;
+    line-height: 5vh;
     box-shadow: none;
   }
   .search-icon{
@@ -2451,8 +2457,8 @@ footer pre{
     left: 0.1vh; 
   }
   #x-search-menu{
-    font-size: 3.5vh;
-    top:0.6vh;
+    font-size: 5vh;
+    top: 0vh;
     color: red;
   }
   #no-search-result{
@@ -2503,10 +2509,10 @@ footer pre{
     border-radius: 0.3em;
   }
   .panels a p{
-    font-size: 0.45em;
+    font-size: 0.6em;
   }
   h3{
-    font-size: 0.7em;
+    font-size: 0.9em;
     word-spacing: 0.1em;
     margin-top: 0.5em;
     margin-left: 0.5em;
