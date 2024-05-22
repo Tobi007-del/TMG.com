@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton');
 *{
   box-sizing: border-box;
 }
@@ -332,8 +332,9 @@ footer pre.light{
   color: whitesmoke;
   text-wrap: nowrap;
   font-size: 2.5vh;
-  font-family:"Cedarville Cursive", cursive;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
   animation: moving-word 20s infinite linear;
+  text-align: right;
   z-index: 1;
 }
 @keyframes moving-word{
@@ -2234,7 +2235,7 @@ footer pre{
     height: 0.45vh;
   }
   #moving-container{
-    top: 8vh;
+    top: 7.5vh;
   }
   #moving-word{
     font-size: 1.5vh;
@@ -2326,17 +2327,17 @@ footer pre{
   }
   #cancel-menu{
     color: red;
-    font-size:2.5vh;
-    top: 2.5vh;
+    font-size: 5vh;
+    top: 6.65vh;
     left: 55vw;
   }
   #hidden-navigator-panel li, #hidden-navigator-panel li a{
     color: rgb(161, 201, 182);
   }
   #navigator{
-    height: 5vh; 
+    height: 4vh; 
     position: relative;
-    top: 0;
+    top: 0.5vh;
   }
   #search {
     top:4.95vh;
