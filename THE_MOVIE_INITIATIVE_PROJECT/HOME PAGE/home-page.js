@@ -144,7 +144,7 @@ function intervalManager(flag, animate, time) {
         console.log(intervalID)
     }
 }
-intervalManager(true, movingFrame, 30000)
+intervalManager(true, movingFrame, 30000);
 
 
 function movingFrame() {
@@ -172,7 +172,8 @@ function movingFrame() {
 previewButtons.forEach((previewButton) => {
     previewButton.addEventListener("mousedown", () =>{
     previewButton.style.display = "none";
-    intervalManager(false,movingFrame, 30000);
+    intervalManager(false, movingFrame, 30000);
+    // clearTimeout(movingFrame)
     console.log(intervalID)
     })
  })

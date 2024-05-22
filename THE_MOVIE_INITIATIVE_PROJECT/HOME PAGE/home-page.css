@@ -278,7 +278,7 @@ footer pre.light{
   list-style: none;
   font-size: 2.5vh;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  margin: 1.5vh 0vw 1.5vh 0vw;
+  margin: 1.75vh 0vw 1.5vh 0vw;
 }
 .topnav li:hover{
   cursor: pointer;
@@ -2172,7 +2172,7 @@ footer pre{
   }
   .topnav li{
     font-size: 2.2vh;
-    margin-top: 1vh;
+    margin-top: 1.5vh;
   }
   #toggle-container{
     min-height: 3.8vh;
@@ -2327,8 +2327,8 @@ footer pre{
   }
   #cancel-menu{
     color: red;
-    font-size: 5vh;
-    top: 6.65vh;
+    font-size: 4.5vh;
+    top: 6vh;
     left: 55vw;
   }
   #hidden-navigator-panel li, #hidden-navigator-panel li a{
