@@ -20,7 +20,7 @@
 <div id="hidden-navigator-panel" onmouseleave="cancelMenuFunction()">
   <span id="cancel-menu" onclick="cancelMenuFunction()">&times;</span>
     <ul id="myMenuBar">
-      <p id="menu"><i class="fa-solid fa-list bar-icon"></i>MENU</p>
+      <p id="menu"><i id="list-icon" onclick="cancelMenuFunction()" class="fa-solid fa-list bar-icon"></i>MENU</p>
       <input type="text" id="my-menu-search" onkeyup="searchMenuFunction()" placeholder="Search Category" title="Type in a category" autocomplete="on">
       <span id="error">Search unavailable!</span>
       <li id="home-bar" onclick="Category('home','home')"><p class="bar-text"><i class="fa-solid fa-house bar-icon"></i>Home</p></li>
