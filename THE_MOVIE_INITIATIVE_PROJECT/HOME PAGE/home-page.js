@@ -411,7 +411,15 @@ function concealSearchMenu(){
     }
 }
 
-
+document.getElementById("navigator").addEventListener('click', ()=> {
+    navigatorMenuOpenFunction()
+})
+document.getElementById("navigator").addEventListener('touchstart', ()=> {
+    navigatorMenuOpenFunction()
+})
+document.getElementById("navigator").addEventListener('mouseover', ()=> {
+    navigatorMenuOpenFunction()
+})
 
 function navigatorMenuOpenFunction() {
     document.getElementById("hidden-navigator-panel").style.width="65vw";
