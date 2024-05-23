@@ -292,7 +292,7 @@ footer pre.light{
   font-size: 12vh;
   font-family:  "Anton", sans-serif;
   font-weight: 900;
-  text-shadow: 1vw 1vw 1vw rgb(9, 9, 9);
+  text-shadow: 1vw 1vw 1vw rgb(4, 4, 4);
   opacity: 0.5;
   pointer-events: none;
   transition: opacity 1s ease-in;
@@ -2317,14 +2317,17 @@ footer pre{
   }
   .topnav{
     width: 35vw;
+    background-color: red;
     margin-left: 10vw;
   }
   #home-nav{
     display:flex;
     flex-flow: row-nowrap;
+    background-color: brown;
   }
   #tmg{
     font-size: 3vh;
+    background-color: blue;
     margin: 0.3vh 0vw 0.75vh 0;
     left: -6.5vw;
   }
@@ -2444,6 +2447,7 @@ footer pre{
     color: rgb(161, 201, 182);
   }
   #navigator{
+    background-color: green;
     height: 4vh; 
     position: relative;
     min-width: 10vw;

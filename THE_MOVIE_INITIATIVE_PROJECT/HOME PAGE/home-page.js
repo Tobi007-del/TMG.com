@@ -111,8 +111,10 @@ if(localStorage.greetUser === undefined){
     }}
     else if (personChange.toUpperCase() === "NO" || personChange.toUpperCase() === "N"){
         console.log("Username not changed!!");
+        newTxt = localStorage.greetUser;
     } else{
         console.log("Username not changed!!");
+        newTxt = localStorage.greetUser;
     }
     document.getElementById("demo").innerHTML = newTxt;
     localStorage.greetUser = newTxt;
