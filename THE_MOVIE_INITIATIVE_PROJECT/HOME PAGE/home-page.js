@@ -1,31 +1,137 @@
+var allLinks = document.querySelectorAll('a');
+
+
+allLinks.forEach((allLink) => {
+allLink.addEventListener('click', (event)=>{
+    event.preventDefault();
+    alert("The site is still in developement so no movies are available at the moment, we apologize!!!");
+})})
+
+
 document.getElementById("tmg").style.opacity = "1.0";
 document.getElementById("demo").style.opacity = "1.0";
 document.getElementById("title").style.opacity = "1.0";
+
 window.onloadstart = myFunction()
 
+var userName;
+
 function myFunction() {
+
+console.log(localStorage.greetUser);
+
+if(localStorage.greetUser === undefined){
+  sessionStorage.current = 1;
   var txt;
   var person = prompt("Please enter your name:", "User");
-  if (person == "" || person == null) {
+  if (person === "" || person === null) {
     txt = "Welcome User";
   } else {
     txt = "Welcome " + person;
+    userName = txt;
   }
-  if (person == "tobi00703181011"){
+  if (person === "tobi-00703181011"){
     txt = "WELCOME CREATOR";
+    userName = txt;
   }
-//   if (person == "tobi00703181011"){
-//   }
   document.getElementById("demo").innerHTML = txt;
-} 
+  localStorage.greetUser = userName;
+    
+  if (Notification?.permission === "granted") {
+    let n = new Notification("THE MOVIE GARDEN", {
+      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/HOME PAGE/home-page.css"
+    });
+      // const interval = setInterval(() => {
+      //   n.close()
+      // }, 10000);
+    } else if (Notification && Notification.permission !== "denied") {
+    Notification.requestPermission().then((status) => {
+    if (status === "granted") {
+    let n = new Notification("THE MOVIE GARDEN", {
+      body: `Welcome${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/HOME PAGE/home-page.css"
+    });
+      // const interval = setInterval(() => {
+      //   n.close()
+      // }, 10000);
+        } else {
+          alert("You have to give notification permission to get the checkout notification");
+        }
+      });
+    } else {
+      alert("You have to give notification permission to get the checkout notification");
+    }}   else {
+    document.getElementById("demo").innerHTML = localStorage.greetUser;
+    window.onload = myNotificationFunction()
+    function myNotificationFunction(){
+    console.log(sessionStorage.current);
+    if(sessionStorage.current === '1'){
+        sessionStorage.current = 1;
+    } else {
+        sessionStorage.current = 1;
+        if (Notification?.permission === "granted") {
+            let n = new Notification("THE MOVIE GARDEN", {
+              body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/HOME PAGE/home-page.css"
+            });
+              // const interval = setInterval(() => {
+              //   n.close()
+              // }, 10000);
+            } else if (Notification && Notification.permission !== "denied") {
+            Notification.requestPermission().then((status) => {
+            if (status === "granted") {
+            let n = new Notification("THE MOVIE GARDEN", {
+              body: `Welcome${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/HOME PAGE/home-page.css"
+            });
+              // const interval = setInterval(() => {
+              //   n.close()
+              // }, 10000);
+                } else {
+                  alert("You have to give notification permission to get the checkout notification");
+                }
+              });
+            } else {
+              alert("You have to give notification permission to get the checkout notification");
+            }        
+    }
+    }
+}
+}
 
+  document.getElementById("demo").addEventListener('click', ()=> {
+    var newTxt;
+    var personChange = prompt("Would you like to change username?", "");
+    if (personChange.toUpperCase() === "YES" || personChange.toUpperCase() === "Y"){
+    var newPerson = prompt("Please enter your name:", "User");
+    if (newPerson === "" || newPerson === null) {
+          newTxt = "Welcome User";
+    } else {
+          newTxt = "Welcome " + newPerson;
+    }
+    if (newPerson == "tobi-00703181011"){
+          newTxt = "WELCOME CREATOR";
+    }}
+    else if (personChange.toUpperCase() === "NO" || personChange.toUpperCase() === "N"){
+        console.log("Username not changed!!");
+    } else{
+        console.log("Username not changed!!");
+    }
+    document.getElementById("demo").innerHTML = newTxt;
+    localStorage.greetUser = newTxt;
+})
+
+localStorage.picsrc = "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person.png"
+var userImage = document.getElementById("user-image");
+userImage.src = localStorage.picsrc;
 
 document.getElementById("insert").addEventListener('change', (evt) => {
     var files = evt.target.files;
     var reader = new FileReader();
     reader.onload = function(event) {
-    var userImage = document.getElementById("user-image");
-    userImage.src = event.target.result;
+    try {
+        localStorage.picsrc = event.target.result;
+        userImage.src = event.target.result;
+     } catch (error) {
+     alert(`The image file selected is too large!!`)
+     } 
     }
     reader.readAsDataURL(files[0]);
 })
@@ -136,11 +242,13 @@ var intervalID = null;
 console.log(intervalID)
 function intervalManager(flag, animate, time) {
     if(flag){
-        intervalID = setInterval(animate,time)
+        var Time = parseInt(time);
+        intervalID = setInterval(animate,Time)
         console.log(intervalID)
     }
     else{
         clearInterval(intervalID)
+        intervalID = null;
         console.log(intervalID)
     }
 }
@@ -173,13 +281,12 @@ previewButtons.forEach((previewButton) => {
     previewButton.addEventListener("mousedown", () =>{
     previewButton.style.display = "none";
     intervalManager(false, movingFrame, 30000);
-    // clearTimeout(movingFrame)
     console.log(intervalID)
     })
  })
  
 endPreviewButtons.forEach((endPreviewButton,i) => {
-    endPreviewButton.addEventListener("click", () => {
+    endPreviewButton.addEventListener("mousedown", () => {
     reversePlayTrailer(i);
     intervalManager(true, movingFrame, 30000);
     doubleClickCounter = 0;

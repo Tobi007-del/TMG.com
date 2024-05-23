@@ -3,12 +3,12 @@
   box-sizing: border-box;
 }
 body{
-  font-family:Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
   overflow-x: hidden;
   background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body::after{
   content: "";
@@ -201,10 +201,12 @@ footer pre.light{
   font-family: "Anton", sans-serif;
   font-weight: 900;
   font-size: 2.75vh;
-  pointer-events: none;
   opacity: 0;
   transition:opacity 1s ease-in;
   text-wrap: nowrap;
+}
+#demo:hover{
+   cursor: pointer;
 }
 #insert{
   position: relative;
@@ -216,7 +218,7 @@ footer pre.light{
   border-radius: 50%;
   background-color: white;
 }
-#insert:hover{
+#insert:hover,#user-image:hover{
   cursor: pointer;
 }
 #user-image{
@@ -276,7 +278,7 @@ footer pre.light{
 .topnav li{
   color: white;
   list-style: none;
-  font-size: 2.5vh;
+  font-size: 3vh;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   margin: 1.75vh 0vw 1.5vh 0vw;
 }
@@ -332,7 +334,7 @@ footer pre.light{
   color: whitesmoke;
   text-wrap: nowrap;
   font-size: 2.5vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:'Courier New', Courier, monospace;
   animation: moving-word 20s infinite linear;
   text-align: right;
   z-index: 1;
@@ -464,7 +466,10 @@ footer pre.light{
   border: none;
   outline: none;
   border-radius: 1.5vh;
-  text-align: center;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  gap: 0.5vh;
   background-color: #2af40f;
   bottom: 4vh;
   right: 29vh;
@@ -1163,13 +1168,13 @@ footer pre{
   animation: footer-moving 3s linear infinite normal;
 }
 @keyframes footer-moving{
-  from {-moz-width:24.5vw;
-        -webkit-width:24.5vw;
-        width:24.5vw;
+  from {-moz-width:29.5vw;
+        -webkit-width:29.5vw;
+        width:29.5vw;
   }
-  to {-moz-width:27vw;
-    -webkit-width:27vw;
-    width:27vw;
+  to {-moz-width:31.5vw;
+    -webkit-width:31.5vw;
+    width:31.5vw;
   }
 }
 .optional-bar{
@@ -1513,6 +1518,8 @@ footer pre{
   }
   #cancel-menu{
     color: red;
+    font-size: 4vh;
+    top: 4.5vh;
   }
   #hidden-navigator-panel li, #hidden-navigator-panel li a{
     color: rgb(161, 201, 182);
@@ -1815,6 +1822,8 @@ footer pre{
   }
   #cancel-menu{
     color: red;
+    font-size: 4vh;
+    top: 4.5vh;
   }
   #hidden-navigator-panel li, #hidden-navigator-panel li a{
     color: rgb(161, 201, 182);
@@ -2141,6 +2150,98 @@ footer pre{
   .optional-bar{
     display: none;
   }
+  #hidden-navigator-panel{
+    display: block;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    box-shadow: 50vw  50vw 100vw rgba(0, 0, 0, 0.7);
+    -webkit-box-shadow: 60vw 60vw 100vw rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 50vw 50vw 100vw rgba(0, 0, 0, 0.7);
+    color: whitesmoke;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width:0;
+    transition: width 0.5s ease-in-out;
+    z-index: 4;
+  }
+  #hidden-navigator-panel #menu{
+    padding-left: 2vw;
+    margin:0 0 2.5vw 0;
+    font-size: 3vw;
+  }
+  #hidden-navigator-panel li p{
+    padding: 0;
+    margin: 0;
+    line-height: 3.9vw;
+    font-size: 2vw;
+  }
+  #hidden-navigator-panel ul{
+    padding-left: 0;
+  }
+  #hidden-navigator-panel li{
+    padding-left: 3vw;
+    border-bottom: solid 2px rgba(255,255,255,0.2);
+  }
+  #hidden-navigator-panel p{
+    font-size: 1.3vw;
+    padding-left: 1vw;
+    line-height: 0.5vw;
+  }
+  .bar-text{
+    left: -2.5vw;
+  }
+  .bar-icon{
+    margin-right: 0.75vw;
+  }
+  #error{
+    font-size: 1.5vw;
+    margin: 1.5vw 0 1.5vw 0;
+  }
+  #hidden-navigator-panel p a{
+    color: white;
+  }
+  #current-mode{
+    width: 100%;
+  }
+  #themes-phrase{
+    right: 2vw;
+  }
+  #toggle-container{
+    right: 2vw;
+    min-height: 3.8vw;
+  }
+  #toggle{
+    height: 2.35vw; 
+    width: 4.5vw;
+    border-radius: 1.1525vw;
+    margin-left: 2vw; 
+  }
+  #toggle-ball{
+    height: 2.2vw;
+    width: 2.2vw;
+    border-radius: 1.1vw;
+    top: 0.075vw;
+    left: 0.1vw;
+    transform: translateX(2.1vw);
+  }
+  .toggle-moon{
+    width: 2.2vw;
+    height: 2.2vw;
+    top: 0.1vw;
+  }
+  .toggle-sun{
+    width: 2vw;
+    height: 2vw;
+    top: 0.2vw;
+    left: 0.15vw;
+    right: 0;
+  }
+  #cancel-menu{
+    font-size: 4vw;
+    top: 12.5vh; 
+  }
 }
 
 /* for phones and tablets with small screens */
@@ -2148,6 +2249,8 @@ footer pre{
   #demo{
     font-size: 2vh;
     text-wrap: nowrap;
+    position: relative;
+    left: 2vh;
   }
   #demo-container{
     height: 5vh;
@@ -2162,7 +2265,7 @@ footer pre{
     border-radius: 50%;
   }
   #user-image{
-    left: -3vh;
+    left: -1vh;
     right: 7vh;
     width: 4vh;
     height: 4vh;
@@ -2212,12 +2315,17 @@ footer pre{
     height: 60vh;
   }
   .topnav{
-    width: 45vw;
+    width: 35vw;
+    margin-left: 10vw;
+  }
+  #home-nav{
+    display:flex;
+    flex-flow: row-nowrap;
   }
   #tmg{
     font-size: 3vh;
     margin: 0.3vh 0vw 0.75vh 0;
-    right: 2vw;
+    left: -6.5vw;
   }
   #title{
     font-size: 5vh;
@@ -2327,8 +2435,8 @@ footer pre{
   }
   #cancel-menu{
     color: red;
-    font-size: 4.5vh;
-    top: 6vh;
+    font-size: 4vh;
+    top: 5.5vh;
     left: 55vw;
   }
   #hidden-navigator-panel li, #hidden-navigator-panel li a{
