@@ -104,20 +104,22 @@ if(localStorage.greetUser === undefined){
     if (newPerson === "" || newPerson === null) {
           newTxt = "Welcome User";
           document.getElementById("demo").innerHTML = newTxt;
+          localStorage.greetUser = newTxt;
     } else {
           newTxt = "Welcome " + newPerson;
           document.getElementById("demo").innerHTML = newTxt;
+          localStorage.greetUser = newTxt;
     }
     if (newPerson == "tobi-00703181011"){
           newTxt = "WELCOME CREATOR";
           document.getElementById("demo").innerHTML = newTxt;
+          localStorage.greetUser = newTxt;
     }}
     else if (personChange.toUpperCase() === "NO" || personChange.toUpperCase() === "N"){
         console.log("Username not changed!!");
     } else{
         console.log("Username not changed!!");
     }
-    localStorage.greetUser = newTxt;
 })
 
 
@@ -413,10 +415,16 @@ function concealSearchMenu(){
     }
 }
 
+document.getElementById("navigator").addEventListener('click', ()=> {
+    navigatorMenuOpenFunction()
+})
 document.getElementById("navigator").addEventListener('touchstart', ()=> {
     navigatorMenuOpenFunction()
 })
-document.getElementById("navigator").addEventListener('click', ()=> {
+document.getElementById("navigator").addEventListener('mousedown', ()=> {
+    navigatorMenuOpenFunction()
+})
+document.getElementById("navigator").addEventListener('mouseup', ()=> {
     navigatorMenuOpenFunction()
 })
 document.getElementById("navigator").addEventListener('mouseover', ()=> {
