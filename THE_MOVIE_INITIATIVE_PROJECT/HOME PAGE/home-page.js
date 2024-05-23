@@ -39,7 +39,7 @@ if(localStorage.greetUser === undefined){
     
   if (Notification?.permission === "granted") {
     let n = new Notification("THE MOVIE GARDEN", {
-      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpegHOME PAGE/home-page.css"
+      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
     });
       // const interval = setInterval(() => {
       //   n.close()
@@ -48,7 +48,7 @@ if(localStorage.greetUser === undefined){
     Notification.requestPermission().then((status) => {
     if (status === "granted") {
     let n = new Notification("THE MOVIE GARDEN", {
-      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpegHOME PAGE/home-page.css"
+      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
     });
       // const interval = setInterval(() => {
       //   n.close()
@@ -79,7 +79,7 @@ if(localStorage.greetUser === undefined){
             Notification.requestPermission().then((status) => {
             if (status === "granted") {
             let n = new Notification("THE MOVIE GARDEN", {
-              body: `${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpegHOME PAGE/home-page.css"
+              body: `${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
             });
               // const interval = setInterval(() => {
               //   n.close()
