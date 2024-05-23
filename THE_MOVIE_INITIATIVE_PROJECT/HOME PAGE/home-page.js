@@ -48,7 +48,7 @@ if(localStorage.greetUser === undefined){
     Notification.requestPermission().then((status) => {
     if (status === "granted") {
     let n = new Notification("THE MOVIE GARDEN", {
-      body: `Welcome${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/HOME PAGE/home-page.css"
+      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/HOME PAGE/home-page.css"
     });
       // const interval = setInterval(() => {
       //   n.close()
@@ -79,7 +79,7 @@ if(localStorage.greetUser === undefined){
             Notification.requestPermission().then((status) => {
             if (status === "granted") {
             let n = new Notification("THE MOVIE GARDEN", {
-              body: `Welcome${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/HOME PAGE/home-page.css"
+              body: `${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/HOME PAGE/home-page.css"
             });
               // const interval = setInterval(() => {
               //   n.close()
@@ -118,10 +118,11 @@ if(localStorage.greetUser === undefined){
     localStorage.greetUser = newTxt;
 })
 
-localStorage.picsrc = "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person.png"
-var userImage = document.getElementById("user-image");
-userImage.src = localStorage.picsrc;
 
+var userImage = document.getElementById("user-image");
+if(localStorage.picsrc !== undefined){
+userImage.src = localStorage.picsrc;
+}
 document.getElementById("insert").addEventListener('change', (evt) => {
     var files = evt.target.files;
     var reader = new FileReader();
@@ -129,6 +130,7 @@ document.getElementById("insert").addEventListener('change', (evt) => {
     try {
         localStorage.picsrc = event.target.result;
         userImage.src = event.target.result;
+        console.log(`current image src: ${userImage.src}`)
      } catch (error) {
      alert(`The image file selected is too large!!`)
      } 

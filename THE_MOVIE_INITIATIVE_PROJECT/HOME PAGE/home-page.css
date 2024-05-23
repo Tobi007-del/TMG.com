@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton');
+/* @import url('https://fonts.googleapis.com/css2?family=Anton'); */
 *{
   box-sizing: border-box;
 }
@@ -2343,7 +2343,7 @@ footer pre{
     height: 0.45vh;
   }
   #moving-container{
-    top: 7.5vh;
+    top: 8.25vh;
   }
   #moving-word{
     font-size: 1.5vh;
@@ -2445,7 +2445,9 @@ footer pre{
   #navigator{
     height: 4vh; 
     position: relative;
+    width: 12vw;
     top: 0.5vh;
+    left: 0;
   }
   #search {
     top:4.95vh;
@@ -2532,7 +2534,7 @@ footer pre{
     margin-bottom: 0;
   }
   .hidden-r-panel-about-text{
-    font-size: 0.45em;
+    font-size: 7.1px;
     margin-top: 0;
   }
   .hide{
