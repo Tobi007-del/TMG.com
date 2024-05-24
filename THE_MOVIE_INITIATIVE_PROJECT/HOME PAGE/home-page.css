@@ -45,13 +45,16 @@ body::after{
 .navigate.light{
   color: black!important;
 }
-#toggle.light{
+#toggle.light,#n-toggle.light{
   background-color: black!important;
 }
 #toggle-ball.light{
   background-color: white!important;
   transform: translateX(0)!important;
   transition: transform 0.25s linear;
+}
+#toggle-push-ball.light{
+  background-color: white!important;
 }
 body.light{
   background-color: white!important;
@@ -660,24 +663,24 @@ footer pre.light{
   color: white;
   text-decoration: none;
 }
-#current-mode{
+#current-mode,#notifiaction-option{
   display: inline-block;
   width: 100%;
 }
-#themes-phrase{
+#themes-phrase,#push-phrase{
   position: relative;
   right: 2vw;
   display: block;
   float: left;
 }
-#toggle-container{
+#toggle-container,#n-toggle-container{
   position: relative;
   right: 2vw;
   display: flex;
   align-items: center;
   min-height: 3.8vw;
 }
-#toggle{
+#toggle,#n-toggle{
   background-color: white;
   position: relative;
   height: 2.35vw; 
@@ -687,7 +690,7 @@ footer pre.light{
   float: left;
   margin-left: 2vw; 
 }
-#toggle-ball{
+#toggle-ball,#toggle-push-ball{
   position: absolute;
   display: inline;
   background-color: black;
@@ -696,9 +699,14 @@ footer pre.light{
   border-radius: 1.1vw;
   top: 0.075vw;
   left: 0.1vw;
-  transform: translateX(2.1vw);
   z-index: 2;
   transition: transform 0.25s linear;
+}
+#toggle-ball{
+  transform: translateX(2.1vw);
+}
+#toggle-push-ball{
+  transform: translateX(0);
 }
 #toggle-ball:hover{
   cursor: pointer;
@@ -1370,10 +1378,10 @@ footer pre{
   #series-nav{
     display: none;
   }
-  #toggle-container{
+  #toggle-container,#n-toggle-container{
     min-height: 3.8vh;
   }
-  #toggle{
+  #toggle,#n-toggle{
     height: 2.35vh; 
     width: 4.5vh;
     border-radius: 1.1525vh;
@@ -1392,14 +1400,19 @@ footer pre{
   #user-image{
     left: -4vh;
   }
-  #toggle-ball{
+  #toggle-ball,#toggle-push-ball{
     height: 2.2vh;
     width: 2.2vh;
     border-radius: 1.1vh;
     top: 0.075vh;
     left: 0.1vh;
-    transform: translateX(2.2vh);
     transition: transform 0.25s linear;
+  }
+  #toggle-ball{
+    transform: translateX(2.2vh);
+  }
+  #toggle-push-ball{
+    transform: translateX(0);
   }
   .toggle-moon{
     width: 2.2vh;
@@ -1676,10 +1689,10 @@ footer pre{
   #series-nav{
     display: none;
   }
-  #toggle-container{
+  #toggle-container,#n-toggle-container{
     min-height: 3.8vh;
   }
-  #toggle{
+  #toggle,#n-toggle{
     height: 2.35vh; 
     width: 4.5vh;
     border-radius: 1.1525vh;
@@ -1696,14 +1709,19 @@ footer pre{
   #user-image{
     left: -4vh;
   }
-  #toggle-ball{
+  #toggle-ball,#toggle-push-ball{
     height: 2.2vh;
     width: 2.2vh;
     border-radius: 1.1vh;
     top: 0.075vh;
     left: 0.1vh;
-    transform: translateX(2.15vh);
     transition: transform 0.25s linear;
+  }
+  #toggle-ball{
+    transform: translateX(2.15vh);
+  }
+  #toggle-push-ball{
+    transform: translateX(0);
   }
   .toggle-moon{
     width: 2.2vh;
@@ -2077,7 +2095,7 @@ footer pre{
     margin-right: 0.5vw;
   }
    .r-panel {
-    height: 10.5em;
+    height: 10em;
     width: 9.5em;
     margin-left: 0.1em;
     margin-right: 0.6em;
@@ -2207,29 +2225,34 @@ footer pre{
   #hidden-navigator-panel p a{
     color: white;
   }
-  #current-mode{
+  #current-mode,#notifiaction-option{
     width: 100%;
   }
-  #themes-phrase{
+  #themes-phrase,#push-phrase{
     right: 2vw;
   }
-  #toggle-container{
+  #toggle-container,#n-toggle-container{
     right: 2vw;
     min-height: 3.8vw;
   }
-  #toggle{
+  #toggle,#n-toggle{
     height: 2.35vw; 
     width: 4.5vw;
     border-radius: 1.1525vw;
     margin-left: 2vw; 
   }
-  #toggle-ball{
+  #toggle-ball,#toggle-push-ball{
     height: 2.2vw;
     width: 2.2vw;
     border-radius: 1.1vw;
     top: 0.075vw;
     left: 0.1vw;
+  }
+  #toggle-ball{
     transform: translateX(2.1vw);
+  }
+  #toggle-push-ball{
+    transform: translateX(0);
   }
   .toggle-moon{
     width: 2.2vw;
@@ -2282,23 +2305,28 @@ footer pre{
     font-size: 2.2vh;
     margin-top: 1.5vh;
   }
-  #toggle-container{
+  #toggle-container,#n-toggle-container{
     min-height: 3.8vh;
   }
-  #toggle{
+  #toggle,#n-toggle{
     height: 2.35vh; 
     width: 4.5vh;
     border-radius: 1.1525vh;
     margin-left: 1vh; 
   }
-  #toggle-ball{
+  #toggle-ball,#toggle-push-ball{
     height: 2.2vh;
     width: 2.2vh;
     border-radius: 1.1vh;
     top: 0.075vh;
     left: 0.1vh;
-    transform: translateX(2.2vh);
     transition: transform 0.25s linear;
+  }
+  #toggle-ball{
+    transform: translateX(2.2vh);
+  }
+  #toggle-push-ball{
+    transform: translateX(0);
   }
   .toggle-moon{
     width: 2.2vh;
@@ -2499,7 +2527,7 @@ footer pre{
     display: none;
   }
   .r-panel {
-    height: 10.5em;
+    height: 10em;
     width: 9.5em;
     margin-left: 0.1em;
     margin-right: 0.6em;

@@ -94,6 +94,7 @@ if(localStorage.greetUser === undefined){
 })
 
 async function registerServiceWorker() {
+    // await navigator.serviceWorker.register('service-worker.js');
     await navigator.serviceWorker.register('service-worker.js').then(function(registration) {
         // registration worked
         console.log('Registration succeeded. ',registration);
@@ -104,14 +105,20 @@ async function registerServiceWorker() {
 }
 
 function displayNotification(txt){
+  const title = "THE MOVIE GARDEN";
+  const options = {
+    body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , 
+    icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
+    badge: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
+    image: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/Justice League/justice-league.jpeg"
+};
   if (Notification?.permission === "granted") {
     // let n = new Notification("THE MOVIE GARDEN", {
     // body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
     // })
     registerServiceWorker()
     navigator.serviceWorker.ready.then(function(registration) {
-    registration.showNotification("THE MOVIE GARDEN", {
-      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})
+    registration.showNotification(title, options);
     });
       // const interval = setInterval(() => {
       //   n.close()
@@ -124,8 +131,8 @@ function displayNotification(txt){
     // })
     registerServiceWorker()
     navigator.serviceWorker.ready.then(function(registration) {
-        registration.showNotification("THE MOVIE GARDEN", {
-      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})});
+    registration.showNotification(title, options);
+    });
       // const interval = setInterval(() => {
       //   n.close()
       // }, 10000);
@@ -138,6 +145,13 @@ function displayNotification(txt){
     }}
 
 function displayReturnNotification(){
+    const returnTitle = "THE MOVIE GARDEN";
+    const returnOptions = {
+        body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , 
+        icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
+        badge: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
+        image: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/Justice League/justice-league.jpeg"
+    };
     sessionStorage.current = 1;
     if (Notification?.permission === "granted") {
         // let n = new Notification("THE MOVIE GARDEN", {
@@ -145,8 +159,8 @@ function displayReturnNotification(){
         // });
         registerServiceWorker()
         navigator.serviceWorker.ready.then(function(registration) {
-            registration.showNotification("THE MOVIE GARDEN", {
-         body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})});
+            registration.showNotification(returnTitle, returnOptions)
+        });
           // const interval = setInterval(() => {
           //   n.close()
           // }, 10000);
@@ -157,9 +171,10 @@ function displayReturnNotification(){
         //   body: `${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
         // });
         registerServiceWorker()
+        registerServiceWorker()
         navigator.serviceWorker.ready.then(function(registration) {
-           registration.showNotification("THE MOVIE GARDEN", {
-         body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})})
+            registration.showNotification(returnTitle, returnOptions)
+        });
           // const interval = setInterval(() => {
           //   n.close()
           // }, 10000);
@@ -193,7 +208,7 @@ document.getElementById("insert").addEventListener('change', (evt) => {
 
 
 function lightMode() {
-    var toggleItems = document.querySelectorAll("#hidden-navigator-panel,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy");
+    var toggleItems = document.querySelectorAll("#hidden-navigator-panel,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle");
     console.log(toggleItems)
     for(var i = 0; i < toggleItems.length; i++){
      toggleItems[i].classList.toggle("light")
