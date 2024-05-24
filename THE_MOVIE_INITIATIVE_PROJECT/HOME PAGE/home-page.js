@@ -1,3 +1,17 @@
+// const checkPermission = () => {
+//     if(!('serviceWorker' in navigator)) {
+//         throw new Error("No support for service worker")
+//     }
+// }
+
+// const registerSW = async () => {
+//     const registration = await navigator.serviceWorker.register('service-worker.js');
+//     return registration;
+// }
+// checkPermission()
+// registerSW()
+
+
 var allLinks = document.querySelectorAll('a');
 
 
@@ -12,11 +26,11 @@ document.getElementById("tmg").style.opacity = "1.0";
 document.getElementById("demo").style.opacity = "1.0";
 document.getElementById("title").style.opacity = "1.0";
 
-window.onloadstart = myFunction()
+window.onloadstart = userNameFunction()
 
 var userName;
 
-function myFunction() {
+function userNameFunction() {
 
 console.log(localStorage.greetUser);
 
@@ -36,30 +50,8 @@ if(localStorage.greetUser === undefined){
   }
   document.getElementById("demo").innerHTML = txt;
   localStorage.greetUser = userName;
-    
-  if (Notification?.permission === "granted") {
-    let n = new Notification("THE MOVIE GARDEN", {
-      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
-    });
-      // const interval = setInterval(() => {
-      //   n.close()
-      // }, 10000);
-    } else if (Notification && Notification.permission !== "denied") {
-    Notification.requestPermission().then((status) => {
-    if (status === "granted") {
-    let n = new Notification("THE MOVIE GARDEN", {
-      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
-    });
-      // const interval = setInterval(() => {
-      //   n.close()
-      // }, 10000);
-        } else {
-          alert("You have to give notification permission to get the checkout notification");
-        }
-      });
-    } else {
-      alert("You have to give notification permission to get the checkout notification");
-    }}   else {
+  displayNotification(txt);
+ }   else {
     document.getElementById("demo").innerHTML = localStorage.greetUser;
     window.onload = myNotificationFunction()
     function myNotificationFunction(){
@@ -67,35 +59,11 @@ if(localStorage.greetUser === undefined){
     if(sessionStorage.current === '1'){
         sessionStorage.current = 1;
     } else {
-        sessionStorage.current = 1;
-        if (Notification?.permission === "granted") {
-            let n = new Notification("THE MOVIE GARDEN", {
-              body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
-            });
-              // const interval = setInterval(() => {
-              //   n.close()
-              // }, 10000);
-            } else if (Notification && Notification.permission !== "denied") {
-            Notification.requestPermission().then((status) => {
-            if (status === "granted") {
-            let n = new Notification("THE MOVIE GARDEN", {
-              body: `${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
-            });
-              // const interval = setInterval(() => {
-              //   n.close()
-              // }, 10000);
-                } else {
-                  alert("You have to give notification permission to get the checkout notification");
-                }
-              });
-            } else {
-              alert("You have to give notification permission to get the checkout notification");
-            }        
+        displayReturnNotification();
     }
     }
 }
 }
-
   document.getElementById("demo").addEventListener('click', ()=> {
     var newTxt;
     var personChange = prompt("Would you like to change username?", "");
@@ -105,15 +73,18 @@ if(localStorage.greetUser === undefined){
           newTxt = "Welcome User";
           document.getElementById("demo").innerHTML = newTxt;
           localStorage.greetUser = newTxt;
+          displayNotification(newTxt);
     } else {
           newTxt = "Welcome " + newPerson;
           document.getElementById("demo").innerHTML = newTxt;
           localStorage.greetUser = newTxt;
+          displayNotification(newTxt);
     }
     if (newPerson == "tobi-00703181011"){
           newTxt = "WELCOME CREATOR";
           document.getElementById("demo").innerHTML = newTxt;
           localStorage.greetUser = newTxt;
+          displayNotification(newTxt);
     }}
     else if (personChange.toUpperCase() === "NO" || personChange.toUpperCase() === "N"){
         console.log("Username not changed!!");
@@ -122,6 +93,89 @@ if(localStorage.greetUser === undefined){
     }
 })
 
+function displayNotification(txt){
+registerServiceWorker()
+async function registerServiceWorker() {
+    await navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+        // registration worked
+        console.log('Registration succeeded. ',registration);
+      }).catch(function(error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      })
+}
+  if (Notification?.permission === "granted") {
+    // let n = new Notification("THE MOVIE GARDEN", {
+    // body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
+    // })
+    navigator.serviceWorker.ready.then(function(registration) {
+    registration.showNotification("THE MOVIE GARDEN", {
+      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})
+    });
+      // const interval = setInterval(() => {
+      //   n.close()
+      // }, 10000);
+    } else if (Notification && Notification.permission !== "denied") {
+    Notification.requestPermission().then((status) => {
+    if (status === "granted") {
+    // let n = new Notification("THE MOVIE GARDEN", {
+    //   body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
+    // })
+    navigator.serviceWorker.ready.then(function(registration) {
+        registration.showNotification("THE MOVIE GARDEN", {
+      body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})});
+      // const interval = setInterval(() => {
+      //   n.close()
+      // }, 10000);
+        } else {
+          alert("You have to give notification permission to get the welcome notification");
+        }
+      });
+    } else {
+      alert("You have to give notification permission to get the welcome notification");
+    }}
+
+function displayReturnNotification(){
+    sessionStorage.current = 1;
+    registerServiceWorker()
+async function registerServiceWorker() {
+    await navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+        // registration worked
+        console.log('Registration succeeded. ',registration);
+      }).catch(function(error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      })
+}
+    if (Notification?.permission === "granted") {
+        // let n = new Notification("THE MOVIE GARDEN", {
+        //   body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
+        // });
+        navigator.serviceWorker.ready.then(function(registration) {
+            registration.showNotification("THE MOVIE GARDEN", {
+         body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})});
+          // const interval = setInterval(() => {
+          //   n.close()
+          // }, 10000);
+        } else if (Notification && Notification.permission !== "denied") {
+        Notification.requestPermission().then((status) => {
+        if (status === "granted") {
+        // let n = new Notification("THE MOVIE GARDEN", {
+        //   body: `${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
+        // });
+           registration.showNotification("THE MOVIE GARDEN", {
+         body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})
+          // const interval = setInterval(() => {
+          //   n.close()
+          // }, 10000);
+            } else {
+              alert("You have to give notification permission to get the  welcome notification");
+            }
+          });
+        } else {
+          alert("You have to give notification permission to get the welcome notification");
+        }
+}      
 
 var userImage = document.getElementById("user-image");
 if(localStorage.picsrc !== undefined){
