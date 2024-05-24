@@ -93,8 +93,6 @@ if(localStorage.greetUser === undefined){
     }
 })
 
-function displayNotification(txt){
-registerServiceWorker()
 async function registerServiceWorker() {
     await navigator.serviceWorker.register('service-worker.js').then(function(registration) {
         // registration worked
@@ -104,10 +102,13 @@ async function registerServiceWorker() {
         console.log('Registration failed with ' + error);
       })
 }
+
+function displayNotification(txt){
   if (Notification?.permission === "granted") {
     // let n = new Notification("THE MOVIE GARDEN", {
     // body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
     // })
+    registerServiceWorker()
     navigator.serviceWorker.ready.then(function(registration) {
     registration.showNotification("THE MOVIE GARDEN", {
       body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})
@@ -121,6 +122,7 @@ async function registerServiceWorker() {
     // let n = new Notification("THE MOVIE GARDEN", {
     //   body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
     // })
+    registerServiceWorker()
     navigator.serviceWorker.ready.then(function(registration) {
         registration.showNotification("THE MOVIE GARDEN", {
       body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})});
@@ -137,20 +139,11 @@ async function registerServiceWorker() {
 
 function displayReturnNotification(){
     sessionStorage.current = 1;
-    registerServiceWorker()
-async function registerServiceWorker() {
-    await navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-        // registration worked
-        console.log('Registration succeeded. ',registration);
-      }).catch(function(error) {
-        // registration failed
-        console.log('Registration failed with ' + error);
-      })
-}
     if (Notification?.permission === "granted") {
         // let n = new Notification("THE MOVIE GARDEN", {
         //   body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
         // });
+        registerServiceWorker()
         navigator.serviceWorker.ready.then(function(registration) {
             registration.showNotification("THE MOVIE GARDEN", {
          body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})});
@@ -163,8 +156,10 @@ async function registerServiceWorker() {
         // let n = new Notification("THE MOVIE GARDEN", {
         //   body: `${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
         // });
+        registerServiceWorker()
+        navigator.serviceWorker.ready.then(function(registration) {
            registration.showNotification("THE MOVIE GARDEN", {
-         body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})
+         body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"})})
           // const interval = setInterval(() => {
           //   n.close()
           // }, 10000);

@@ -283,7 +283,7 @@ footer pre.light{
 .topnav li{
   color: white;
   list-style: none;
-  font-size: 2.75vh;
+  font-size: 2.625vh;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   margin: 1.75vh 0vw 1.5vh 0vw;
 }
@@ -785,7 +785,7 @@ footer pre.light{
 }
 #search:hover {
   transition: width 1.0s ease-in-out, opacity ease 1s;
-  width: 23vw;
+  width: 22vw;
   opacity: 1.0;
   color: black;   
   cursor: pointer;
