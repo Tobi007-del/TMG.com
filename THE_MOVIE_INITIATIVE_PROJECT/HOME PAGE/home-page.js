@@ -28,13 +28,12 @@ document.getElementById("title").style.opacity = "1.0";
 
 window.onloadstart = userNameFunction()
 
-var userName;
 
 function userNameFunction() {
 
 console.log(localStorage.greetUser);
 
-if(localStorage.greetUser === undefined){
+if(localStorage.greetUser === undefined || localStorage.greetUser === 'undefined'){
   sessionStorage.current = 1;
   var txt;
   var person = prompt("Please enter your name:", "User");
@@ -42,14 +41,12 @@ if(localStorage.greetUser === undefined){
     txt = "Welcome User";
   } else {
     txt = "Welcome " + person;
-    userName = txt;
   }
   if (person === "tobi-00703181011"){
     txt = "WELCOME CREATOR";
-    userName = txt;
   }
   document.getElementById("demo").innerHTML = txt;
-  localStorage.greetUser = userName;
+  localStorage.greetUser = txt;
   displayNotification(txt);
  }   else {
     document.getElementById("demo").innerHTML = localStorage.greetUser;
@@ -94,7 +91,6 @@ if(localStorage.greetUser === undefined){
 })
 
 async function registerServiceWorker() {
-    // await navigator.serviceWorker.register('service-worker.js');
     await navigator.serviceWorker.register('service-worker.js').then(function(registration) {
         // registration worked
         console.log('Registration succeeded. ',registration);
@@ -107,10 +103,10 @@ async function registerServiceWorker() {
 function displayNotification(txt){
   const title = "THE MOVIE GARDEN";
   const options = {
-    body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , 
+    body: `${txt} to The Movie Garden where you can watch all your exclusive movies and tv shows!!!` , 
     icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
     badge: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
-    image: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/Justice League/justice-league.jpeg"
+    image: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/justice-league-b-s.jpeg"
 };
   if (Notification?.permission === "granted") {
     // let n = new Notification("THE MOVIE GARDEN", {
@@ -147,10 +143,10 @@ function displayNotification(txt){
 function displayReturnNotification(){
     const returnTitle = "THE MOVIE GARDEN";
     const returnOptions = {
-        body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , 
+        body: `${localStorage.greetUser} to The Movie Garden once more. Tour the site and enjoy all your exclusive movies and tv shows!!` , 
         icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
         badge: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
-        image: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/Justice League/justice-league.jpeg"
+        image: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/justice-league-b-s.jpeg"
     };
     sessionStorage.current = 1;
     if (Notification?.permission === "granted") {
@@ -170,7 +166,6 @@ function displayReturnNotification(){
         // let n = new Notification("THE MOVIE GARDEN", {
         //   body: `${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
         // });
-        registerServiceWorker()
         registerServiceWorker()
         navigator.serviceWorker.ready.then(function(registration) {
             registration.showNotification(returnTitle, returnOptions)
@@ -221,6 +216,68 @@ function lightMode() {
      }
     } 
  } 
+
+
+var togglePushBall = document.getElementById("toggle-push-ball");
+var pusher;
+
+window.onloadstart = pusherExist();
+
+function pusherExist(){
+console.log("Local Storage Pusher: ", localStorage.pusher);
+if(localStorage.pusher === undefined){
+    pusher = 0;
+    console.log(`Pusher: ${pusher}`);
+    registerServiceWorkerForPush(pusher)
+    togglePushBall.classList.remove('push');
+} else if(Number(localStorage.pusher) === 1){
+    pusher = Number(localStorage.pusher);
+    console.log(`Pusher: ${pusher}`);
+    registerServiceWorkerForPush(pusher)
+    togglePushBall.classList.add('push');
+} else if(Number(localStorage.pusher) === 0){
+    pusher = Number(localStorage.pusher);
+    console.log(`Pusher: ${pusher}`);
+    registerServiceWorkerForPush(pusher)
+    togglePushBall.classList.remove('push');
+}}
+async function registerServiceWorkerForPush(pusherValue) {
+    await navigator.serviceWorker.register('service-worker.js');
+    await navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+    if(pusherValue === 1){
+        // registration worked
+        console.log('Registration succeeded. ',registration);
+    }
+    else if(pusherValue === 0){
+    registration.unregister().then((boolean)=>{
+    if(boolean){
+    console.log('Unregistration succeeded.',registration);
+    } else{
+        console.log("Unregistration failed.")
+    }
+    })
+    }
+      }).catch(function(error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      })
+}
+
+togglePushBall.addEventListener('click',()=>{
+    if(pusher === 0){
+    pusher ++;
+    registerServiceWorkerForPush(pusher)
+    localStorage.pusher = pusher;
+    console.log(`pusher enabled. Pusher = ${pusher}`)
+    togglePushBall.classList.add('push');
+    } else{
+    pusher = 0;
+    registerServiceWorkerForPush(pusher)
+    localStorage.pusher = pusher;
+    console.log(`pusher disabled. Pusher = ${pusher}`)
+    togglePushBall.classList.remove('push');
+    }
+})
  
 
 var mousedownCounter = 0;

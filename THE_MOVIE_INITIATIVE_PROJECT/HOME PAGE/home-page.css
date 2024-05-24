@@ -1408,7 +1408,7 @@ footer pre{
     left: 0.1vh;
     transition: transform 0.25s linear;
   }
-  #toggle-ball{
+  #toggle-ball,#toggle-push-ball.push{
     transform: translateX(2.2vh);
   }
   #toggle-push-ball{
@@ -1717,7 +1717,7 @@ footer pre{
     left: 0.1vh;
     transition: transform 0.25s linear;
   }
-  #toggle-ball{
+  #toggle-ball,#toggle-push-ball.push{
     transform: translateX(2.15vh);
   }
   #toggle-push-ball{
@@ -2248,7 +2248,7 @@ footer pre{
     top: 0.075vw;
     left: 0.1vw;
   }
-  #toggle-ball{
+  #toggle-ball,#toggle-push-ball.push{
     transform: translateX(2.1vw);
   }
   #toggle-push-ball{
@@ -2322,7 +2322,7 @@ footer pre{
     left: 0.1vh;
     transition: transform 0.25s linear;
   }
-  #toggle-ball{
+  #toggle-ball,#toggle-push-ball.push{
     transform: translateX(2.2vh);
   }
   #toggle-push-ball{
