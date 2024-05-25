@@ -14,7 +14,7 @@ self.addEventListener('notificationclick', (event) => {
   
       for (let i = 0; i < windowClients.length; i++) {
         const windowClient = windowClients[i];
-        if (windowClient.url === sitePageUrl) {
+        if (String(windowClient.url) === sitePageUrl) {
           matchingClient = windowClient;
           break;
         }

@@ -86,16 +86,6 @@ if(localStorage.greetUser === undefined || localStorage.greetUser === 'undefined
     }
 })
 
-async function registerServiceWorker() {
-    await navigator.serviceWorker.register('service-worker.js');
-    await navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-        // registration worked
-        console.log('Registration succeeded. ',registration);
-      }).catch(function(error) {
-        // registration failed
-        console.log('Registration failed with ' + error);
-      })
-}
 
 function displayNotification(txt){
   const title = "THE MOVIE GARDEN";
@@ -119,26 +109,18 @@ function displayNotification(txt){
     // let n = new Notification("THE MOVIE GARDEN", {
     // body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
     // })
-    registerServiceWorker()
     navigator.serviceWorker.ready.then(function(registration) {
     registration.showNotification(title, options);
     });
-      // const interval = setInterval(() => {
-      //   n.close()
-      // }, 10000);
     } else if (Notification && Notification.permission !== "denied") {
     Notification.requestPermission().then((status) => {
     if (status === "granted") {
     // let n = new Notification("THE MOVIE GARDEN", {
     //   body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
     // })
-    registerServiceWorker()
     navigator.serviceWorker.ready.then(function(registration) {
     registration.showNotification(title, options);
     });
-      // const interval = setInterval(() => {
-      //   n.close()
-      // }, 10000);
         } else {
           alert("You have to give notification permission to get the welcome notification");
         }
@@ -170,26 +152,18 @@ function displayReturnNotification(){
         // let n = new Notification("THE MOVIE GARDEN", {
         //   body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
         // });
-        registerServiceWorker()
         navigator.serviceWorker.ready.then(function(registration) {
             registration.showNotification(returnTitle, returnOptions)
         });
-          // const interval = setInterval(() => {
-          //   n.close()
-          // }, 10000);
         } else if (Notification && Notification.permission !== "denied") {
         Notification.requestPermission().then((status) => {
         if (status === "granted") {
         // let n = new Notification("THE MOVIE GARDEN", {
         //   body: `${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
         // });
-        registerServiceWorker()
         navigator.serviceWorker.ready.then(function(registration) {
             registration.showNotification(returnTitle, returnOptions)
         });
-          // const interval = setInterval(() => {
-          //   n.close()
-          // }, 10000);
             } else {
               alert("You have to give notification permission to get the  welcome notification");
             }
@@ -238,17 +212,12 @@ function lightMode() {
 var togglePushBall = document.getElementById("toggle-push-ball");
 var pusher;
 
-// window.onloadstart = pusherExist();
+window.onloadstart = pusherExist();
 
 function pusherExist(){
 console.log("Local Storage Pusher: ", localStorage.pusher);
 if(localStorage.pusher === undefined){
-    pusher = 0;
-    console.log(`Pusher: ${pusher}`);
-    registerServiceWorkerForPush(pusher)
-    togglePushBall.classList.remove('push');
-} else if(Number(localStorage.pusher) === 1){
-    pusher = Number(localStorage.pusher);
+    pusher = 1;
     console.log(`Pusher: ${pusher}`);
     registerServiceWorkerForPush(pusher)
     togglePushBall.classList.add('push');
@@ -257,6 +226,11 @@ if(localStorage.pusher === undefined){
     console.log(`Pusher: ${pusher}`);
     registerServiceWorkerForPush(pusher)
     togglePushBall.classList.remove('push');
+} else if(Number(localStorage.pusher) === 1){
+    pusher = Number(localStorage.pusher);
+    console.log(`Pusher: ${pusher}`);
+    registerServiceWorkerForPush(pusher)
+    togglePushBall.classList.add('push');
 }}
 async function registerServiceWorkerForPush(pusherValue) {
     await navigator.serviceWorker.register('service-worker.js');
@@ -283,16 +257,16 @@ async function registerServiceWorkerForPush(pusherValue) {
 togglePushBall.addEventListener('click',()=>{
     if(pusher === 0){
     pusher ++;
+    togglePushBall.classList.add('push');
     registerServiceWorkerForPush(pusher)
     localStorage.pusher = pusher;
     console.log(`pusher enabled. Pusher = ${pusher}`)
-    togglePushBall.classList.add('push');
     } else{
     pusher = 0;
+    togglePushBall.classList.remove('push');
     registerServiceWorkerForPush(pusher)
     localStorage.pusher = pusher;
     console.log(`pusher disabled. Pusher = ${pusher}`)
-    togglePushBall.classList.remove('push');
     }
 })
  
@@ -531,10 +505,10 @@ function revealSearchMenu(){
     const movieitems = document.getElementById("search-menu");
     const movie = document.querySelectorAll(".search-lines");
     const mname = movieitems.getElementsByTagName("p");
-    for(var i=0; i< mname.length; i++){
-        movie[i].style.display="none";
-    document.getElementById("Search").focus();
+    for(var i=0; i< movie.length; i++){
+        movie[i].style.display = "none";
     }
+    document.getElementById("Search").focus();
 }
 
 function concealSearchMenu(){
@@ -565,9 +539,9 @@ document.getElementById("navigator").addEventListener('mousedown', ()=> {
 document.getElementById("navigator").addEventListener('mouseup', ()=> {
     navigatorMenuOpenFunction()
 })
-document.getElementById("navigator").addEventListener('mouseover', ()=> {
-    navigatorMenuOpenFunction()
-})
+// document.getElementById("navigator").addEventListener('mouseover', ()=> {
+//     navigatorMenuOpenFunction()
+// })
 
 function navigatorMenuOpenFunction() {
     document.getElementById("hidden-navigator-panel").style.width="65vw";

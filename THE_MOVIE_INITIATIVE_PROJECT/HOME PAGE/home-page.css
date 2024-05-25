@@ -562,8 +562,7 @@ footer pre.light{
 }
 #left-arrow{
   left: 0; 
-  display: none;
-  
+  display: none; 
 }
 #right-arrow{
   right: 0;
@@ -702,7 +701,7 @@ footer pre.light{
   z-index: 2;
   transition: transform 0.25s linear;
 }
-#toggle-ball{
+#toggle-ball,#toggle-push-ball.push{
   transform: translateX(2.1vw);
 }
 #toggle-push-ball{
@@ -2362,7 +2361,7 @@ footer pre{
   }
   #title{
     font-size: 5vh;
-    width: 15vh;
+    width: 40vw;
   }
   #title-container{
     text-align: center;
