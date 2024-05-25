@@ -46,7 +46,6 @@ if(localStorage.greetUser === undefined || localStorage.greetUser === 'undefined
   displayNotification(txt);
  }   else {
     document.getElementById("demo").innerHTML = localStorage.greetUser;
-    window.onload = myNotificationFunction()
     function myNotificationFunction(){
     console.log(sessionStorage.current);
     if(sessionStorage.current === '1'){
@@ -55,6 +54,7 @@ if(localStorage.greetUser === undefined || localStorage.greetUser === 'undefined
         displayReturnNotification();
     }
     }
+    myNotificationFunction()
 }
 }
   document.getElementById("demo").addEventListener('click', ()=> {
@@ -67,7 +67,7 @@ if(localStorage.greetUser === undefined || localStorage.greetUser === 'undefined
           document.getElementById("demo").innerHTML = newTxt;
           localStorage.greetUser = newTxt;
           displayNotification(newTxt);
-    } else {
+    } else if(newPerson !== "tobi-00703181011"){
           newTxt = "Welcome " + newPerson;
           document.getElementById("demo").innerHTML = newTxt;
           localStorage.greetUser = newTxt;
@@ -109,9 +109,11 @@ function displayNotification(txt){
             action: 'open-site',
             title: 'Visit The Garden',
             type: 'button',
-            icon: '/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg'
+            icon: '/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
         }
     ],
+    tag: 'renotify',
+    renotify: true,
   };
   if (Notification?.permission === "granted") {
     // let n = new Notification("THE MOVIE GARDEN", {
@@ -143,7 +145,7 @@ function displayNotification(txt){
       });
     } else {
       alert("You have to give notification permission to get the welcome notification");
-    }}
+}}
 
 function displayReturnNotification(){
     const returnTitle = "THE MOVIE GARDEN";
@@ -157,9 +159,11 @@ function displayReturnNotification(){
                 action: 'open-site',
                 title: 'Visit The Garden',
                 type: 'button',
-                icon: '/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg'
+                icon: '/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
             }
         ],
+        tag: 'renotify',
+        renotify: true,
     };
     sessionStorage.current = 1;
     if (Notification?.permission === "granted") {
@@ -234,7 +238,7 @@ function lightMode() {
 var togglePushBall = document.getElementById("toggle-push-ball");
 var pusher;
 
-window.onloadstart = pusherExist();
+// window.onloadstart = pusherExist();
 
 function pusherExist(){
 console.log("Local Storage Pusher: ", localStorage.pusher);

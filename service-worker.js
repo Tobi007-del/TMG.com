@@ -1,30 +1,33 @@
 console.log('reached service-worker.js successfully');
 
 self.addEventListener('notificationclick', (event) => {
-    if(event.action === 'open-site' || event.action !== 'open-s'){
     console.log('click received');
     const sitePageUrl = new URL('THE_MOVIE_INITIATIVE',self.location.origin).href;
     console.log(sitePageUrl);
-    const promiseChain = clients.matchAll({
-        type: 'window',
-        includeUncontrolled: true,
-    }).then((windowClients)=> {
-    let matchingClient = null;
-
-    for (let i = 0; i < windowClients.length; i++){
-        const windowClient = windowClients[i];
-        if(windowClient.url === sitePageUrl){
-            matchingClient = windowClient;
-            break;
-        }
-    }
-    if (matchingClient){
-        return matchingClient.focus();
-    } else {
-        return clients.openWindow(sitePageUrl);
-    }
+    const promiseChain = clients
+    .matchAll({
+      type: 'window',
+      includeUncontrolled: true,
     })
-    event.waitUntil(promiseChain);}
+    .then((windowClients) => {
+      let matchingClient = null;
+  
+      for (let i = 0; i < windowClients.length; i++) {
+        const windowClient = windowClients[i];
+        if (windowClient.url === sitePageUrl) {
+          matchingClient = windowClient;
+          break;
+        }
+      }
+  
+      if (matchingClient) {
+        return matchingClient.focus();
+      } else {
+        return clients.openWindow(sitePageUrl);
+      }
+    });
+  
+  event.waitUntil(promiseChain);
 })
 
 // self.addEventListener('activate', async (e) => {
