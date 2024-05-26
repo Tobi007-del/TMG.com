@@ -235,10 +235,10 @@ if(localStorage.pusher === undefined){
 
 
 async function registerServiceWorkerForPush(pusherValue) {
+    await navigator.serviceWorker.register('service-worker.js');
     await navigator.serviceWorker.register('service-worker.js').then(function(registration) {
     if(pusherValue === 1){
         // registration worked
-        navigator.serviceWorker.register('service-worker.js');
         console.log('Registration succeeded. ',registration);
     }
     else if(pusherValue === 0){
