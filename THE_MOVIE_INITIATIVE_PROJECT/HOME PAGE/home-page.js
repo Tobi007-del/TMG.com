@@ -173,7 +173,7 @@ function displayReturnNotification(){
         }
 }      
 
-var GardenerImage = document.getElementById("Gardener-image");
+var GardenerImage = document.getElementById("user-image");
 if(localStorage.picsrc !== undefined){
 GardenerImage.src = localStorage.picsrc;
 }
@@ -212,7 +212,7 @@ function lightMode() {
 var togglePushBall = document.getElementById("toggle-push-ball");
 var pusher;
 
-pusherExist();
+windo.onloadstart = pusherExist();
 
 function pusherExist(){
 console.log("Local Storage Pusher: ", localStorage.pusher);
