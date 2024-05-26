@@ -22,19 +22,19 @@ document.getElementById("tmg").style.opacity = "1.0";
 document.getElementById("demo").style.opacity = "1.0";
 document.getElementById("title").style.opacity = "1.0";
 
-window.onloadstart = userNameFunction()
+window.onloadstart = GardenerNameFunction()
 
 
-function userNameFunction() {
+function GardenerNameFunction() {
 
-console.log(localStorage.greetUser);
+console.log(localStorage.greetGardener);
 
-if(localStorage.greetUser === undefined || localStorage.greetUser === 'undefined'){
+if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'undefined'){
   sessionStorage.current = 1;
   var txt;
-  var person = prompt("Please enter your name:", "User");
+  var person = prompt("Please enter your name:", "Gardener");
   if (person === "" || person === null) {
-    txt = "Welcome User";
+    txt = "Welcome Gardener";
   } else {
     txt = "Welcome " + person;
   }
@@ -42,10 +42,10 @@ if(localStorage.greetUser === undefined || localStorage.greetUser === 'undefined
     txt = "WELCOME CREATOR";
   }
   document.getElementById("demo").innerHTML = txt;
-  localStorage.greetUser = txt;
+  localStorage.greetGardener = txt;
   displayNotification(txt);
  }   else {
-    document.getElementById("demo").innerHTML = localStorage.greetUser;
+    document.getElementById("demo").innerHTML = localStorage.greetGardener;
     function myNotificationFunction(){
     console.log(sessionStorage.current);
     if(sessionStorage.current === '1'){
@@ -59,30 +59,30 @@ if(localStorage.greetUser === undefined || localStorage.greetUser === 'undefined
 }
   document.getElementById("demo").addEventListener('click', ()=> {
     var newTxt;
-    var personChange = prompt("Would you like to change username?", "");
+    var personChange = prompt("Would you like to change Gardener name?", "");
     if (personChange.toUpperCase() === "YES" || personChange.toUpperCase() === "Y"){
-    var newPerson = prompt("Please enter your name:", "User");
+    var newPerson = prompt("Please enter your name:", "Gardener");
     if (newPerson === "" || newPerson === null) {
-          newTxt = "Welcome User";
+          newTxt = "Welcome Gardener";
           document.getElementById("demo").innerHTML = newTxt;
-          localStorage.greetUser = newTxt;
+          localStorage.greetGardener = newTxt;
           displayNotification(newTxt);
     } else if(newPerson !== "tobi-00703181011"){
           newTxt = "Welcome " + newPerson;
           document.getElementById("demo").innerHTML = newTxt;
-          localStorage.greetUser = newTxt;
+          localStorage.greetGardener = newTxt;
           displayNotification(newTxt);
     }
     if (newPerson == "tobi-00703181011"){
           newTxt = "WELCOME CREATOR";
           document.getElementById("demo").innerHTML = newTxt;
-          localStorage.greetUser = newTxt;
+          localStorage.greetGardener = newTxt;
           displayNotification(newTxt);
     }}
     else if (personChange.toUpperCase() === "NO" || personChange.toUpperCase() === "N"){
-        console.log("Username not changed!!");
+        console.log("Gardener name not changed!!");
     } else{
-        console.log("Username not changed!!");
+        console.log("Gardener name not changed!!");
     }
 })
 
@@ -132,7 +132,7 @@ function displayNotification(txt){
 function displayReturnNotification(){
     const returnTitle = "THE MOVIE GARDEN";
     const returnOptions = {
-        body: `${localStorage.greetUser} to The Movie Garden once more. Tour the site and enjoy all your exclusive movies and tv shows!!` , 
+        body: `${localStorage.greetGardener} to The Movie Garden once more. Tour the site and enjoy all your exclusive movies and tv shows!!` , 
         icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
         badge: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
         image: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/justice-league-b-s.jpeg",
@@ -150,7 +150,7 @@ function displayReturnNotification(){
     sessionStorage.current = 1;
     if (Notification?.permission === "granted") {
         // let n = new Notification("THE MOVIE GARDEN", {
-        //   body: `${localStorage.greetUser} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
+        //   body: `${localStorage.greetGardener} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
         // });
         navigator.serviceWorker.ready.then(function(registration) {
             registration.showNotification(returnTitle, returnOptions)
@@ -159,7 +159,7 @@ function displayReturnNotification(){
         Notification.requestPermission().then((status) => {
         if (status === "granted") {
         // let n = new Notification("THE MOVIE GARDEN", {
-        //   body: `${localStorage.greetUser} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
+        //   body: `${localStorage.greetGardener} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
         // });
         navigator.serviceWorker.ready.then(function(registration) {
             registration.showNotification(returnTitle, returnOptions)
@@ -173,9 +173,9 @@ function displayReturnNotification(){
         }
 }      
 
-var userImage = document.getElementById("user-image");
+var GardenerImage = document.getElementById("Gardener-image");
 if(localStorage.picsrc !== undefined){
-userImage.src = localStorage.picsrc;
+GardenerImage.src = localStorage.picsrc;
 }
 document.getElementById("insert").addEventListener('change', (evt) => {
     var files = evt.target.files;
@@ -183,8 +183,8 @@ document.getElementById("insert").addEventListener('change', (evt) => {
     reader.onload = function(event) {
     try {
         localStorage.picsrc = event.target.result;
-        userImage.src = event.target.result;
-        console.log(`current image src: ${userImage.src}`)
+        GardenerImage.src = event.target.result;
+        console.log(`current image src: ${GardenerImage.src}`)
      } catch (error) {
      alert(`The image file selected is too large!!`)
      } 
@@ -212,7 +212,7 @@ function lightMode() {
 var togglePushBall = document.getElementById("toggle-push-ball");
 var pusher;
 
-window.onloadstart = pusherExist();
+pusherExist();
 
 function pusherExist(){
 console.log("Local Storage Pusher: ", localStorage.pusher);
@@ -232,11 +232,13 @@ if(localStorage.pusher === undefined){
     registerServiceWorkerForPush(pusher)
     togglePushBall.classList.add('push');
 }}
+
+
 async function registerServiceWorkerForPush(pusherValue) {
-    await navigator.serviceWorker.register('service-worker.js');
     await navigator.serviceWorker.register('service-worker.js').then(function(registration) {
     if(pusherValue === 1){
         // registration worked
+        navigator.serviceWorker.register('service-worker.js');
         console.log('Registration succeeded. ',registration);
     }
     else if(pusherValue === 0){
