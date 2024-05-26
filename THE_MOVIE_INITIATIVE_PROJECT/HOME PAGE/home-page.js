@@ -212,7 +212,7 @@ function lightMode() {
 var togglePushBall = document.getElementById("toggle-push-ball");
 var pusher;
 
-windo.onloadstart = pusherExist();
+window.onloadstart = pusherExist();
 
 function pusherExist(){
 console.log("Local Storage Pusher: ", localStorage.pusher);
