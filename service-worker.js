@@ -92,6 +92,8 @@ self.addEventListener("push", e => {
                 icon: '/THE_MOVIE_INITIATIVE/THE_MOVIE_ItNITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
             }
         ],
+        tag: 'push',
+        renotify: true,
     };
     self.registration.showNotification(pushTitle, pushOptions)
 })

@@ -1,3 +1,49 @@
+var first = document.getElementById("first-text");
+var second = document.getElementById("second-text");
+var third = document.getElementById("third-text");
+var fourth = document.getElementById("fourth-text");
+var fifth = document.getElementById("fifth-text");
+var sixth = document.getElementById("sixth-text");
+
+const preload = () => {
+const preloaderTexts = document.querySelectorAll(".preloader-text");
+preloaderTexts.forEach((preloaderText)=>{
+    preloaderText.style.display = "none";
+})
+}
+function preloader(){
+   first.style.display = "block";
+   second.style.display = "block";
+setTimeout(()=>{
+   preload()
+   third.style.display = "block";
+},15000);
+setTimeout(()=>{
+   preload()
+   fourth.style.display = "block";
+},25000);
+setTimeout(()=>{
+   preload()
+   fifth.style.display = "block";
+},31000);
+setTimeout(()=>{
+   preload()
+   sixth.style.display = "block";
+},50000);
+}
+window.onloadstart = preloader();
+
+document.onreadystatechange = () => {
+if(document.readyState === "complete"){
+    document.getElementById("loading-page").style.display = "none";
+    document.getElementById("body").style.display = "block";
+}
+};
+//  window.onload = () => {
+//     document.getElementById("loading-page").style.display = "none";
+//     document.getElementById("body").style.display = "block";
+//  }
+
 if (!('serviceWorker' in navigator)) {
     // Service Worker isn't supported on this browser, disable or hide UI.
     document.getElementById("notification-option").style.display = "none";
@@ -22,7 +68,8 @@ document.getElementById("tmg").style.opacity = "1.0";
 document.getElementById("demo").style.opacity = "1.0";
 document.getElementById("title").style.opacity = "1.0";
 
-window.onloadstart = GardenerNameFunction()
+
+GardenerNameFunction()
 
 
 function GardenerNameFunction() {
@@ -195,7 +242,6 @@ document.getElementById("insert").addEventListener('change', (evt) => {
 
 function lightMode() {
     var toggleItems = document.querySelectorAll("#hidden-navigator-panel,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle");
-    console.log(toggleItems)
     for(var i = 0; i < toggleItems.length; i++){
      toggleItems[i].classList.toggle("light")
      var lightItems = document.getElementsByClassName("light");
@@ -326,7 +372,7 @@ function reversePlayTrailer(x){
     movingLinks[x].classList.remove("trailer");
     previewButtons[x].classList.remove("trailer");
     endPreviewButtons[x].classList.remove("trailer");
-    console.log(movingPictures[x].computedStyleMap().get("transform")[0].x.value);
+    // console.log(movingPictures[x].computedStyleMap().get("transform")[0].x.value);
     if (movingPictures[x].computedStyleMap().get("transform")[0].x.value == 0){
         document.getElementById("left-arrow").style.display="none";
     }
@@ -359,20 +405,20 @@ watchTrailerButtons.forEach((watchTrailerButton,i) => {
 
 
 var intervalID = null;
-console.log(intervalID)
+    console.log(`Interval: ${intervalID}`)
 function intervalManager(flag, animate, time) {
     if(flag){
         var Time = parseInt(time);
+        console.log(`Time:${Time}`)
         intervalID = setInterval(animate,Time)
-        console.log(intervalID)
+        console.log(`Interval: ${intervalID}`)
     }
     else{
         clearInterval(intervalID)
-        intervalID = null;
-        console.log(intervalID)
+        console.log(`Interval: ${intervalID}`)
     }
 }
-intervalManager(true, movingFrame, 30000);
+window.onload = intervalManager(true, movingFrame, 30000);
 
 
 function movingFrame() {
@@ -381,7 +427,7 @@ function movingFrame() {
     movingPicture.computedStyleMap().get("transform")[0].x.value
     -100}%)`;
     reversePlayTrailer(r);
-    console.log(intervalID)
+    console.log(`Interval:${intervalID}`);
     doubleClickCounter = 0;
     if (movingPicture.computedStyleMap().get("transform")[0].x.value == -4800){
         movingPicture.style.transform="translateX(0)";
@@ -397,19 +443,23 @@ function movingFrame() {
     }
 })}
 
+var animationStopped = 0;
 previewButtons.forEach((previewButton) => {
     previewButton.addEventListener("mousedown", () =>{
+    animationStopped ++;
     previewButton.style.display = "none";
     intervalManager(false, movingFrame, 30000);
-    console.log(intervalID)
     })
  })
  
 endPreviewButtons.forEach((endPreviewButton,i) => {
     endPreviewButton.addEventListener("mousedown", () => {
     reversePlayTrailer(i);
-    intervalManager(true, movingFrame, 30000);
     doubleClickCounter = 0;
+    if (animationStopped === 1){
+    intervalManager(true, movingFrame, 30000);
+    animationStopped = 0;
+    }
     })
  })
 
