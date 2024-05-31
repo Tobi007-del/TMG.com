@@ -464,7 +464,7 @@ footer pre.light{
   transform: translateX(0);
   height: 80vh;
   position: relative;
-  transition: .0005s transform linear;
+  transition: transform .05s linear;
 }
 .moving-picture-image{
   height: 100%;
@@ -2101,8 +2101,30 @@ footer pre{
     display: block;
   }
   #demo{
-    font-size: 2.5vh;
+    font-size: 3.25vh;
     text-wrap: nowrap;
+  }
+  #top-box{
+    height: 7.5vh;
+  }
+  #navigator{
+    height: 5.75vh;
+    width: 5.75vh;
+  }
+  #Search{
+    font-size: 4.5vh;
+    text-indent: 7.5vh;
+    height: 10vh;
+  }
+  .search-icon{
+    top: 2.25vh;
+    left: 0.15vh; 
+    font-size: 4.5vh;
+  }
+  #x-search-menu{
+    font-size: 9vh;
+    top: 0vh;
+    color: red;
   }
   #demo-container{
     right: 30vw;
@@ -2116,8 +2138,15 @@ footer pre{
     top: 8vh;
   }
   #tmg{
-    margin: 0.3vh 0vh 0.75vh 0vh;
+    margin: 0vh 0vh 0.75vh 0vh;
     right: 4vh;
+    font-size: 4.75vh;
+  }
+  #moving-container{
+    top: 5vh;
+  }
+  #moving-word{
+    font-size: 2.5vh;
   }
   .topnav{
     width: 50vw;
@@ -2192,8 +2221,8 @@ footer pre{
     right: 1vw;
   }
   .topnav li{
-    font-size: 2.2vh;
-    margin-top: 1.65vh;
+    font-size: 3.5vh;
+    margin-top: 1.7vh;
     margin-left: 0;
     margin-right: 0.5vw;
   }
@@ -2265,6 +2294,18 @@ footer pre{
   }
   .panels a p{
     font-size: 0.45em;
+  }
+  #search{
+    height: 5.5vh;
+    right: 0.5vw;
+  }
+  #insert{
+    width: 5.5vh;
+    height: 5.5vh;
+  }
+  #user-image{
+    width: 5.5vh;
+    height: 5.5vh;
   }
   h3{
     font-size: 0.7em;
@@ -2381,7 +2422,14 @@ footer pre{
     font-size: 2.5vh;
     font-weight: bold;
     position: relative;
-    right: 2.5vw;
+    right: 1vw;
+    animation: magnify 2s infinite ease-in-out normal;
+  }
+  @keyframes magnify{
+    to{
+      transform: scale(1.05) rotate(15deg);
+      color: whitesmoke;
+    }
   }
   #demo{
     font-size: 2vh;
@@ -2503,7 +2551,7 @@ footer pre{
     height: 47.5vh;
   }
   .moving-picture-title{
-    top: 21.5vh;
+    top: 20.5vh;
     right: 2vw; 
     font-size: 1.9vh;
     max-width: 50vw;
@@ -2704,17 +2752,18 @@ footer pre{
     cursor: pointer;
   }
   #search-menu{
-    height: 44.5vh;
+    height: 46.5vh;
   }
   #Search{
-    font-size: 2.25vh;
+    font-size: 2.5vh;
     text-indent: 3.5vh;
-    line-height: 5vh;
+    height: 5.75vh;
     box-shadow: none;
   }
   .search-icon{
-    top: 1.5vh;
-    left: 0.1vh; 
+    top: 1.8vh;
+    left: 0.05vh; 
+    font-size: 2.25vh;
   }
   #x-search-menu{
     font-size: 5vh;
@@ -2722,12 +2771,12 @@ footer pre{
     color: red;
   }
   #no-search-result{
-    height:20vh;
+    height:17.5vh;
     width: 60vw;
     margin-left: 20vw;
   }
   #no-search-result img{
-    height:15vh;
+    height:12.5vh;
     width:40vw;
     margin-bottom: 2vh;
   }
@@ -2738,16 +2787,16 @@ footer pre{
     font-size: 1vh;
   }
   .search-lines{
-    height: 6.5vh;
+    height: 7.5vh;
     margin-bottom: 0.5vw;
   }
   .search-lines a img{
-    width: 6vh;
-    height: 5vh;
+    width: 7vh;
+    height: 6vh;
     margin: 0.75vh 2vw 0.75vh 2vw;
   }
   .search-lines a p{
-    left: 8vh;
+    left: 9vh;
     word-spacing: 0vw;
     letter-spacing: 0vw;
     font: 1.75vh "Helvetica Neue", Arial, sans-serf;

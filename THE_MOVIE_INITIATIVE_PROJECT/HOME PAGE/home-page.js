@@ -440,7 +440,6 @@ function intervalManager(flag, animate, time) {
 
 function movingFrame() {
     movingPictures.forEach((movingPicture,r) => {
-    movingPicture.style.transition = ".1s";
     movingPicture.style.transform = `translateX(${
     movingPicture.computedStyleMap().get("transform")[0].x.value
     -100}%)`;
