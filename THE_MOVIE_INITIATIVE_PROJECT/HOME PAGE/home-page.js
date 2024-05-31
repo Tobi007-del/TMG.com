@@ -17,19 +17,19 @@ function preloader(){
 setTimeout(()=>{
    preload()
    third.style.display = "block";
-},15000);
+},20000);
 setTimeout(()=>{
    preload()
    fourth.style.display = "block";
-},25000);
+},30000);
 setTimeout(()=>{
    preload()
    fifth.style.display = "block";
-},31000);
+},36000);
 setTimeout(()=>{
    preload()
    sixth.style.display = "block";
-},50000);
+},55000);
 }
 window.onloadstart = preloader();
 
@@ -37,8 +37,11 @@ document.onreadystatechange = () => {
 if(document.readyState === "complete"){
     document.getElementById("loading-page").style.display = "none";
     document.getElementById("body").style.display = "block";
+    GardenerNameFunction();
+    intervalManager(true, movingFrame, 30000);
 }
 };
+// window.onload = GardenerNameFunction();
 //  window.onload = () => {
 //     document.getElementById("loading-page").style.display = "none";
 //     document.getElementById("body").style.display = "block";
@@ -63,19 +66,34 @@ allLink.addEventListener('click', (event)=>{
     alert("The site is still in developement so no movies are available at the moment, we apologize!!!");
 })})
 
+var menuSearchIcon = document.getElementById("menu-search-icon");
+var searchBar = document.getElementById("search");
+
+document.addEventListener('scroll',()=>{
+  if((window.innerWidth <= 600) && (window.scrollY > 0)){
+    menuSearchIcon.style.display = "block";
+    searchBar.style.transition = ".25s";
+    searchBar.style.height = "0";
+  } else if(window.innerWidth <= 600){
+    menuSearchIcon.style.display = "none";
+    searchBar.style.height = "4vh";
+  } else{
+    menuSearchIcon.style.display = "none";
+  }
+})
+menuSearchIcon.addEventListener('click',()=>{
+    menuSearchIcon.style.display = "none";
+    searchBar.style.height = "4vh";
+    searchBar.style.transition = ".25s";
+})
 
 document.getElementById("tmg").style.opacity = "1.0";
 document.getElementById("demo").style.opacity = "1.0";
 document.getElementById("title").style.opacity = "1.0";
 
 
-GardenerNameFunction()
-
-
 function GardenerNameFunction() {
-
 console.log(localStorage.greetGardener);
-
 if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'undefined'){
   sessionStorage.current = 1;
   var txt;
@@ -258,7 +276,7 @@ function lightMode() {
 var togglePushBall = document.getElementById("toggle-push-ball");
 var pusher;
 
-window.onloadstart = pusherExist();
+pusherExist();
 
 function pusherExist(){
 console.log("Local Storage Pusher: ", localStorage.pusher);
@@ -296,10 +314,10 @@ async function registerServiceWorkerForPush(pusherValue) {
     }
     })
     }
-      }).catch(function(error) {
-        // registration failed
-        console.log('Registration failed with ' + error);
-      })
+    }).catch(function(error) {
+      // registration failed
+      console.log('Registration failed with ' + error);
+    })
 }
 
 togglePushBall.addEventListener('click',()=>{
@@ -418,25 +436,25 @@ function intervalManager(flag, animate, time) {
         console.log(`Interval: ${intervalID}`)
     }
 }
-window.onload = intervalManager(true, movingFrame, 30000);
 
 
 function movingFrame() {
     movingPictures.forEach((movingPicture,r) => {
+    movingPicture.style.transition = ".1s";
     movingPicture.style.transform = `translateX(${
     movingPicture.computedStyleMap().get("transform")[0].x.value
     -100}%)`;
     reversePlayTrailer(r);
     console.log(`Interval:${intervalID}`);
     doubleClickCounter = 0;
-    if (movingPicture.computedStyleMap().get("transform")[0].x.value == -4800){
+    if (movingPicture.computedStyleMap().get("transform")[0].x.value == -4700){
         movingPicture.style.transform="translateX(0)";
         document.getElementById("left-arrow").style.display="none";
     }
     else{
         document.getElementById("left-arrow").style.display = "block";
     }
-    if(movingPicture.computedStyleMap().get("transform")[0].x.value == -4700){
+    if(movingPicture.computedStyleMap().get("transform")[0].x.value == -4600){
         document.getElementById("right-arrow").style.display="none";
     } else {
         document.getElementById("right-arrow").style.display = "block";
@@ -471,7 +489,7 @@ movingPictures.forEach((movingPicture) =>{
     movingPicture.style.transform = `translateX(${
     movingPicture.computedStyleMap().get("transform")[0].x.value
     -100}%)`;
-    if(movingPicture.computedStyleMap().get("transform")[0].x.value === -4700){
+    if(movingPicture.computedStyleMap().get("transform")[0].x.value === -4600){
         document.getElementById("right-arrow").style.display="none";
     }
 })})
@@ -481,7 +499,7 @@ movingPictures.forEach((movingPicture) =>{
     movingPicture.style.transform = `translateX(${
     movingPicture.computedStyleMap().get("transform")[0].x.value
     +100}%)`;
-    if((movingPicture.computedStyleMap().get("transform")[0].x.value) === 0){
+    if((movingPicture.computedStyleMap().get("transform")[0].x.value) === -100){
         document.getElementById("left-arrow").style.display="none";
     }
 })})
