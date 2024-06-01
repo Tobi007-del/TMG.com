@@ -39,7 +39,7 @@ if(document.readyState === "complete"){
     loadingPage.style.display = "none";
     document.getElementById("body").style.display = "block";
     GardenerNameFunction();
-    intervalManager(true, movingFrame, 30000);
+    intervalManager(true, movingFrame, 35000);
 }
 };
 
@@ -68,7 +68,7 @@ var searchBar = document.getElementById("search");
 document.addEventListener('scroll',()=>{
   if((window.innerWidth <= 600) && (window.scrollY > 0)){
     menuSearchIcon.style.display = "block";
-    searchBar.style.transition = ".25s";
+    searchBar.style.transition = ".05s";
     searchBar.style.height = "0";
   } else if(window.innerWidth <= 600){
     menuSearchIcon.style.display = "none";
@@ -448,6 +448,8 @@ function intervalManager(flag, animate, time) {
 
 
 function movingFrame() {
+    loadingPage.classList.remove('buffering');
+    preloaderTextContainer.classList.remove('buffering');
     movingPictures.forEach((movingPicture,r) => {
     movingPicture.style.transform = `translateX(${
     movingPicture.computedStyleMap().get("transform")[0].x.value
@@ -474,12 +476,14 @@ previewButtons.forEach((previewButton) => {
     previewButton.addEventListener("mousedown", () =>{
     animationStopped ++;
     previewButton.style.display = "none";
-    intervalManager(false, movingFrame, 30000);
+    intervalManager(false, movingFrame, 35000);
     })
  })
  
 endPreviewButtons.forEach((endPreviewButton,i) => {
     endPreviewButton.addEventListener("mousedown", () => {
+    loadingPage.classList.remove('buffering');
+    preloaderTextContainer.classList.remove('buffering');
     reversePlayTrailer(i);
     doubleClickCounter = 0;
     if (animationStopped === 1){

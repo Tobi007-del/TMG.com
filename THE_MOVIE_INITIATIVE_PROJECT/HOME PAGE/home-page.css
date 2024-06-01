@@ -82,6 +82,7 @@
   font-size: 1.7vh;
 }
 #loading-page.buffering{
+  position: absolute;
   display: flex!important;
   background-color: transparent!important;
   width: 12vh;
