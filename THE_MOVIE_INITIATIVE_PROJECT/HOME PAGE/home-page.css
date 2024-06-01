@@ -881,7 +881,7 @@ footer pre.light{
   position: fixed;
   z-index: 3;
   display: inline-flex;
-  top: 0.5vh;
+  top: 1.2vh;
   right: 0.5vw;
   width: 19vw;
   transition: width ease 0.2s, opacity ease 0.4s;
@@ -895,7 +895,7 @@ footer pre.light{
   -moz-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
   text-align: left;
   font: 13px "Helvetica Neue", Arial, sans-serif;
-  line-height: 5vh;
+  height: 4vh;
   font-size: 3vh;
   text-indent: 1.8vw;
   border: none;
@@ -1388,9 +1388,11 @@ footer pre{
   }
   #insert{
     left: 1vw!important;
+    display: block!important;
   }
   #user-image{
     left: calc(-5vh + 1vw)!important;
+    display: block!important;
   }
   #title{
     font-size: 11vh!important;
@@ -1674,7 +1676,7 @@ footer pre{
     width: 29vw;
     padding-right: 0.5vw;
     border: none;
-    line-height: 4vh;
+    height: 4vh;
     box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
     -webkit-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
     -moz-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
@@ -1818,15 +1820,17 @@ footer pre{
     margin-left: 1vh; 
   }
   #demo-container{
-    right: 27.5vw;
+    right: 32vw;
     width: auto;
     top: 0;
   }
   #insert{
     left: 1vh;
+    display: none;
   }
   #user-image{
     left: -4vh;
+    display: none;
   }
   #toggle-ball,#toggle-push-ball{
     height: 2.2vh;
@@ -1868,7 +1872,7 @@ footer pre{
     right: 0.3vh;
   }
   .topnav{
-    width: 30vw;
+    width: 35vw;
   }
   #title{
     width: 50vh;
@@ -1974,7 +1978,7 @@ footer pre{
     color: rgb(161, 201, 182);
   }
   #search {
-    top:1vh;
+    top:1.25vh;
     right:1vw;
     font-size: 3vh;
     border-radius: 0 0 0 0;
@@ -1986,7 +1990,7 @@ footer pre{
     width:30vw;
     padding-right: 0.5vw;
     border: none;
-    line-height: 4vh;
+    height: 4vh;
     box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
     -webkit-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
     -moz-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
@@ -2323,10 +2327,17 @@ footer pre{
   #insert{
     width: 5.5vh;
     height: 5.5vh;
+    border-radius: 0;
+    display: block;
   }
   #user-image{
-    width: 5.5vh;
+    width: 7.5vh;
     height: 5.5vh;
+    border-radius: 10%;
+    display: block;
+  }
+  .menu-search-icon{
+    display: none;
   }
   h3{
     font-size: 0.85em;
@@ -2440,7 +2451,7 @@ footer pre{
 /* for phones and tablets with small screens */
 @media(max-width:600px){
   #menu-search-icon{
-    font-size: 2vh;
+    font-size: 2.25vh;
     font-weight: bold;
     position: relative;
     right: 1vh;
@@ -2453,24 +2464,26 @@ footer pre{
     }
   }
   #demo{
-    font-size: 2vh;
+    font-size: 1.85vh;
     text-wrap: nowrap;
     position: relative;
-    left: 2vh;
+    right: 1vh;
   }
   #demo-container{
     height: 5vh;
     align-content: center;
-    right: 0vw;
+    right: 0vh;
     width: auto;
   }
   #insert{
+    display: none;
     left: 1vh;
     width: 4vh;
     height: 4vh;
     border-radius: 50%;
   }
   #user-image{
+    display: none;
     left: -1vh;
     right: 7vh;
     width: 4vh;

@@ -1,3 +1,5 @@
+const CREATOR_ID = "tobi-00703181011";
+
 var first = document.getElementById("first-text");
 var second = document.getElementById("second-text");
 var third = document.getElementById("third-text");
@@ -65,6 +67,7 @@ allLink.addEventListener('click', (event)=>{
 var menuSearchIcon = document.getElementById("menu-search-icon");
 var searchBar = document.getElementById("search");
 
+
 document.addEventListener('scroll',()=>{
   if((window.innerWidth <= 600) && (window.scrollY > 0)){
     menuSearchIcon.style.display = "block";
@@ -75,6 +78,7 @@ document.addEventListener('scroll',()=>{
     searchBar.style.height = "4vh";
   } else{
     menuSearchIcon.style.display = "none";
+    searchBar.style.height = "4vh";
   }
 })
 menuSearchIcon.addEventListener('click',()=>{
@@ -86,20 +90,25 @@ menuSearchIcon.addEventListener('click',()=>{
 document.getElementById("tmg").style.opacity = "1.0";
 document.getElementById("demo").style.opacity = "1.0";
 document.getElementById("title").style.opacity = "1.0";
-
+var maxCharacters = 8;
 
 function GardenerNameFunction() {
 console.log(localStorage.greetGardener);
 if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'undefined'){
   sessionStorage.current = 1;
   var txt;
-  var person = prompt("Please enter your name:", "Gardener");
+  var person = prompt("What should we call you:", "Gardener");
+  if(person !== CREATOR_ID){
+  while(person.length > maxCharacters){
+    alert(`Your names shold not be more than ${maxCharacters} characters`)
+    person = prompt("What should we call you:", "Gardener");
+  }}
   if (person === "" || person === null) {
     txt = "Welcome Gardener";
   } else {
     txt = "Welcome " + person;
   }
-  if (person === "tobi-00703181011"){
+  if (person === CREATOR_ID){
     txt = "WELCOME CREATOR";
   }
   document.getElementById("demo").innerHTML = txt;
@@ -120,25 +129,29 @@ if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'u
 }
   document.getElementById("demo").addEventListener('click', ()=> {
     var newTxt;
-    var personChange = prompt("Would you like to change Gardener name?", "");
+    var personChange = prompt("Would you like to change your name?", "");
     if (personChange.toUpperCase() === "YES" || personChange.toUpperCase() === "Y"){
     var newPerson = prompt("Please enter your name:", "Gardener");
+    if(newPerson.length <= maxCharacters){
     if (newPerson === "" || newPerson === null) {
           newTxt = "Welcome Gardener";
           document.getElementById("demo").innerHTML = newTxt;
           localStorage.greetGardener = newTxt;
           displayNotification(newTxt);
-    } else if(newPerson !== "tobi-00703181011"){
+    } else{
           newTxt = "Welcome " + newPerson;
           document.getElementById("demo").innerHTML = newTxt;
           localStorage.greetGardener = newTxt;
           displayNotification(newTxt);
-    }
-    if (newPerson == "tobi-00703181011"){
+    }}
+    else if (newPerson == CREATOR_ID){
           newTxt = "WELCOME CREATOR";
           document.getElementById("demo").innerHTML = newTxt;
           localStorage.greetGardener = newTxt;
           displayNotification(newTxt);
+    }
+    else {
+        alert(`Your name must not be more than ${maxCharacters} characters`);
     }}
     else if (personChange.toUpperCase() === "NO" || personChange.toUpperCase() === "N"){
         console.log("Gardener name not changed!!");
