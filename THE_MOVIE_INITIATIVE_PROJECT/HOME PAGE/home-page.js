@@ -383,7 +383,7 @@ function playTrailer(i){
 }
 
 function reversePlayTrailer(x){
-    watchTrailerButtons[x].style.display = "block";
+    watchTrailerButtons[x].style.display = "flex";
     mousedownCounter = 0;
     header.style.opacity = "1.0";
     movingLine.style.display = "block";
