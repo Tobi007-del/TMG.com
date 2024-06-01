@@ -81,6 +81,18 @@
   color: beige;
   font-size: 1.7vh;
 }
+#loading-page.buffering{
+  display: flex!important;
+  background-color: transparent!important;
+  width: 12vh;
+  height: 12vh;
+  margin-left: calc(50vw - 6vh);
+  margin-top: calc(80vh/2 - 6vh);
+  top: 6.5vh;
+}
+#preloader-text-container.buffering{
+  display: none;
+}
 #first-text{
    display: block;
 }
@@ -576,8 +588,7 @@ footer pre.light{
   border-radius: 1.5vh;
   align-items: center;
   display: inline-flex;
-  justify-content: center;
-  gap: 0.5vh;
+  justify-content: space-evenly;
   background-color: #2af40f;
   bottom: 4vh;
   right: 29vh;
@@ -1566,6 +1577,9 @@ footer pre{
   .moving-picture{
     height: 65vh;
   }
+  #loading-page.buffering{
+    margin-top: calc(65vh/2 - 6vh);   
+  }
   .moving-picture-title{
     top: 24vh;
     right: 3vw;
@@ -1875,6 +1889,9 @@ footer pre{
   .moving-picture{
     height: 65vh;
   }
+  #loading-page.buffering{
+    margin-top: calc(65vh/2 - 6vh);
+  }
   .moving-picture-button{
     padding: 0;
     text-align: center;
@@ -2102,6 +2119,7 @@ footer pre{
   }
   #demo{
     font-size: 3.25vh;
+    top: 1vh;
     text-wrap: nowrap;
   }
   #top-box{
@@ -2128,7 +2146,7 @@ footer pre{
   }
   #demo-container{
     right: 30vw;
-    top: 0;
+    top: .5vh;
   }
   #title{
     font-size: 12vh;
@@ -2138,7 +2156,7 @@ footer pre{
     top: 8vh;
   }
   #tmg{
-    margin: 0vh 0vh 0.75vh 0vh;
+    margin: 0.5vh 0vh 0.75vh 0vh;
     right: 4vh;
     font-size: 4.75vh;
   }
@@ -2221,8 +2239,8 @@ footer pre{
     right: 1vw;
   }
   .topnav li{
-    font-size: 3.5vh;
-    margin-top: 1.7vh;
+    font-size: 2.8vh;
+    margin-top: 2.15vh;
     margin-left: 0;
     margin-right: 0.5vw;
   }
@@ -2296,8 +2314,9 @@ footer pre{
     font-size: 0.45em;
   }
   #search{
-    height: 5.5vh;
+    height: 5.5vh!important;
     right: 0.5vw;
+    font-size: 4vh;
   }
   #insert{
     width: 5.5vh;
@@ -2308,7 +2327,7 @@ footer pre{
     height: 5.5vh;
   }
   h3{
-    font-size: 0.7em;
+    font-size: 0.85em;
     word-spacing: 0.1em;
     margin-top: 0.5em;
     margin-left: 0.5em;
@@ -2550,8 +2569,12 @@ footer pre{
   .moving-picture{
     height: 47.5vh;
   }
+  #loading-page.buffering{
+    margin-top: calc(47.5vh/2 - 6vh);
+    top: 8.5vh;
+  }
   .moving-picture-title{
-    top: 20.5vh;
+    top: 15vh;
     right: 2vw; 
     font-size: 1.9vh;
     max-width: 50vw;

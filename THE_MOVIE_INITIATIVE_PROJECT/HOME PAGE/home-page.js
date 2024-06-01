@@ -4,6 +4,7 @@ var third = document.getElementById("third-text");
 var fourth = document.getElementById("fourth-text");
 var fifth = document.getElementById("fifth-text");
 var sixth = document.getElementById("sixth-text");
+var loadingPage = document.getElementById("loading-page");
 
 const preload = () => {
 const preloaderTexts = document.querySelectorAll(".preloader-text");
@@ -35,17 +36,12 @@ window.onloadstart = preloader();
 
 document.onreadystatechange = () => {
 if(document.readyState === "complete"){
-    document.getElementById("loading-page").style.display = "none";
+    loadingPage.style.display = "none";
     document.getElementById("body").style.display = "block";
     GardenerNameFunction();
     intervalManager(true, movingFrame, 30000);
 }
 };
-// window.onload = GardenerNameFunction();
-//  window.onload = () => {
-//     document.getElementById("loading-page").style.display = "none";
-//     document.getElementById("body").style.display = "block";
-//  }
 
 if (!('serviceWorker' in navigator)) {
     // Service Worker isn't supported on this browser, disable or hide UI.
@@ -347,9 +343,22 @@ const endPreviewButtons = document.querySelectorAll(".end-preview-button");
 const watchTrailerButtons = document.querySelectorAll(".watch-trailer-buttons");
 const movingLine = document.querySelector(".moving-line");
 const movingTitles = document.querySelectorAll(".moving-picture-title");
-const movingAbouts = document.querySelectorAll(".moving-picture-about");
+const movingAbouts = document.querySelectorAll(".moving-picture-about");                                                                                             
 const movingButtons = document.querySelectorAll(".moving-picture-button");
 const movingLinks = document.querySelectorAll(".moving-picture-link");
+const preloaderTextContainer = document.getElementById("preloader-text-container");
+
+movingVideos.forEach((movingVideo)=>{
+    movingVideo.onwaiting = function(){
+        loadingPage.classList.add('buffering');
+        preloaderTextContainer.classList.add('buffering');
+    }
+    movingVideo.onplaying = function(){
+        loadingPage.classList.remove('buffering');
+        preloaderTextContainer.classList.remove('buffering');
+    }
+})
+
 function playTrailer(i){
     watchTrailerButtons[i].style.display = "none";
     mousedownCounter++;
@@ -608,9 +617,6 @@ document.getElementById("navigator").addEventListener('mousedown', ()=> {
 document.getElementById("navigator").addEventListener('mouseup', ()=> {
     navigatorMenuOpenFunction()
 })
-// document.getElementById("navigator").addEventListener('mouseover', ()=> {
-//     navigatorMenuOpenFunction()
-// })
 
 function navigatorMenuOpenFunction() {
     document.getElementById("hidden-navigator-panel").style.width="65vw";
