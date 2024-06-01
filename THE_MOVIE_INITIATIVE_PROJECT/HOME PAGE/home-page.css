@@ -83,6 +83,7 @@
 }
 #loading-page.buffering{
   position: absolute;
+  z-index: 1;
   display: flex!important;
   background-color: transparent!important;
   width: 12vh;
