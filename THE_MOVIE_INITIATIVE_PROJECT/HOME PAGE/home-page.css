@@ -5,6 +5,12 @@
 #body{
   display: none;
 }
+.white-text{
+  color: white;
+}
+.white-text.light{
+  color: gray!important;
+}
 #loading-page{
   display: flex;
   justify-content: center;
@@ -14,7 +20,7 @@
   position: fixed;
   top: 0;
   z-index: 100;
-  background:black url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/twoballs.gif) no-repeat center center; 
+  background:black url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-white.gif) no-repeat center center; 
   background-size: 12vh;
   animation: ball_one 1s infinite ease-in-out;
 }
@@ -40,7 +46,7 @@
   width: 12vh;
   height: 12vh;
   transform: rotate(90deg);
-  background: url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/twoballs.gif) no-repeat center center;
+  background: url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-white.gif) no-repeat center center;
   animation: ball_three 1s infinite ease-in-out;
   background-size: 100%;
 }
@@ -317,7 +323,6 @@ footer pre.light{
   font-family: "Anton", sans-serif;
   font-weight: 900;
   font-size: 2.5vh;
-  opacity: 0;
   transition:opacity 1s ease-in;
   text-wrap: nowrap;
 }
@@ -365,7 +370,6 @@ footer pre.light{
   margin: 0.3vh 0vw 0.75vh 0;
   position: relative;
   right: 2vw;
-  opacity: 0;
   transition:opacity 1s ease-in;
 }
 @media(max-width: 1180px){
@@ -395,6 +399,9 @@ footer pre.light{
   color: white;
   font-weight: bold;
 }
+.topnav{
+  overflow: hidden;
+}
 .topnav li{
   color: white;
   list-style: none;
@@ -403,6 +410,28 @@ footer pre.light{
   display: flex;
   height: 6.5vh;
   align-items: center;
+  font-weight: lighter;
+}
+.topnav li.active::after{
+  content: attr(data-title);
+  position: absolute;
+  top: 6.1vh;
+  height: .25vh;
+  transform: scaleX(1);
+  background-color: burlywood;
+}
+.topnav li::after{
+  content: attr(data-title);
+  position: absolute;
+  top: 6.1vh;
+  height: .5vh;
+  background-color: burlywood;
+  transform: scaleX(0);
+  transition: all .5s ease-in-out;
+  transform-origin: bottom right;
+}
+.topnav li:hover::after{
+  transform: scaleX(1);
 }
 .topnav li:hover{
   cursor: pointer;
@@ -413,11 +442,19 @@ footer pre.light{
   font-size: 12vh;
   font-family:  "Anton", sans-serif;
   font-weight: 900;
-  text-shadow: 1vw 1vw 1vw rgb(4, 4, 4);
-  opacity: 0.5;
   pointer-events: none;
   transition: opacity 1s ease-in;
   z-index: 1;
+  background: linear-gradient(to right,white,burlywood,burlywood,burlywood, white);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: title 35s infinite ease-in-out both;
+}
+@keyframes title{
+    0%{opacity: 1;}
+    30%{opacity: 0.1;}
+    70%{opacity: 0.1;}
 }
 #title-container{
   text-align: center;
@@ -433,7 +470,7 @@ footer pre.light{
   width: 40vw;
   height: 0.75vh;
   opacity: 1;
-  animation: moving-line 2s infinite ease-in-out;
+  animation: moving-line 2s infinite ease-in-out,title 35s infinite ease-in-out both;
   z-index: 1;
 }
 @keyframes moving-line{
@@ -696,7 +733,6 @@ footer pre.light{
 }
 #navigator:hover{
   cursor: pointer;
-  fill: wheat;
 }
 #cancel-menu{
   position: relative;
@@ -765,7 +801,10 @@ footer pre.light{
   left: -2.5vw;
 }
 .bar-icon{
-  margin-right: 0.5vw;
+  margin-right: 0.75vw;
+}
+.menu-bar-icon{
+  margin-right: 0.25vw;
 }
 #error{
   display: none;
@@ -1567,11 +1606,10 @@ footer pre{
   #title{
     width: 50vh;
     font-size: 8.5vh;
-    text-shadow: 1vh 1vh 1vh rgba(0, 0, 0, 1);
   }
   #title-container{
     text-align: center;
-    top: 10vh;
+    top: 10.5vh;
   }
   .moving-line{
     top: 38.5vh;
@@ -1882,7 +1920,6 @@ footer pre{
   #title{
     width: 50vh;
     font-size: 8.5vh;
-    text-shadow: 1vh 1vh 1vh rgba(0, 0, 0, 1);
   }
   #title-container{
     text-align: center;
@@ -2119,14 +2156,36 @@ footer pre{
   #anime-nav{
     display: block;
   }
+  #anime-nav::after{
+    content: 'Anime';
+  }
   #cartoons-nav{
     display: block;
+  }
+  #cartoons-nav::after{
+    content: 'Cartoons';
   }
   #movies-nav{
     display: block;
   }
+  #movies-nav::after{
+    content: 'Movies';
+  }
   #series-nav{
     display: block;
+  }
+  #series-nav::after{
+    content: 'Series';
+  }
+  .topnav li.active::after{
+    content: '';
+    top: 4.35vh;
+    height: .5vh;
+  }
+  .topnav li::after{
+    content: '';
+    left: 0;
+    height: .5vh;
   }
   #demo{
     font-size: 3.25vh;
@@ -2176,7 +2235,7 @@ footer pre{
   #moving-word{
     font-size: 2.5vh;
   }
-  .bar-icon{
+  .menu-bar-icon{
     display: none;
   }
   .topnav{

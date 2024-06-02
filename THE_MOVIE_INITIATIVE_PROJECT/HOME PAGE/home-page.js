@@ -55,7 +55,7 @@ if (!('serviceWorker' in navigator)) {
     document.getElementById("notification-option").style.display = "none";
   }
 
-var allLinks = document.querySelectorAll('a');
+var allLinks = document.querySelectorAll('.moving-picture-link, .panels a, .search-lines a, .hidden-r-panel-main a');
 
 
 allLinks.forEach((allLink) => {
@@ -87,9 +87,7 @@ menuSearchIcon.addEventListener('click',()=>{
     searchBar.style.transition = ".25s";
 })
 
-document.getElementById("tmg").style.opacity = "1.0";
-document.getElementById("demo").style.opacity = "1.0";
-document.getElementById("title").style.opacity = "1.0";
+
 var maxCharacters = 8;
 
 function GardenerNameFunction() {
@@ -268,7 +266,7 @@ document.getElementById("insert").addEventListener('change', (evt) => {
 
 
 function lightMode() {
-    var toggleItems = document.querySelectorAll("#hidden-navigator-panel,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle");
+    var toggleItems = document.querySelectorAll(".white-text,#hidden-navigator-panel,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle");
     for(var i = 0; i < toggleItems.length; i++){
      toggleItems[i].classList.toggle("light")
      var lightItems = document.getElementsByClassName("light");
@@ -375,7 +373,7 @@ movingVideos.forEach((movingVideo)=>{
 function playTrailer(i){
     watchTrailerButtons[i].style.display = "none";
     mousedownCounter++;
-    header.style.opacity = "0";
+    header.style.display = "none";
     movingLine.style.display = "none";
     if (mousedownCounter == 1){
     previewButtons[i].style.display = "block";
@@ -398,7 +396,7 @@ function playTrailer(i){
 function reversePlayTrailer(x){
     watchTrailerButtons[x].style.display = "flex";
     mousedownCounter = 0;
-    header.style.opacity = "1.0";
+    header.style.display = "block";
     movingLine.style.display = "block";
     previewButtons[x].style.display = "none";
     endPreviewButtons[x].style.display = "none";
@@ -412,7 +410,6 @@ function reversePlayTrailer(x){
     movingLinks[x].classList.remove("trailer");
     previewButtons[x].classList.remove("trailer");
     endPreviewButtons[x].classList.remove("trailer");
-    // console.log(movingPictures[x].computedStyleMap().get("transform")[0].x.value);
     if (movingPictures[x].computedStyleMap().get("transform")[0].x.value == 0){
         document.getElementById("left-arrow").style.display="none";
     }
@@ -659,7 +656,9 @@ function Category(genre, genrename, nav) {
     for (var y= 0; y < navName.length; y++){
         var navNam = navName[y];
         navNam.style.fontWeight = "lighter";
+        navNam.classList.remove('active');
         document.getElementById("home-nav").style.fontWeight = "bold";
+        document.getElementById("home-nav").classList.add('active');
     }
     document.getElementById("home-nav").style.fontWeight = "bold";
     document.getElementById("top-content").style.opacity="1";
@@ -714,7 +713,10 @@ function Category(genre, genrename, nav) {
         for (x = 0; x < navName.length; x++){
             var navNom = navName[x];
             navNom.style.fontWeight = "lighter";
+            navNom.classList.remove('active');
             document.getElementById(nav).style.fontWeight = "bold";
+            document.getElementById(nav).classList.add('active');
+            document.getElementById("home-nav").classList.remove('active');
             document.getElementById("home-nav").style.fontWeight = "lighter";
         }
     }  else {
@@ -722,6 +724,9 @@ function Category(genre, genrename, nav) {
         for (var y= 0; y < navName.length; y++){
             var navNam = navName[y];
             navNam.style.fontWeight = "lighter";
+            navNam.classList.remove('active');
+            navNam.classList.remove('active');
+            document.getElementById("home-nav").classList.remove('active');
             document.getElementById("home-nav").style.fontWeight = "lighter";
         }
     }
