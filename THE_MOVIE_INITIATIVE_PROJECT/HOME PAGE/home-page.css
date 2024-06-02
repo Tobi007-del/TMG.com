@@ -365,7 +365,6 @@ footer pre.light{
   margin: 0.3vh 0vw 0.75vh 0;
   position: relative;
   right: 2vw;
-  pointer-events: none;
   opacity: 0;
   transition:opacity 1s ease-in;
 }
@@ -399,9 +398,11 @@ footer pre.light{
 .topnav li{
   color: white;
   list-style: none;
-  font-size: 2.625vh;
+  font-size: 2.4vh;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-  margin: 1.75vh 0vw 1.5vh 0vw;
+  display: flex;
+  height: 6.5vh;
+  align-items: center;
 }
 .topnav li:hover{
   cursor: pointer;
@@ -526,7 +527,7 @@ footer pre.light{
   right: 4.5vh;
   cursor: pointer;
 }
-.moving-picture-button.trailer:hover, .moving-picture-link.trailer{
+.moving-picture-button.trailer:hover .moving-picture-link.trailer{
   color: white; 
 }
 .moving-picture-title.trailer{
@@ -1484,6 +1485,9 @@ footer pre{
 
 /*for extra large tablets/ipads/folds in potrait mode*/
 @media (min-width:1200px) and (max-width: 1450px) and (min-height:1650px) and (max-height:2000px){
+  #home-nav{
+    display: none;
+  }
   #anime-nav{
     display: none;
   }
@@ -1820,17 +1824,15 @@ footer pre{
     margin-left: 1vh; 
   }
   #demo-container{
-    right: 32vw;
+    right: 29vw;
     width: auto;
     top: 0;
   }
   #insert{
     left: 1vh;
-    display: none;
   }
   #user-image{
     left: -4vh;
-    display: none;
   }
   #toggle-ball,#toggle-push-ball{
     height: 2.2vh;
@@ -1870,6 +1872,9 @@ footer pre{
   #tmg{
     margin: 0.5vh 0vh 0.75vh 0vh;
     right: 0.3vh;
+  }
+  #home-nav{
+    display: none;
   }
   .topnav{
     width: 35vw;
@@ -2141,7 +2146,6 @@ footer pre{
     height: 10vh;
   }
   .search-icon{
-    top: 2.25vh;
     left: 0.15vh; 
     font-size: 4.5vh;
   }
@@ -2162,7 +2166,7 @@ footer pre{
     top: 8vh;
   }
   #tmg{
-    margin: 0.5vh 0vh 0.75vh 0vh;
+    margin: 0.25vh 0vh 0.75vh 0vh;
     right: 4vh;
     font-size: 4.75vh;
   }
@@ -2245,10 +2249,9 @@ footer pre{
     right: 1vw;
   }
   .topnav li{
-    font-size: 2.8vh;
-    margin-top: 2.15vh;
-    margin-left: 0;
-    margin-right: 0.5vw;
+    font-size: 3.45vh;
+    position: relative;
+    top: 2vh;
   }
    .r-panel {
     height: 10em;
@@ -2325,13 +2328,13 @@ footer pre{
     font-size: 4vh;
   }
   #insert{
-    width: 5.5vh;
+    width: 8.5vh;
     height: 5.5vh;
     border-radius: 0;
     display: block;
   }
   #user-image{
-    width: 7.5vh;
+    width: 8.5vh;
     height: 5.5vh;
     border-radius: 10%;
     display: block;
@@ -2455,19 +2458,19 @@ footer pre{
     font-weight: bold;
     position: relative;
     right: 1vh;
+    color: burlywood;
     animation: magnify 2s infinite ease-in-out normal;
   }
   @keyframes magnify{
     to{
       transform: scale(1.05) rotate(15deg);
-      color: whitesmoke;
     }
   }
   #demo{
     font-size: 1.85vh;
     text-wrap: nowrap;
     position: relative;
-    right: 1vh;
+    left: 2vh;
   }
   #demo-container{
     height: 5vh;
@@ -2476,14 +2479,12 @@ footer pre{
     width: auto;
   }
   #insert{
-    display: none;
     left: 1vh;
     width: 4vh;
     height: 4vh;
     border-radius: 50%;
   }
   #user-image{
-    display: none;
     left: -1vh;
     right: 7vh;
     width: 4vh;
@@ -2494,7 +2495,6 @@ footer pre{
   }
   .topnav li{
     font-size: 2.2vh;
-    margin-top: 1.5vh;
   }
   #toggle-container,#n-toggle-container{
     min-height: 3.8vh;
@@ -2546,7 +2546,7 @@ footer pre{
     height: 5vh;
   }
   #home-nav{
-    display:flex;
+    display: none;
     flex-flow: row-nowrap;
     position: relative;
     right: 4vw;
@@ -2730,8 +2730,8 @@ footer pre{
   .r-panel {
     height: 10em;
     width: 9.5em;
-    margin-left: 0.1em;
-    margin-right: 0.6em;
+    margin-left: 0.2em;
+    margin-right: 1em;
   }
   .r-panel img{
     height: 9em;
@@ -2848,7 +2848,7 @@ footer pre{
   .panels {
     height:10em;
     width:6.0em;
-    margin: 0 0.5em 0 0.2em;
+    margin: 0 0.9em 0 0.3em;
   }
   .panels a img{
     height: 8em; 

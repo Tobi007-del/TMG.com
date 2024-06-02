@@ -670,9 +670,7 @@ function Category(genre, genrename, nav) {
     document.getElementById("content-box").style.display="block";
     document.getElementById("about-site").style.display="none";
     var categories = document.querySelectorAll("#recently-addeds,#actions,#adventures,#comedies,#families,#fantasies,#gores,#horrors,#musicals,#nollywoods,#romances,#sci-fis,#thrillers")
-    console.log(categories)
     var categoryNames = document.querySelectorAll("#recently-added,#action,#adventure,#comedy,#family,#fantasy,#gore,#horror,#musical,#nollywood,#romance,#sci-fi,#thriller")
-    console.log(categoryNames)
     var i;
     for (i = 0; i < categories.length; i++){
         var type = categories[i];
