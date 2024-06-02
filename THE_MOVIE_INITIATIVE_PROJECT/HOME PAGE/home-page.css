@@ -316,7 +316,7 @@ footer pre.light{
   color: bisque;
   font-family: "Anton", sans-serif;
   font-weight: 900;
-  font-size: 2.75vh;
+  font-size: 2.5vh;
   opacity: 0;
   transition:opacity 1s ease-in;
   text-wrap: nowrap;
@@ -352,7 +352,7 @@ footer pre.light{
   top: 0;
   height: 6.5vh;
   display: inline-flex;
-  width: 50vw;
+  width: 52.5vw;
   margin-left: 3vw;
   justify-content: space-evenly;
   z-index: 3;
@@ -765,7 +765,7 @@ footer pre.light{
   left: -2.5vw;
 }
 .bar-icon{
-  margin-right: 0.75vw;
+  margin-right: 0.5vw;
 }
 #error{
   display: none;
@@ -2176,8 +2176,11 @@ footer pre{
   #moving-word{
     font-size: 2.5vh;
   }
+  .bar-icon{
+    display: none;
+  }
   .topnav{
-    width: 50vw;
+    width: 45vw;
   }
   .moving-line{
     top: 30.5vh;
@@ -2256,8 +2259,8 @@ footer pre{
    .r-panel {
     height: 10em;
     width: 9.5em;
-    margin-left: 0.1em;
-    margin-right: 0.6em;
+    margin-left: 0.2em;
+    margin-right: 0.9em;
   }
   .r-panel img{
     height: 9em;
@@ -2312,7 +2315,7 @@ footer pre{
   .panels {
     height:10em;
     width:6.0em;
-    margin: 0 0.5em 0 0.2em;
+    margin: 0 0.8em 0 0.3em;
   }
   .panels a img{
     height: 8em; 
@@ -2393,9 +2396,6 @@ footer pre{
   }
   .bar-text{
     left: -2.5vw;
-  }
-  .bar-icon{
-    margin-right: 0.75vw;
   }
   #error{
     font-size: 1.5vw;
