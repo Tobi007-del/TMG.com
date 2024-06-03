@@ -20,19 +20,19 @@ function preloader(){
 setTimeout(()=>{
    preload()
    third.style.display = "block";
-},20000);
+},25000);
 setTimeout(()=>{
    preload()
    fourth.style.display = "block";
-},30000);
+},35000);
 setTimeout(()=>{
    preload()
    fifth.style.display = "block";
-},36000);
+},45000);
 setTimeout(()=>{
    preload()
    sixth.style.display = "block";
-},55000);
+},65000);
 }
 window.onloadstart = preloader();
 
