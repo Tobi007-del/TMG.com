@@ -70,6 +70,7 @@ var searchBar = document.getElementById("search");
 
 document.addEventListener('scroll',()=>{
   if((window.innerWidth <= 600) && (window.scrollY > 0)){
+    searchClickCounter = "0";
     menuSearchIcon.style.display = "block";
     searchBar.style.transition = ".05s";
     searchBar.style.height = "0";
@@ -81,10 +82,17 @@ document.addEventListener('scroll',()=>{
     searchBar.style.height = "4vh";
   }
 })
+var searchClickCounter = 0;
 menuSearchIcon.addEventListener('click',()=>{
-    menuSearchIcon.style.display = "none";
-    searchBar.style.height = "4vh";
-    searchBar.style.transition = ".25s";
+    searchClickCounter++;
+    if(searchClickCounter == 1){
+        searchBar.style.height = "4vh";
+        searchBar.style.transition = ".25s";
+    } else{
+        searchClickCounter = 0;
+        searchBar.style.height = "0";
+        searchBar.style.transition = ".25s";  
+    }
 })
 
 
@@ -266,7 +274,16 @@ document.getElementById("insert").addEventListener('change', (evt) => {
 
 
 function lightMode() {
-    var toggleItems = document.querySelectorAll(".white-text,#hidden-navigator-panel,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle");
+    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,#hidden-navigator-panel,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle");
+    if(lighter === 1){
+      lighter = 0;
+      localStorage.lighter = lighter;
+      console.log(`Lighter: ${lighter}`);
+    } else{
+      lighter ++;
+      localStorage.lighter = lighter;
+      console.log(`Lighter: ${lighter}`);
+    }
     for(var i = 0; i < toggleItems.length; i++){
      toggleItems[i].classList.toggle("light")
      var lightItems = document.getElementsByClassName("light");
@@ -282,6 +299,7 @@ function lightMode() {
 
 var togglePushBall = document.getElementById("toggle-push-ball");
 var pusher;
+var lighter;
 
 pusherExist();
 
@@ -303,6 +321,23 @@ if(localStorage.pusher === undefined){
     registerServiceWorkerForPush(pusher)
     togglePushBall.classList.add('push');
 }}
+
+
+function lightExist(){
+    console.log("Local Storage Lighter: ", localStorage.lighter);
+    if(localStorage.lighter === undefined){
+        lighter = 0;
+        console.log(`Lighter: ${lighter}`);
+    } else if(Number(localStorage.lighter) === 0){
+        lighter = Number(localStorage.lighter);
+        console.log(`Lighter: ${lighter}`);
+    } else if(Number(localStorage.lighter) === 1){
+        lighter = 0;
+        lightMode();
+    }
+}
+
+window.onloadstart = lightExist();
 
 
 async function registerServiceWorkerForPush(pusherValue) {

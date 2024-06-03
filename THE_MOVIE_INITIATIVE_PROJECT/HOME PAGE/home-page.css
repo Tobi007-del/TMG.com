@@ -11,6 +11,31 @@
 .white-text.light{
   color: gray!important;
 }
+#loading-page.light{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background:white url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-gray.gif) no-repeat center center; 
+  background-size: 12vh;
+  animation: ball_one 1s infinite ease-in-out;
+}
+#another-two-balls.light{
+  position: absolute;
+  width: 12vh;
+  height: 12vh;
+  transform: rotate(90deg);
+  background: url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-gray.gif) no-repeat center center;
+  animation: ball_three 1s infinite ease-in-out;
+  background-size: 100%; 
+}
+.preloader-text.light{
+  color: darkgray!important;
+}
 #loading-page{
   display: flex;
   justify-content: center;
