@@ -106,7 +106,7 @@ if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'u
   var person = prompt("What should we call you:", "Gardener");
   if(person !== CREATOR_ID){
   while(person.length > maxCharacters){
-    alert(`Your names shold not be more than ${maxCharacters} characters`)
+    alert(`Your names should not be more than ${maxCharacters} characters`)
     person = prompt("What should we call you:", "Gardener");
   }}
   if (person === "" || person === null) {
