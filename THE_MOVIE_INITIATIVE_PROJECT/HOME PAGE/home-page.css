@@ -476,6 +476,12 @@ footer pre.light{
   -webkit-background-clip: text;
   animation: title 35s infinite ease-in-out both;
 }
+#title.light{
+  background: linear-gradient(to right,gray,burlywood,burlywood,burlywood, gray);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 @keyframes title{
     0%{opacity: 1;}
     30%{opacity: 0.1;}
