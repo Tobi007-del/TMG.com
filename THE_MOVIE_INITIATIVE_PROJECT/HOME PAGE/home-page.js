@@ -88,10 +88,12 @@ menuSearchIcon.addEventListener('click',()=>{
     if(searchClickCounter == 1){
         searchBar.style.height = "4vh";
         searchBar.style.transition = ".25s";
+        menuSearchIcon.classList.remove('attention');
     } else{
         searchClickCounter = 0;
         searchBar.style.height = "0";
-        searchBar.style.transition = ".25s";  
+        searchBar.style.transition = ".25s"; 
+        menuSearchIcon.classList.add('attention');
     }
 })
 
