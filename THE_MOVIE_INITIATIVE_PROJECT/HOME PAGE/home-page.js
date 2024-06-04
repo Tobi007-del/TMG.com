@@ -173,15 +173,15 @@ function displayNotification(txt){
   const title = "THE MOVIE GARDEN";
   const options = {
     body: `${txt} to The Movie Garden where you can watch all your exclusive movies and tv shows!!!` , 
-    icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
-    badge: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
-    image: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/justice-league-b-s.jpeg",
+    icon: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
+    badge: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
+    image: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/justice-league-b-s.jpeg",
     actions: [
         {
             action: 'open-site',
             title: 'Visit The Garden',
             type: 'button',
-            icon: '/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
+            icon: '/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
         }
     ],
     tag: 'renotify',
@@ -189,7 +189,7 @@ function displayNotification(txt){
   };
   if (Notification?.permission === "granted") {
     // let n = new Notification("THE MOVIE GARDEN", {
-    // body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
+    // body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
     // })
     navigator.serviceWorker.ready.then(function(registration) {
     registration.showNotification(title, options);
@@ -198,7 +198,7 @@ function displayNotification(txt){
     Notification.requestPermission().then((status) => {
     if (status === "granted") {
     // let n = new Notification("THE MOVIE GARDEN", {
-    //   body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
+    //   body: `${txt} to The Movie Garden. We are now live and you can watch all your exclusive movies and tv shows!!!` , icon: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
     // })
     navigator.serviceWorker.ready.then(function(registration) {
     registration.showNotification(title, options);
@@ -215,15 +215,15 @@ function displayReturnNotification(){
     const returnTitle = "THE MOVIE GARDEN";
     const returnOptions = {
         body: `${localStorage.greetGardener} to The Movie Garden once more. Tour the site and enjoy all your exclusive movies and tv shows!!` , 
-        icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
-        badge: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
-        image: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/justice-league-b-s.jpeg",
+        icon: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
+        badge: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
+        image: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/justice-league-b-s.jpeg",
         actions: [
             {
                 action: 'open-site',
                 title: 'Visit The Garden',
                 type: 'button',
-                icon: '/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
+                icon: '/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
             }
         ],
         tag: 'renotify',
@@ -232,7 +232,7 @@ function displayReturnNotification(){
     sessionStorage.current = 1;
     if (Notification?.permission === "granted") {
         // let n = new Notification("THE MOVIE GARDEN", {
-        //   body: `${localStorage.greetGardener} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
+        //   body: `${localStorage.greetGardener} to The Movie Garden once more. You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
         // });
         navigator.serviceWorker.ready.then(function(registration) {
             registration.showNotification(returnTitle, returnOptions)
@@ -241,7 +241,7 @@ function displayReturnNotification(){
         Notification.requestPermission().then((status) => {
         if (status === "granted") {
         // let n = new Notification("THE MOVIE GARDEN", {
-        //   body: `${localStorage.greetGardener} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
+        //   body: `${localStorage.greetGardener} to The Movie Garden once more.You now know where you can watch all your exclusive movies and tv shows so tour the site and enjoy!` , icon: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg"
         // });
         navigator.serviceWorker.ready.then(function(registration) {
             registration.showNotification(returnTitle, returnOptions)

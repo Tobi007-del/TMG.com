@@ -20,7 +20,7 @@
   position: fixed;
   top: 0;
   z-index: 100;
-  background:white url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-gray.gif) no-repeat center center; 
+  background:white url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-gray.gif) no-repeat center center; 
   background-size: 12vh;
   animation: ball_one 1s infinite ease-in-out;
 }
@@ -29,7 +29,7 @@
   width: 12vh;
   height: 12vh;
   transform: rotate(90deg);
-  background: url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-gray.gif) no-repeat center center;
+  background: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-gray.gif) no-repeat center center;
   animation: ball_three 1s infinite ease-in-out;
   background-size: 100%; 
 }
@@ -45,7 +45,7 @@
   position: fixed;
   top: 0;
   z-index: 100;
-  background:black url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-white.gif) no-repeat center center; 
+  background:black url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-white.gif) no-repeat center center; 
   background-size: 12vh;
   animation: ball_one 1s infinite ease-in-out;
 }
@@ -53,7 +53,7 @@
   position: absolute;
   width: 7vh;
   height: 7vh;
-  background: url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/twoballs.gif) no-repeat center center;
+  background: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/twoballs.gif) no-repeat center center;
   animation: balls_two 1s infinite ease-in-out;
   background-size: 100%;
 }
@@ -62,7 +62,7 @@
   width: 7vh;
   height: 7vh;
   transform: rotate(90deg);
-  background: url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/twoballs.gif) no-repeat center center;
+  background: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/twoballs.gif) no-repeat center center;
   animation: balls_two 1s infinite ease-in-out;
   background-size: 100%;
 }
@@ -71,7 +71,7 @@
   width: 12vh;
   height: 12vh;
   transform: rotate(90deg);
-  background: url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-white.gif) no-repeat center center;
+  background: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-white.gif) no-repeat center center;
   animation: ball_three 1s infinite ease-in-out;
   background-size: 100%;
 }
@@ -1308,7 +1308,7 @@ h3{
   color: whitesmoke;
 }
 #about-site div{
-  background-image: url(/THE_MOVIE_INITIATIVE/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/tape-2.png);
+  background-image: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/tape-2.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
