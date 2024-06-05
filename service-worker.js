@@ -87,7 +87,7 @@ self.addEventListener("push", e => {
                 action: 'open-site',
                 title: 'Visit The Garden',
                 type: 'button',
-                icon: '/TMG.com/THE_MOVIE_ItNITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
+                icon: '/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
             }
         ],
         tag: 'push',
