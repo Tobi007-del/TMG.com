@@ -8,10 +8,12 @@ self.addEventListener('notificationclick', (event) => {
     console.log('click received');
     const sitePageUrl = new URL('TMG.com',self.location.origin).href;
     console.log(sitePageUrl);
-    const promiseChain = clients.matchAll({
+    const promiseChain = clients
+    .matchAll({
       type: 'window',
       includeUncontrolled: true,
-    }).then((windowClients) => {
+    })
+    .then((windowClients) => {
       let matchingClient = null;
   
       for (let i = 0; i < windowClients.length; i++) {
@@ -79,15 +81,15 @@ self.addEventListener("push", e => {
     const pushTitle = data.title;
     const pushOptions = {
         body: `Dear Gardener, movies will be available soon!!!, ready your seatbelts and anticipate our official launch` , 
-        icon: "/TMG.com/TMG.com_PROJECT/SPARE-PICS/movieicon-two.jpeg",
-        badge: "/TMG.com/TMG.com_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
-        image: "/TMG.com/TMG.com_PROJECT/SPARE-PICS/tape-2.png",
+        icon: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
+        badge: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
+        image: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/tape-2.png",
         actions: [
             {
                 action: 'open-site',
                 title: 'Visit The Garden',
                 type: 'button',
-                icon: '/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
+                icon: '/TMG.com/THE_MOVIE_ItNITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
             }
         ],
         tag: 'push',
