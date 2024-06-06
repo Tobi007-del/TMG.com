@@ -1,4 +1,5 @@
-const CREATOR_ID = "tobi-00703181011";
+const UNIQUE_ID = "Tobi-007031810110908";
+const UNIQUE_TEXT = "WELCOME CREATOR";
 
 var first = document.getElementById("first-text");
 var second = document.getElementById("second-text");
@@ -106,18 +107,20 @@ if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'u
   sessionStorage.current = 1;
   var txt;
   var person = prompt("What should we call you:", "Gardener");
-  if(person !== CREATOR_ID){
   while(person.length > maxCharacters){
+    if(person == UNIQUE_ID){
+        break;
+    }
     alert(`Your names should not be more than ${maxCharacters} characters`)
     person = prompt("What should we call you:", "Gardener");
-  }}
+  }
   if (person === "" || person === null) {
     txt = "Welcome Gardener";
   } else {
     txt = "Welcome " + person;
   }
-  if (person === CREATOR_ID){
-    txt = "WELCOME CREATOR";
+  if (person == UNIQUE_ID){
+    txt = UNIQUE_TEXT;
   }
   document.getElementById("demo").innerHTML = txt;
   localStorage.greetGardener = txt;
@@ -152,8 +155,8 @@ if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'u
           localStorage.greetGardener = newTxt;
           displayNotification(newTxt);
     }}
-    else if (newPerson == CREATOR_ID){
-          newTxt = "WELCOME CREATOR";
+    else if (newPerson == UNIQUE_ID){
+          newTxt = UNIQUE_TEXT;
           document.getElementById("demo").innerHTML = newTxt;
           localStorage.greetGardener = newTxt;
           displayNotification(newTxt);
