@@ -1,5 +1,8 @@
-const UNIQUE_ID = "Tobi-007031810110908";
+const UNIQUE_ID = "Tobi-00703181011";
 const UNIQUE_TEXT = "WELCOME CREATOR";
+const UNIQUE_IMAGE_L = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/compman.gif";
+const UNIQUE_IMAGE_D = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/compman_lowres.gif";
+
 
 var first = document.getElementById("first-text");
 var second = document.getElementById("second-text");
@@ -10,8 +13,8 @@ var sixth = document.getElementById("sixth-text");
 var loadingPage = document.getElementById("loading-page");
 
 const preload = () => {
-const preloaderTexts = document.querySelectorAll(".preloader-text");
-preloaderTexts.forEach((preloaderText)=>{
+    const preloaderTexts = document.querySelectorAll(".preloader-text");
+    preloaderTexts.forEach((preloaderText)=>{
     preloaderText.style.display = "none";
 })
 }
@@ -101,38 +104,46 @@ menuSearchIcon.addEventListener('click',()=>{
 
 var maxCharacters = 8;
 
-function GardenerNameFunction() {
+function GardenerNameFunction(){
 console.log(localStorage.greetGardener);
 if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'undefined'){
   sessionStorage.current = 1;
   var txt;
   var person = prompt("What should we call you:", "Gardener");
   while(person.length > maxCharacters){
-    if(person == UNIQUE_ID){
+    if(person === UNIQUE_ID){
         break;
     }
     alert(`Your names should not be more than ${maxCharacters} characters`)
     person = prompt("What should we call you:", "Gardener");
   }
-  if (person === "" || person === null) {
-    txt = "Welcome Gardener";
-  } else {
-    txt = "Welcome " + person;
-  }
-  if (person == UNIQUE_ID){
-    txt = UNIQUE_TEXT;
-  }
-  document.getElementById("demo").innerHTML = txt;
-  localStorage.greetGardener = txt;
-  displayNotification(txt);
- }   else {
-    document.getElementById("demo").innerHTML = localStorage.greetGardener;
-    function myNotificationFunction(){
-    console.log(sessionStorage.current);
-    if(sessionStorage.current === '1'){
-        sessionStorage.current = 1;
+    if (person === "" || person === null) {
+        txt = "Welcome Gardener";
     } else {
-        displayReturnNotification();
+        txt = "Welcome " + person;
+    }
+    if (person === UNIQUE_ID){
+        txt = UNIQUE_TEXT;
+        const nlightItems = document.getElementsByClassName("light");
+        if(nlightItems.length == 0){
+            document.getElementById("user-image").src = UNIQUE_IMAGE_D;
+            localStorage.picsrc = UNIQUE_IMAGE_D;
+        } else{
+          document.getElementById("user-image").src = UNIQUE_IMAGE_L;
+          localStorage.picsrc = UNIQUE_IMAGE_L;
+        }
+    }
+    document.getElementById("demo").innerHTML = txt;
+    localStorage.greetGardener = txt; 
+    displayNotification(txt);
+    }  else {
+        document.getElementById("demo").innerHTML = localStorage.greetGardener;
+    function myNotificationFunction(){
+        console.log(sessionStorage.current);
+        if(sessionStorage.current === '1'){
+            sessionStorage.current = 1;
+        } else {
+            displayReturnNotification();
     }
     }
     myNotificationFunction()
@@ -160,6 +171,14 @@ if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'u
           document.getElementById("demo").innerHTML = newTxt;
           localStorage.greetGardener = newTxt;
           displayNotification(newTxt);
+          const dlightItems = document.getElementsByClassName("light");
+          if(dlightItems.length == 0){
+            document.getElementById("user-image").src = UNIQUE_IMAGE_D;
+            localStorage.picsrc = UNIQUE_IMAGE_D;
+          } else{
+          document.getElementById("user-image").src = UNIQUE_IMAGE_L;
+          localStorage.picsrc = UNIQUE_IMAGE_L;
+          }
     }
     else {
         alert(`Your name must not be more than ${maxCharacters} characters`);
@@ -289,17 +308,34 @@ function lightMode() {
       localStorage.lighter = lighter;
       console.log(`Lighter: ${lighter}`);
     }
+    var lightItems = document.getElementsByClassName("light");
     for(var i = 0; i < toggleItems.length; i++){
-     toggleItems[i].classList.toggle("light")
-     var lightItems = document.getElementsByClassName("light");
+     toggleItems[i].classList.toggle("light");
      if(lightItems.length >= 1){
-         document.getElementById("themes-phrase").innerHTML="Toggle Dark Mode";
-        } 
+        document.getElementById("themes-phrase").innerHTML="Toggle Dark Mode";
+     } 
      else {
-         document.getElementById("themes-phrase").innerHTML="Toggle Light Mode";
+        document.getElementById("themes-phrase").innerHTML="Toggle Light Mode";
      }
-    } 
- } 
+    }
+    if(lightItems.length === 0 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
+        document.getElementById("user-image").src = UNIQUE_IMAGE_D;
+        localStorage.picsrc = UNIQUE_IMAGE_D;
+        console.log(localStorage.greetGardener);
+    } else if (lightItems.length > 0 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
+      document.getElementById("user-image").src = UNIQUE_IMAGE_L;
+      localStorage.picsrc = UNIQUE_IMAGE_L;
+      console.log(localStorage.greetGardener);
+    } else if (lightItems.length === 0 && ((localStorage.picsrc === undefined) || (localStorage.picsrc === "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/bulbon.gif"))){
+        document.getElementById("user-image").src = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person.png";
+        localStorage.picsrc = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person.png";
+        console.log(localStorage.greetGardener);
+    } else if (lightItems.length > 0 && ((localStorage.picsrc === "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/bulbon.gif"))){
+      document.getElementById("user-image").src = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/bulbon.gif";
+      localStorage.picsrc = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/bulbon.gif";
+      console.log(localStorage.greetGardener);
+    }
+} 
 
 
 var togglePushBall = document.getElementById("toggle-push-ball");
@@ -660,9 +696,6 @@ function concealSearchMenu(){
 }
 
 document.getElementById("navigator").addEventListener('click', ()=> {
-    navigatorMenuOpenFunction()
-})
-document.getElementById("navigator").addEventListener('touchstart', ()=> {
     navigatorMenuOpenFunction()
 })
 document.getElementById("navigator").addEventListener('mousedown', ()=> {
