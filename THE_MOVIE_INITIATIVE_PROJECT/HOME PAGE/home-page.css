@@ -152,11 +152,17 @@ body{
   width: 100%;
   overflow-x: hidden;
   background-color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+button,input,p{
+  font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
 }
 body::after{
   content: "";
   display: table;
+}
+#demo.light{
+  color: gray!important;
 }
 #hidden-navigator-panel.light{
   background-color: white!important;
@@ -208,6 +214,15 @@ h3.light{
 }
 #search-menu.light{
   background-color: white!important;
+}
+#search.light,#my-menu-search.light{
+  box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
+  -webkit-box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
+  -moz-box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
+  background-color: rgb(246, 246, 246);
+} 
+#search.light:hover,#my-menu-search.light:hover{
+  background-color: rgb(238, 237, 237);
 }
 #Search.light{
   background-color: white!important;
@@ -431,7 +446,6 @@ footer pre.light{
   color: white;
   list-style: none;
   font-size: 2.4vh;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   display: flex;
   height: 6.5vh;
   align-items: center;
@@ -454,7 +468,7 @@ footer pre.light{
   border-radius: .175vh;
   background-color: burlywood;
   transform: scaleX(0);
-  transition: all .5s ease-in-out;
+  transition: all .75s ease-in-out;
   transform-origin: bottom right;
 }
 .topnav li:hover::after{
@@ -522,11 +536,11 @@ footer pre.light{
   z-index: 1;
 }
 #moving-word{
-  font-weight: bolder;
+  font-weight: 500;
+  font-style: italic;
   color: whitesmoke;
   text-wrap: nowrap;
   font-size: 2.5vh;
-  font-family:"Akaya Kanadaka", system-ui;
   animation: moving-word 20s infinite linear;
   text-align: right;
   z-index: 1;
@@ -569,7 +583,6 @@ footer pre.light{
   position: absolute;
   font-weight: bolder;
   font-size: 4.25vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-shadow: 2vh 2vh 2vh black;
   background-color:rgba(8, 8, 8, 0.623);
   padding: 1vh;
@@ -659,7 +672,7 @@ footer pre.light{
   outline: none;
   border-radius: 1.5vh;
   align-items: center;
-  display: inline-flex;
+  display: flex;
   justify-content: space-evenly;
   background-color: #2af40f;
   bottom: 4vh;
@@ -700,7 +713,6 @@ footer pre.light{
 .moving-picture-about{
   position: absolute;
   font-size: 2.95vh;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   width: 45vw;
   border-radius: 1vh;
   padding: 2vh;
@@ -798,13 +810,13 @@ footer pre.light{
 #hidden-navigator-panel #menu{
   padding-left: 2vw;
   margin:0 0 2.5vw 0;
-  font-size: 3vw;
+  font-size: 2vw;
 }
 #hidden-navigator-panel li p{
   padding: 0;
   margin: 0;
-  line-height: 3.9vw;
-  font-size: 2vw;
+  line-height: 2.9vw;
+  font-size: 1.5vw;
 }
 #hidden-navigator-panel ul{
   padding-left: 0;
@@ -860,35 +872,35 @@ footer pre.light{
 }
 #toggle-container,#n-toggle-container{
   position: relative;
-  right: 2vw;
+  right: 1vw;
   display: flex;
   align-items: center;
-  min-height: 3.8vw;
+  min-height: 2.8vw;
 }
 #toggle,#n-toggle{
   background-color: white;
   position: relative;
-  height: 2.35vw; 
-  width: 4.5vw;
-  border-radius: 1.1525vw;
+  height: 1.75vw; 
+  width: 3.4vw;
+  border-radius: 0.875vw;
   display: flex;
   float: left;
-  margin-left: 2vw; 
+  margin-left: 0vw; 
 }
 #toggle-ball,#toggle-push-ball{
   position: absolute;
   display: inline;
   background-color: black;
-  height: 2.2vw;
-  width: 2.2vw;
-  border-radius: 1.1vw;
-  top: 0.075vw;
-  left: 0.1vw;
+  height: 1.65vw;
+  width: 1.65vw;
+  border-radius: 0.825vw;
   z-index: 2;
+  top: 0.05vw;
+  left: 0.105vw;
   transition: transform 0.25s linear;
 }
 #toggle-ball,#toggle-push-ball.push{
-  transform: translateX(2.1vw);
+  transform: translateX(1.595vw);
 }
 #toggle-push-ball{
   transform: translateX(0);
@@ -899,55 +911,53 @@ footer pre.light{
 .toggle-moon{
   position: relative;
   display: inline;
-  width: 2.2vw;
-  height: 2.2vw;
+  width: 1.45vw;
+  height: 1.45vw;
+  left: 0.175vw;
   top: 0.1vw;
   fill: goldenrod;
 }
 .toggle-sun{
   position: relative;
   display: inline;
-  width: 2vw;
-  height: 2vw;
-  top: 0.2vw;
-  left: 0.15vw;
+  width: 1.5vw;
+  height: 1.5vw;
+  top: 0.15vw;
+  left: 0.225vw;
   right: 0;
   fill: gold;
 }
 #my-menu-search {
-  width: 22%;
-  height: 5vh;
+  width: 20%;
+  height: 4vh;
   transition: width ease 0.2s, opacity ease 0.4s;
   -webkit-transition: width ease 0.2s, opacity ease 0.4s;
   -moz-transition: width ease 0.2s, opacity ease 0.4s;
-  border-radius: 32px;
-  -webkit-border-radius: 32px;
-  -moz-border-radius: 32px;
-  box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
-  -webkit-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
-  -moz-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
+  border-radius: 2vh;
+  -webkit-border-radius: 2vh;
+  -moz-border-radius: 2vh;
+  background-color: white;
   text-align: left;
-  font: "Helvetica Neue", Arial, sans-serif;
   margin:0 0 1vw 2vw;
   font-size: 1.3vw;
-  text-indent: 1.8vw;
+  text-indent: 1.25vw;
   border: none;
-  background-color: none;
   outline: none; 
-  opacity: 0.7;
   color: #888;
+  opacity: 0.9;
+  box-shadow: inset 0px 0px 3px burlywood, inset 0px 1px 3px burlywood, 0px 1px 0px burlywood;
 }
 #my-menu-search:hover{
   transition: width 1.0s ease-in-out, opacity ease 1s;
-  width: 31.5%;
+  width: 27.5%;
   color: black; 
-  opacity: 0.9;
+  opacity: 1;
 }
 #my-menu-search:focus{
   transition: width 1.0s ease-in-out, opacity ease 1s;
-  width: 31.5%;
-  opacity: 1.0;
+  width: 27.5%;
   color: black; 
+  opacity: 1;
 }
 #search {
   position: fixed;
@@ -955,31 +965,28 @@ footer pre.light{
   display: inline-flex;
   top: 1.2vh;
   right: 0.5vw;
-  width: 19vw;
+  width: 20vw;
   transition: width ease 0.2s, opacity ease 0.4s;
   -webkit-transition: width ease 0.2s, opacity ease 0.4s;
   -moz-transition: width ease 0.2s, opacity ease 0.4s;
   border-radius: 2.5vh;
   -webkit-border-radius: 2.5vh;
   -moz-border-radius: 2.5vh;
-  box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
-  -webkit-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
-  -moz-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
   text-align: left;
-  font: 13px "Helvetica Neue", Arial, sans-serif;
+  font: 3vh;
   height: 4vh;
   font-size: 3vh;
-  text-indent: 1.8vw;
+  text-indent: 1.5vw;
   border: none;
-  background-color: none;
   outline: none; 
-  opacity: 0.7;
   color: #888;
+  box-shadow: inset 0px 0px 3px burlywood, inset 0px 1px 3px burlywood, 0px 1px 0px burlywood;
+  -webkit-box-shadow: inset 0px 0px 3px burlywood, inset 0px 1px 3px burlywood, 0px 1px 0px burlywood;
+  -moz-box-shadow: inset 0px 0px 3px burlywood, inset 0px 1px 3px burlywood, 0px 1px 0px burlywood;
 }
 #search:hover {
-  transition: width 1.0s ease-in-out, opacity ease 1s;
+  transition: width 1.0s ease-in-out;
   width: 22vw;
-  opacity: 1.0;
   color: black;   
   cursor: pointer;
 }
@@ -1003,7 +1010,6 @@ footer pre.light{
   -webkit-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
   -moz-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
   text-align: left;
-  font: "Helvetica Neue", Arial, sans-serif;
   font-size: 2.5vh;
   font-weight: bold;
   text-indent: 4.5vh;
@@ -1015,6 +1021,8 @@ footer pre.light{
   margin: 0;
   outline: none;
   line-height: 7vh;
+  display: flex;
+  align-items: center;
 }
 .search-icon{
   color: white;
@@ -1025,7 +1033,7 @@ footer pre.light{
 }
 #x-search-menu{
   position: absolute;
-  top: 0.8vh;
+  top: 0vh;
   right: 2vw;
   font-size: 4.5vh;
   font-weight: bold;
@@ -1069,7 +1077,6 @@ footer pre.light{
   left: 15vh;
   word-spacing: 0.5vw;
   letter-spacing: 0.25vw;
-  font: 3vh "Helvetica Neue", Arial, sans-serf;
 }
 #no-search-result{
   display: none;
@@ -1109,7 +1116,7 @@ footer pre.light{
   color: white;
   word-spacing: 0.5vw;
   letter-spacing: 0.2vw;
-  font: 2vh "Helvetica Neue", Arial, sans-serif;
+  font-size: 2vh;
 }
 #search-error{ 
   display: none;
@@ -1127,8 +1134,8 @@ footer pre.light{
   justify-content: baseline;
   height: 34vh;
   width: 18.5vw;
-  margin-right: 1vw;
-  margin-left: 0.2vw;
+  margin-right: 1.5vw;
+  margin-left: 1vw;
 }
 .r-panel img{
   height: 30vh;
@@ -1167,7 +1174,7 @@ footer pre.light{
   background: linear-gradient(to right, #00000000, #151515d0 50%), url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg) no-repeat center center;
   background-size: cover;
   margin: 0 0.5vw 2vh 0.5vw;
-  box-shadow: inset 0.1vw 0.1vw 1.0vw rgba(255,255,255,0.25), 1vw 1vw 3vw rgba(255,255,255,0.25);
+  box-shadow: inset 0.1vw 0.1vw 1.0vw rgba(255,255,255,0.25), 0.2vw 0.2vw 2vw rgba(255,255,255,0.25);
 }
 .hidden-r-panel-main{
   position: relative;
@@ -1266,7 +1273,7 @@ div.s-r-view-tile h3{
   display: flex;
   flex-direction: column;
   justify-content: baseline;
-  margin: 0 1.0vw 0 0.2vw;
+  margin: 0 2vw 0 1vw;
   width: 11.1vw;
 }
 .panels a img{
@@ -1289,7 +1296,6 @@ div.s-r-view-tile h3{
   text-align: center;
 }
 h3{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   font-weight: bold;
   font-size: 3vh;
@@ -1345,7 +1351,6 @@ footer .footer-text p{
   text-wrap: wrap;
   height: 2.5vw;
   color: whitesmoke;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.5vw;
   position: relative;
   left: 3vw;
@@ -1364,7 +1369,7 @@ footer .bullet{
   top: 0.3vw;
 }
 footer pre{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-align: center;
   font-size: 1.5vw;
   color: whitesmoke;
@@ -1404,8 +1409,8 @@ footer pre{
   .r-panel {
     height: 30vh!important;
     width: 23.5vw!important;
-    margin-right: 1.2vw!important;
-    margin-left: 0.3vw!important;
+    margin-right: 2vw!important;
+    margin-left: 0.6vw!important;
   }
   .r-panel img{
     height: 27vh!important;
@@ -1446,7 +1451,7 @@ footer pre{
     font-size: 1.25vw!important;
   }
   .panels {
-    margin: 0 1.15vw 0 0.2vw!important;
+    margin: 0 2.15vw 0 1.2vw!important;
     width: 16vw!important;
     height: 33.5vh!important;
   }
@@ -1560,6 +1565,9 @@ footer pre{
   }
   .optional-bar{
     display: block!important;
+  }
+  #search{
+    width: 25vw!important;
   }
 }
 
@@ -1755,23 +1763,19 @@ footer pre{
     text-align: right;
     float: right;
     direction:ltr;
-    opacity: 0.7;
+    opacity: 1.0; 
     width: 29vw;
     padding-right: 0.5vw;
     border: none;
     height: 4vh;
-    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
-    -webkit-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
-    -moz-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
     transition: width ease 0.1s, opacity ease 0.1s;
     -webkit-transition: width ease 0.1s, opacity ease 0.1s;
     -moz-transition: width ease 0.1s, opacity ease 0.1s;
     flex: 4;
   }
   #search:hover{
-    transition: width 0.5s ease-in-out, opacity ease 1s;
+    transition: width 0.5s ease-in-out;
     width: 29vw;
-    opacity: 1.0; 
     color: black;
   }
   #hidden-navigator-panel #menu{
@@ -1946,7 +1950,8 @@ footer pre{
   }
   #tmg{
     margin: 0.25vh 0vh 0.75vh 0vh;
-    right: 0.3vh;
+    right: 1vh;
+    font-size: 3.85vh;
   }
   #home-nav{
     display: none;
@@ -2065,21 +2070,17 @@ footer pre{
     text-align: right;
     float: right;
     direction:ltr;
-    opacity: 0.7;
     width:30vw;
     padding-right: 0.5vw;
     border: none;
     height: 4vh;
-    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
-    -webkit-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
-    -moz-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
+    opacity: 1.0; 
     transition: width ease 0.1s, opacity ease 0.1s;
     -webkit-transition: width ease 0.1s, opacity ease 0.1s;
     -moz-transition: width ease 0.1s, opacity ease 0.1s;
   }
   #search:hover{
-    transition: width 0.5s ease-in-out, opacity ease 1s;
-    opacity: 1.0; 
+    transition: width 0.5s ease-in-out;
     width: 30vw;
     color: black;
   }
@@ -2110,7 +2111,7 @@ footer pre{
   .panels {
     height: 22vh;
     width:19vw;
-    margin: 0 1vw 4vh 0.5vw;
+    margin: 0 2.5vw 4vh 1.5vw;
   }
   .panels a img{
     height: 20vh; 
@@ -2123,7 +2124,7 @@ footer pre{
   .r-panel {
     height: 23vh;
     width: 32vw;
-    margin: 0 1vw 1.5vh 1vw;
+    margin: 0 2vw 1.5vh 1.25vw;
   }
   .r-panel img{
     height: 22vh;
@@ -2765,21 +2766,14 @@ footer pre{
     margin:0.15vw 0vw 1vw 1vw;
     font-size: 2.25vh;
     border-radius: 0 0 0 0;
-    border: 1px solid rgb(122, 113, 113);
     text-align: left;
     direction:ltr;
     text-indent: 2.5vw;
     float:none;
     width:100vw;
-    opacity: 0.9;
+    color: black;
+    opacity: 1;
     height: 4vh;
-    background-color:white;
-    transition: width ease 0.2s, opacity ease 0.4s, height ease 1s;
-    -webkit-transition: width ease 0.2s, opacity ease 0.4s;
-    -moz-transition: width ease 0.2s, opacity ease 0.4s;
-    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
-    -webkit-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
-    -moz-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
   }
   #search:hover{
     width: 100vw;

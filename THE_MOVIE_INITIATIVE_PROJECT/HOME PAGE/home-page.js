@@ -297,8 +297,11 @@ document.getElementById("insert").addEventListener('change', (evt) => {
 })
 
 
+
+
 function lightMode() {
-    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle");
+    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo");
+    // const mpis = document.getElementsByClassName("moving-picture-image");
     if(lighter === 1){
       lighter = 0;
       localStorage.lighter = lighter;
@@ -326,13 +329,13 @@ function lightMode() {
       document.getElementById("user-image").src = UNIQUE_IMAGE_L;
       localStorage.picsrc = UNIQUE_IMAGE_L;
       console.log(localStorage.greetGardener);
-    } else if (lightItems.length === 0 && ((localStorage.picsrc === undefined) || (localStorage.picsrc === "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/bulbon.gif"))){
+    } else if (lightItems.length === 0 && ((localStorage.picsrc === undefined) || (localStorage.picsrc === "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person_one.jpg"))){
         document.getElementById("user-image").src = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person.png";
         localStorage.picsrc = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person.png";
         console.log(localStorage.greetGardener);
-    } else if (lightItems.length > 0 && ((localStorage.picsrc === "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/bulbon.gif"))){
-      document.getElementById("user-image").src = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/bulbon.gif";
-      localStorage.picsrc = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/bulbon.gif";
+    } else if (lightItems.length > 0 && ((localStorage.picsrc === "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined))){
+      document.getElementById("user-image").src = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person_one.jpg";
+      localStorage.picsrc = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person_one.jpg";
       console.log(localStorage.greetGardener);
     }
 } 
