@@ -165,7 +165,7 @@ body::after{
   color: gray!important;
 }
 #hidden-navigator-panel.light{
-  background-color: white!important;
+  background-color: rgb(247, 247, 247)!important;
 }
 #hidden-navigator-panel li.light{
   border-bottom: solid 2px rgba(0,0,0,0.5)!important;
@@ -190,7 +190,7 @@ body::after{
   color: red!important;
 }
 #top-box.light{
-  background-color: white!important;
+  background-color: rgb(246, 246, 246)!important;
 }
 .navigate.light{
   color: black!important;
@@ -207,7 +207,7 @@ body::after{
   background-color: white!important;
 }
 body.light{
-  background-color: white!important;
+  background-color: rgb(236, 236, 236)!important;
 }
 h3.light{
   color: black!important;
@@ -569,6 +569,7 @@ footer pre.light{
   height: 100%;
   width: 100vw;
   margin: 0;
+  background-size: cover!important;
 }
 .moving-picture-video{
   position: absolute;
@@ -2670,6 +2671,9 @@ footer pre{
     font-size: 1.9vh;
     max-width: 50vw;
     height: fit-content;
+  }
+  .moving-picture-image{
+    background-size: 100% 100%!important;
   }
   .moving-picture-button{
     height: 4vh;
