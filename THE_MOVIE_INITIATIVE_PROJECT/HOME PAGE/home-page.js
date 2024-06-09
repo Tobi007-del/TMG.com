@@ -300,8 +300,7 @@ document.getElementById("insert").addEventListener('change', (evt) => {
 
 
 function lightMode() {
-    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo");
-    // const mpis = document.getElementsByClassName("moving-picture-image");
+    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right");
     if(lighter === 1){
       lighter = 0;
       localStorage.lighter = lighter;
@@ -437,6 +436,8 @@ const movingAbouts = document.querySelectorAll(".moving-picture-about");
 const movingButtons = document.querySelectorAll(".moving-picture-button");
 const movingLinks = document.querySelectorAll(".moving-picture-link");
 const preloaderTextContainer = document.getElementById("preloader-text-container");
+const movingPictureImageCoversLeft = document.getElementsByClassName("moving-picture-image-cover-left");
+const movingPictureImageCoversRight = document.getElementsByClassName("moving-picture-image-cover-right");
 
 movingVideos.forEach((movingVideo)=>{
     movingVideo.onwaiting = function(){
@@ -450,6 +451,8 @@ movingVideos.forEach((movingVideo)=>{
 })
 
 function playTrailer(i){
+    movingPictureImageCoversLeft[i].classList.add('inactive');
+    movingPictureImageCoversRight[i].classList.add('inactive');
     watchTrailerButtons[i].style.display = "none";
     mousedownCounter++;
     header.style.display = "none";
@@ -473,6 +476,8 @@ function playTrailer(i){
 }
 
 function reversePlayTrailer(x){
+    movingPictureImageCoversLeft[x].classList.remove('inactive');
+    movingPictureImageCoversRight[x].classList.remove('inactive');
     watchTrailerButtons[x].style.display = "flex";
     mousedownCounter = 0;
     header.style.display = "block";

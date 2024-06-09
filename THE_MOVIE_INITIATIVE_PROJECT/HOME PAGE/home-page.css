@@ -468,7 +468,7 @@ footer pre.light{
   border-radius: .175vh;
   background-color: burlywood;
   transform: scaleX(0);
-  transition: all .75s ease-in-out;
+  transition: all .45s ease-in-out;
   transform-origin: bottom right;
 }
 .topnav li:hover::after{
@@ -571,12 +571,37 @@ footer pre.light{
   margin: 0;
   background-size: cover!important;
 }
+.moving-picture-image-cover-left,.moving-picture-image-cover-right{
+  display: block;
+  height: 100%;
+  width: 50vw;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  transition: all 1s ease-out;
+  background: linear-gradient(#00000000 60%,black);
+}
+.moving-picture-image-cover-left{
+  left: 0;
+  direction: rtl;
+}
+.moving-picture-image-cover-right{
+  right: 0;
+  direction: ltr;
+}
+.moving-picture-image-cover-left.light,.moving-picture-image-cover-right.light{
+  background: linear-gradient(#00000000 60%,rgba(236, 236, 236, 0.65));
+}
+.moving-picture-image-cover-left.inactive,.moving-picture-image-cover-right.inactive{
+  width: 0!important;
+}
 .moving-picture-video{
   position: absolute;
   height: 0;
   width: 100%;
   transition: all 1s ease-in-out;
   object-fit: fill;
+  z-index: 1;
 }
 .moving-picture-title{
   top: 20vh;
@@ -593,12 +618,13 @@ footer pre.light{
   width: fit-content;
   min-width: 5vw;
   pointer-events: none;
+  z-index: 1;
 }
 .moving-picture-title.trailer:hover{
   background-color:rgba(8, 8, 8, 0.623);
   color: white;
   right: 2.5vh;
-  cursor:default;
+  cursor: default;
 }
 .moving-picture-about.trailer:hover{
   background-color:rgba(8, 8, 8, 0.623);
@@ -631,11 +657,13 @@ footer pre.light{
   height:fit-content;
   opacity: 0.2;
   pointer-events: all;
+  z-index: 1;
 }
 .moving-picture-button.trailer{
   right: -8vh;
   bottom: 10vh;
   opacity: 0.2;
+  z-index: 1;
 }
 .moving-picture-link.trailer{
   color:#2af40f;
@@ -697,6 +725,7 @@ footer pre.light{
   font-weight: bold;
   color: black;
   opacity: 0;
+  z-index: 1;
 }
 .preview-button{
   left: 40vh;
@@ -1975,7 +2004,7 @@ footer pre{
     top: 4.2vh;
   }
   #moving-word{
-    font-size: 2.5vh;
+    font-size: 2vh;
   }
   .moving-picture{
     height: 65vh;
