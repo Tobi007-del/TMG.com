@@ -1896,7 +1896,7 @@ footer pre{
     margin-top: 1vh;
   }
   .search-footer{
-    font: 2vh "Helvetica Neue", Arial, sans-serf;
+    font: 2vh;
   }
   .optional-bar{
     display: block;
@@ -2199,7 +2199,7 @@ footer pre{
     margin-top: 1vh;
   }
   .search-footer{
-    font: 2vh "Helvetica Neue", Arial, sans-serf;
+    font: 2vh;
   }
   .optional-bar{
     display: block
@@ -2929,13 +2929,13 @@ footer pre{
     left: 9vh;
     word-spacing: 0vw;
     letter-spacing: 0vw;
-    font: 1.75vh "Helvetica Neue", Arial, sans-serf;
+    font: 1.75vh;
   }
   #search-footer{
     height: 12vh;
   }
   .search-footer{
-    font: 1.5vh "Helvetica Neue", Arial, sans-serf;
+    font: 1.5vh;
   }
   .panels {
     height:10em;
