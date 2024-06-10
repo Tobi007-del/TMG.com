@@ -2,7 +2,7 @@ const UNIQUE_ID = "Tobi-00703181011";
 const UNIQUE_TEXT = "WELCOME CREATOR";
 const UNIQUE_IMAGE_L = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/compman.gif";
 const UNIQUE_IMAGE_D = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/compman_lowres.gif";
-
+var t = 0;
 
 var first = document.getElementById("first-text");
 var second = document.getElementById("second-text");
@@ -451,6 +451,7 @@ movingVideos.forEach((movingVideo)=>{
 })
 
 function playTrailer(i){
+    t=i;
     movingPictureImageCoversLeft[i].classList.add('inactive');
     movingPictureImageCoversRight[i].classList.add('inactive');
     watchTrailerButtons[i].style.display = "none";
@@ -725,9 +726,9 @@ function cancelMenuFunction() {
 }
 
 function Category(genre, genrename, nav) {
-    document.getElementById("moving-pictures").classList.remove("about");
     document.getElementById("moving-container").classList.remove("about");
     document.getElementById("top-content").classList.remove("about");
+    document.getElementById("content-box").classList.remove("about");
     document.getElementById("top-content").style.opacity="1";
     document.getElementById("content-box").style.opacity="1";
     document.getElementById("hidden-navigator-panel").style.width="0vw";
@@ -737,6 +738,7 @@ function Category(genre, genrename, nav) {
     document.getElementById("about-site").style.display="none";
     document.getElementById("moving-pictures").style.display="flex";
     if (genre === "home" || genrename === "home"){
+    document.getElementById("moving-pictures").classList.remove("about");
     var navName = document.getElementsByClassName("navigate");
     for (var y= 0; y < navName.length; y++){
         var navNam = navName[y];
@@ -779,6 +781,8 @@ function Category(genre, genrename, nav) {
         typeName.style.display = "block";
     }
     } else{ 
+    noMovingPicture(t);
+    document.getElementById("content-box").classList.add("about");
     var category = document.querySelectorAll(".view-panes");
     var categoryName = document.getElementsByClassName("pane-title");
     var i;
@@ -805,7 +809,7 @@ function Category(genre, genrename, nav) {
             document.getElementById("home-nav").style.fontWeight = "lighter";
         }
     }  else {
-        var navName = document.getElementsByClassName("navigate");``
+        var navName = document.getElementsByClassName("navigate");
         for (var y= 0; y < navName.length; y++){
             var navNam = navName[y];
             navNam.style.fontWeight = "lighter";
@@ -817,13 +821,18 @@ function Category(genre, genrename, nav) {
     }
     if (genrename === "about"){
         document.getElementById("about-site").style.display="block";
-        document.getElementById("moving-pictures").classList.add("about");
-        document.getElementById("moving-container").classList.add("about");
-        document.getElementById("top-content").classList.add("about");
+        noMovingPicture(t);
     }
     }}
 }
 
+
+function noMovingPicture(u){
+    document.getElementById("moving-pictures").classList.add("about");
+    document.getElementById("moving-container").classList.add("about");
+    document.getElementById("top-content").classList.add("about");
+    reversePlayTrailer(u);
+}
 
 function openPanel(panelName, hiddenPanelName){
     document.getElementById(panelName).style.display = "none";

@@ -355,6 +355,10 @@ footer pre.light{
 #top-content.about{
   height: 0;
 }
+#content-box.about{
+  position: relative;
+  top: 6.5vh;
+}
 #top{
   position: absolute;
   width: 100vw;
@@ -2575,6 +2579,9 @@ footer pre{
 
 /* for phones and tablets with small screens */
 @media(max-width:500px){
+  #content-box.about{
+    top: 8.5vh;
+  }
   #menu-search-icon{
     font-size: 2.25vh;
     color: burlywood;
