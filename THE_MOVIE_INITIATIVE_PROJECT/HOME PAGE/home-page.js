@@ -732,6 +732,7 @@ function Category(genre, genrename, nav) {
     document.getElementById("initial").style.display="block";
     document.getElementById("content-box").style.display="block";
     document.getElementById("about-site").style.display="none";
+    document.getElementById("moving-pictures").style.display="flex";
     if (genre === "home" || genrename === "home"){
     var navName = document.getElementsByClassName("navigate");
     for (var y= 0; y < navName.length; y++){
@@ -813,6 +814,8 @@ function Category(genre, genrename, nav) {
     }
     if (genrename === "about"){
         document.getElementById("about-site").style.display="block";
+        document.getElementById("moving-pictures").style.display="none";
+        document.getElementById("initial").style.display="none";
     }
     }}
 }
