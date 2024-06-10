@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TMG.com</title>
+  <link rel="icon" type="image/jpg" sizes="32x32" href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href ="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/HOME PAGE/home-page.css">
+</head>
+<body>
+<div id="hidden-navigator-panel" onmouseleave="cancelMenuFunction()">
+  <span id="cancel-menu" onclick="cancelMenuFunction()">&times;</span>
+    <ul id="myMenuBar">
+      <p id="menu"><i id="list-icon" onclick="cancelMenuFunction()" class="fa-solid fa-list bar-icon"></i>MENU</p>
+      <input type="text" id="my-menu-search" onkeyup="searchMenuFunction()" placeholder="Search Category" title="Type in a category" autocomplete="on">
+      <span id="error">Search unavailable!</span>
+      <li id="home-bar" onclick="Category('home','home')"><p class="bar-text"><i class="fa-solid fa-house bar-icon"></i>Home</p></li>
+      <li class="optional-bar" onclick="Category('animes','anime','anime-nav')"><p class="bar-text"><i class="fa-solid fa-user-ninja bar-icon"></i>Anime</p></li>
+      <li class="optional-bar" onclick="Category('cartoon','cartoons','cartoons-nav')"><p class="bar-text"><i class="fa-brands fa-space-awesome bar-icon"></i>Cartoons</p></li>
+      <li class="optional-bar" onclick="Category('movie','movies','movies-nav')"><p class="bar-text"><i class="fa-solid fa-video bar-icon"></i>Movies</p></li>
+      <li class="optional-bar" onclick="Category('serie','series','series-nav')"><p class="bar-text"><i class="fa-solid fa-photo-film bar-icon"></i>Series</p></li>
+      <li onclick="Category('recently-addeds','recently-added')"><p class="bar-text"><i class="fa-solid fa-fire bar-icon"></i>Recently Added</p></li>
+      <li onclick="Category('actions','action')"><p class="bar-text"><i class="fa-solid fa-explosion bar-icon"></i>Action</p></li>
+      <li onclick="Category('adventures','adventure')"><p class="bar-text"><i class="fa-solid fa-earth-americas bar-icon"></i>Adventure</p></li>
+      <li onclick="Category('comedies','comedy')"><p class="bar-text"><i class="fa-solid fa-face-laugh-squint bar-icon"></i>Comedy</p></li>
+      <li onclick="Category('families','family')"><p class="bar-text"><i class="fa-solid fa-people-roof bar-icon"></i>Family</p></li>
+      <li onclick="Category('fantasies','fantasy')"><p class="bar-text"><i class="fa-solid fa-book-journal-whills bar-icon"></i>Fantasy</p></li>
+      <li onclick="Category('gores','gore')"><p class="bar-text"><i class="fa-solid fa-biohazard bar-icon"></i>Gore</p></li>
+      <li onclick="Category('horrors','horror')"><p class="bar-text"><i class="fa-solid fa-skull-crossbones bar-icon"></i>Horror</p></li>
+      <li onclick="Category('musicals','musical')"><p class="bar-text"><i class="fa-solid fa-music bar-icon"></i>Musical</p></li>
+      <li onclick="Category('nollywoods','nollywood')"><p class="bar-text"><i class="fa-solid fa-film bar-icon"></i>Nolly Wood</p></li>
+      <li onclick="Category('romances','romance')"><p class="bar-text"><i class="fa-solid fa-heart-pulse bar-icon"></i>Romance</p></li>
+      <li onclick="Category('sci-fis','sci-fi')"><p class="bar-text"><i class="fa-solid fa-robot bar-icon"></i>Sci-fi</p></li>
+      <li onclick="Category('thrillers','thriller')"><p class="bar-text"><i class="fa-solid fa-binoculars bar-icon"></i>Thriller</p></li>
+      <li><a href="TMG.com\THE_MOVIE_INITIATIVE_PROJECT\about-site.html"><p class="bar-text"><i class="fa-solid fa-circle-info bar-icon"></i>About Site</p></a></li>
+      <li id="current-mode"><p id="themes-phrase">Toggle Light Mode</p>
+        <div id="toggle-container">
+        <span id="toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" class="toggle-sun" viewBox="0 0 512 512"><path d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="toggle-moon" viewBox="0 0 384 512"><path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"/></svg>
+          <span id="toggle-ball" onclick="lightMode()"></span>
+        </span>
+        </div>
+      </li>
+      <li id="notifiaction-option">
+      <p id="push-phrase">Push Notifications</p>
+      <div id="n-toggle-container">
+      <span id="n-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="toggle-sun" viewBox="0 0 640 512"><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7l-90.2-70.7c.2-.4 .4-.9 .6-1.3c5.2-11.5 3.1-25-5.3-34.4l-7.4-8.3C497.3 319.2 480 273.9 480 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V51.2c-42.6 8.6-79 34.2-102 69.3L38.8 5.1zM406.2 416L160 222.1v4.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S115.4 416 128 416H406.2zm-40.9 77.3c12-12 18.7-28.3 18.7-45.3H320 256c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="toggle-moon" viewBox="0 0 448 512"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm0 96c61.9 0 112 50.1 112 112v25.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V208c0-61.9 50.1-112 112-112zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"/></svg>
+      <span id="toggle-push-ball"></span>
+      </span>
+      </div>
+      </li>
+      <li id="menu-not-found" style="border: none; display: none;"><p style="color:red">Category not found!!</p></li>
+      <p><a href="mailto: tobioketade007@gmail.com">Contact Us!</a></p>
+      <p><a href="tel: +2349052425395">+2349052425395</a></p>
+      <p><a href="mailto: tobioketade007@gmail.com">tobioketade007@gmail.com</a></p>
+    </ul>
+</div>
+<div id="initial">
+<div id="top-box">
+  <svg id="navigator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
+</div>
+<div id="top">
+  <div id="title-container"> 
+  <h1 id="title"><strong>THE MOVIE GARDEN</strong></h1>
+  </div>
+  <div class="moving-line"></div>
+    <ul class="topnav">
+      <p id="tmg" onclick="Category('home','home')"><span class="white-text">T</span>M<span class="white-text">G</span></p>
+      <li class="nav navigate active" id="home-nav" onclick="Category('home','home','home-nav')" data-title="Homeeei"><i class="fa-solid fa-house menu-bar-icon"></i>Home</li>
+      <li class="nav navigate" id="anime-nav" onclick="Category('animes','anime','anime-nav')" data-title="Animeeei"><i class="fa-solid fa-user-ninja menu-bar-icon"></i>Anime</li>
+      <li class="nav navigate" id="cartoons-nav" onclick="Category('cartoon','cartoons','cartoons-nav')" data-title="Cartoonseei"><i class="fa-brands fa-space-awesome menu-bar-icon"></i>Cartoons</li>
+      <li class="nav navigate" id="movies-nav" onclick="Category('movie','movies','movies-nav')" data-title="Movieseei"><i class="fa-solid fa-video menu-bar-icon"></i>Movies</li>
+      <li class="nav navigate" id="series-nav" onclick="Category('serie','series','series-nav')" data-title="Serieseei"><i class="fa-solid fa-photo-film menu-bar-icon"></i>Series</li>
+      <li><i class="fa-solid fa-magnifying-glass attention" id="menu-search-icon"></i></li>
+    </ul>
+  <div id="demo-container">
+    <p id="demo">Welcome</p>
+    <input type="file" id="insert" accept="image/*">
+    <img alt="TMG-image" src="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/person.png" id="user-image">
+  </div>
+    <input id="search" placeholder="Search" type="text" onclick="revealSearchMenu()" autocomplete="off" readonly/>
+</div>
+</div>
+    <div id="about-site">
+        <div id="about"></div>
+        <p id="abouts">This site is only intended to provide movies of all genres to 
+          those searching and make life easier by easing the stress of those 
+          who want to seek solace in the movie world where they can escape 
+          reality even if just for a moment. The site is not to be misused 
+          or violated as we have rules that have been put in place and if 
+          you try to hack the site to steal or pirate movies, you will be met
+          with whatever consequences that come you way in due time. This site
+          was made to meet the needs of a wide variety of individuals and the 
+          services we deliver has always been for the good of the masses, users 
+          should be cautious and should follow ethic when using as the site is 
+          not a porn page and there are some searches that should not be tested 
+          just for the fun of it as what we provide here is purely movies, cartoons, 
+          anime and tv shows/series. Movies will be added occassionaly and for the 
+          user's convenience, they wil be added to the recently added category and new releases 
+          so it can be accessed easily so always look out for when we have a new 
+          addition to our collection. The site was created in goodwill and we do 
+          not intend to cause harm to anyone in any way, we are just here to assist in
+          any way we can. Some features will also be updated on a regular basis if
+          we see it fit to and you can also send an email to this address: <a href="mailto:tobioketade007@gmail.com">tobioketade007@gmail.com</a> 
+          if you have any idea you would like to see implemented or any movie 
+          suggestion you want added to the collection to make it even more pleasing
+          to other users. Do not send spam messages as you can be blocked. You can also 
+          do well to follow us on our social media platforms which will be listed below;
+          the_movie_garden which is our instagram handle, The Movie Garden which is our
+          facebook handle and The moviegarden on twitter as content is posted there regularly
+          so do well to stay in touch as our new releases are also posted there. Now, your 
+          continued use on the site is our utmost priority so do well to inform people you 
+          know so that we can have a large number of users and in the long run still be 
+          available providing free movies and tv shows. We can only hope you enjoy your 
+          stay on the site as our efforts have been put in place only to please your 
+          senses and infiltrate your leisure time to make you feel at ease and give you 
+          a space where you can come to escape reality in the world of movies as that is 
+          why movies were made in the first place as a doorway to another world where movie 
+          magic happens and everything you've ever wanted can be yours but do well not
+          to let movies take top priority in your life becaue there also other things that one 
+          should spend time doing so be wise about it as we do not want to just mess with 
+          your daily routine.
+        </p>
+    </div>
+      
+      
+    <footer>
+        <div class="footer-text">
+        <span class="bullet" id="bullet"></span>
+          <p>Disclaimer: This site does not claim ownership of any resource found here so if you find your material here against your consent, drop a message and it will be brought down it in due time.</p>
+        <span class="bullet" id="bullett"></span>
+          <p>Notice: Materials may be under copyright laws so plagiarism is at your own risk.</p>
+        </div>
+      
+        <pre id="footer-container">
+        <div  class="footer-container">The best collection of movies on the internet.......</div>
+        With such thrilling shows that keep you wanting more and makes your leisure time something to look forward to.
+        This site was built with the sole purpose to make a wide variety of movies avaailable to those searching.
+      
+      
+        Sponsored By TCI&reg[Tobi's Certified Industries]&#8482;      &copyCopy Right 2024.
+        </pre>
+    </footer>
+        
+
+  <script src="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/HOME PAGE/home-page.js"></script>
+
+</body>
+</html>

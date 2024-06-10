@@ -725,6 +725,9 @@ function cancelMenuFunction() {
 }
 
 function Category(genre, genrename, nav) {
+    document.getElementById("moving-pictures").classList.remove("about");
+    document.getElementById("moving-container").classList.remove("about");
+    document.getElementById("top-content").classList.remove("about");
     document.getElementById("top-content").style.opacity="1";
     document.getElementById("content-box").style.opacity="1";
     document.getElementById("hidden-navigator-panel").style.width="0vw";
@@ -814,8 +817,9 @@ function Category(genre, genrename, nav) {
     }
     if (genrename === "about"){
         document.getElementById("about-site").style.display="block";
-        document.getElementById("moving-pictures").style.display="none";
-        document.getElementById("initial").style.display="none";
+        document.getElementById("moving-pictures").classList.add("about");
+        document.getElementById("moving-container").classList.add("about");
+        document.getElementById("top-content").classList.add("about");
     }
     }}
 }

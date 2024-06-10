@@ -336,7 +336,7 @@ footer pre.light{
 }
 #top-content{
   position: relative;
-  overflow: hidden;
+  overflow: hidden;                     
   margin: 0;
   top: 0;
   height: 88vh;
@@ -345,6 +345,15 @@ footer pre.light{
   position: absolute;  
   top: 0;
   display: inline-flex;
+}
+#moving-pictures.about{
+  display: none;
+}
+#moving-container.about{
+  display: none;
+}
+#top-content.about{
+  height: 0;
 }
 #top{
   position: absolute;
@@ -1355,7 +1364,6 @@ h3{
   display: none;
   width: 100%;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 2vw;
   color: whitesmoke;
 }
