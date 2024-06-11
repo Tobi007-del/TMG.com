@@ -1,16 +1,17 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Anton'); */
+
 *{
   box-sizing: border-box;
 }
 :root{
   --brand-color: #e26e02;
-  --lighter-brand-color: #ef9329;
+  --lighter-brand-color: #ed8f23;
+  --light-lighter-brand-color: gray;
 }
 .white-text{
   color: white;
 }
 .white-text.light{
-  color: gray!important;
+  color: var(--light-lighter-brand-color)!important;
 }
 #loading-page.light{
   display: flex;
@@ -21,7 +22,7 @@
   position: fixed;
   top: 0;
   z-index: 100;
-  background:white url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-gray.gif) no-repeat center center; 
+  background:white url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-gray;gif) no-repeat center center; 
   background-size: 12vh;
   animation: ball_one 1s infinite ease-in-out;
 }
@@ -35,7 +36,7 @@
   background-size: 100%; 
 }
 .preloader-text.light{
-  color: darkgray!important;
+  color: darkvar(--light-lighter-brand-color)!important;
 }
 #loading-page{
   display: flex;
@@ -54,7 +55,7 @@
   position: absolute;
   width: 7vh;
   height: 7vh;
-  background: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-main.png) no-repeat center center;
+  background: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/twoballs-beige.gif) no-repeat center center;
   animation: balls_two 1s infinite ease-in-out;
   background-size: 100%;
 }
@@ -63,7 +64,7 @@
   width: 7vh;
   height: 7vh;
   transform: rotate(90deg);
-  background: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-main.png) no-repeat center center;
+  background: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/twoballs-beige.gif) no-repeat center center;
   animation: balls_two 1s infinite ease-in-out;
   background-size: 100%;
 }
@@ -153,20 +154,20 @@ body{
   width: 100%;
   overflow-x: hidden;
   background-color: black;
-  font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:  "Lato", sans-serif;
 }
 button,input,p{
-  font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+  font-family:  "Lato", sans-serif; 
 }
 body::after{
   content: "";
   display: table;
 }
 #demo.light{
-  color: gray!important;
+  color: var(--light-lighter-brand-color)!important;
 }
 #hidden-navigator-panel.light{
-  background-color: rgb(247, 247, 247)!important;
+  background-color: rgb(236, 236, 236)!important;
 }
 #hidden-navigator-panel li.light{
   border-bottom: solid 2px rgba(0,0,0,0.5)!important;
@@ -208,13 +209,13 @@ body::after{
   background-color: white!important;
 }
 .topnav.light li::after{
-  background-color: gray!important;
+  background-color: var(--light-lighter-brand-color)!important;
 }
 body.light{
   background-color: rgb(236, 236, 236)!important;
 }
 h3.light{
-  color: gray!important;
+  color: var(--light-lighter-brand-color)!important;
 }
 h3.light::after{
   background-color: black!important;
@@ -228,10 +229,10 @@ h3.light::after{
   box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
   -webkit-box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
   -moz-box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
-  background-color: rgb(246, 246, 246);
+  background: rgb(246, 246, 246);
 } 
 #search.light:hover,#my-menu-search.light:hover{
-  background-color: rgb(238, 237, 237);
+  background: rgb(238, 237, 237);
 }
 #Search.light{
   background-color: white!important;
@@ -468,6 +469,9 @@ footer pre.light{
     text-wrap: nowrap;
     font-size: 2.5vh;
   }
+  .view-tiles::after,.r-view-tile::after,.s-r-view-tile::after{
+  display: none;
+  }
 }
 #list-icon:hover{
   color: whitesmoke;
@@ -485,7 +489,7 @@ footer pre.light{
   display: flex;
   height: 6.5vh;
   align-items: center;
-  font-weight: lighter;
+  font-weight: light;
 }
 .topnav li.active::after{
   overflow: hidden;
@@ -524,14 +528,14 @@ footer pre.light{
   pointer-events: none;
   transition: opacity 1s ease-in;
   z-index: 1;
-  background: linear-gradient(to right,white,var(--brand-color),var(--brand-color),var(--brand-color), white);
+  background: linear-gradient(to right,white,var(--brand-color), white);
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   animation: title 35s infinite ease-in-out both;
 }
 #title.light{
-  background: linear-gradient(to right,gray,var(--brand-color),var(--brand-color),var(--brand-color), gray);
+  background: linear-gradient(to right,var(--light-lighter-brand-color),var(--brand-color), var(--light-lighter-brand-color));
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -678,8 +682,8 @@ footer pre.light{
   color: white; 
 }
 .moving-picture-title.trailer{
-  background-color: lightgray;
-  color: lightgray;
+  background-color: lightvar(--light-lighter-brand-color);
+  color: lightvar(--light-lighter-brand-color);
   text-shadow: none;
   width: 25vw;
   right: -20vw;
@@ -688,8 +692,8 @@ footer pre.light{
   pointer-events: all;
 }
 .moving-picture-about.trailer{
-  background-color: lightgray;
-  color: lightgray;
+  background-color: lightvar(--light-lighter-brand-color);
+  color: lightvar(--light-lighter-brand-color);
   right: -40vw;
   top: 25vh;
   height:fit-content;
@@ -998,10 +1002,8 @@ footer pre.light{
 #my-menu-search {
   width: 20%;
   height: 4vh;
-  transition: width ease 0.2s, opacity ease 0.4s;
-  -webkit-transition: width ease 0.2s, opacity ease 0.4s;
-  -moz-transition: width ease 0.2s, opacity ease 0.4s;
   border-radius: 2vh;
+  font-weight: bold;
   -webkit-border-radius: 2vh;
   -moz-border-radius: 2vh;
   background-color: white;
@@ -1015,7 +1017,7 @@ footer pre.light{
   opacity: 0.9;
 }
 #my-menu-search::placeholder{
-  color: var(--brand-color);
+  color: var(--lighter-brand-color);
 }
 #my-menu-search:hover{
   transition: width 1.0s ease-in-out, opacity ease 1s;
@@ -1036,42 +1038,49 @@ footer pre.light{
   top: 1.2vh;
   right: 0.5vw;
   width: 20vw;
-  transition: width ease 0.2s, opacity ease 0.4s;
-  -webkit-transition: width ease 0.2s, opacity ease 0.4s;
-  -moz-transition: width ease 0.2s, opacity ease 0.4s;
   border-radius: .65vh;
   -webkit-border-radius: .85vh;
   -moz-border-radius: .85vh;
   text-align: left;
   height: 4vh;
-  font-size: 2vh;
-  text-indent: 1.5vw;
+  opacity: 1;
+  font-size: 1.95vh;
+  text-indent: 1vw;
   border: none;
   outline: none; 
-  background-color: gray;
-  box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
-  -webkit-box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
-  -moz-box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
+  transition: all 1s ease;
+  background: linear-gradient(to right,darkslategray,darkslategray,darkslategray,slategray,darkslategray,darkslategray);
 }
 #search::placeholder{
   color: var(--brand-color); 
 }
 #search:hover {
-  transition: width 1.0s ease-in-out;
-  width: 22vw;
+  transition: all 1s ease;
+  width: 20.5vw;
   color: black;  
-  background-color: gray;
+  background: linear-gradient(to right,slategray,darkslategray,darkslategray,darkslategray,darkslategray,slategray,darkslategray,darkslategray); 
   cursor: pointer;
 }
-/* #search-div{
+#search-div{
+  pointer-events: none;
   position: fixed;
   z-index: 5;
-  display: inline-flex;
+  display: flex;
   top: 1.2vh;
   right: 0.5vw;
   width: 20vw;
   height: 4vh;
-} */
+  align-items: center;
+  background-color: transparent;
+  justify-content: flex-end;
+  padding-right: 1vh;
+}
+#search-glass{
+  position: absolute;
+  font-size: 2vh;
+  color: var(--brand-color);
+  z-index: 3;
+}
 #search-menu{
   display: none;
   width: 100vw;
@@ -1099,24 +1108,27 @@ footer pre.light{
   width:100vw;
   margin: 0;
   outline: none;
-  line-height: 7vh;
+  height: 7vh;
   display: flex;
   align-items: center;
 }
-#Search::placeholder{
-  color: var(--brand-color);
-}
 .search-icon{
-  color:var(--brand-color);
+  color:var(--lighter-brand-color);
   position: absolute;
-  top: 2.35vh;
-  margin-left: 1vh;
+  display: flex;
+  align-items: center;
+  height: 7vh;
+  top: 0;
+  margin-left: calc(0.5vw + 0.5vh);
   font-size: 2.75vh;
 }
 #x-search-menu{
   position: absolute;
-  top: 0vh;
   right: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7vh;
   font-size: 4.5vh;
   font-weight: bold;
   color: white;
@@ -1208,7 +1220,7 @@ footer pre.light{
   color: rgb(255, 255, 255);
   text-align: center;
   font-weight: bold;
-  font-size: 2.15vh;
+  font-size: 2.5vh;
 }
 .r-panel {
   display: flex;
@@ -1256,7 +1268,7 @@ footer pre.light{
   background: linear-gradient(to right, #00000000, #151515d0 50%), url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/tape-2.png);
   background-size: 100% 100%;
   margin: 0 0.5vw 2vh 0.5vw;
-  box-shadow: inset 0.1vw 0.1vw 1.0vw rgba(255,255,255,0.25), 0.2vw 0.2vw 2vw rgba(255,255,255,0.25);
+  box-shadow: inset 0.1vw 0.1vw 1.0vw rgba(255,255,255,0.25), 0.1vw 0.1vw 1vw rgba(255,255,255,0.25);
 }
 .hidden-r-panel-main{
   position: relative;
@@ -1318,11 +1330,23 @@ footer pre.light{
   color:white;
   font-size: 1.05vw;
 }
-.view-tiles, .r-view-tile {
+.view-tiles, .r-view-tile,.s-r-view-tile {
   display: block;
   width: 100%;
-  margin: 3.5vh 0 1vh 0;
+  margin: 3.5vh 0 7.5vh 0;
   padding:0;
+}
+.view-tiles.line::after,.r-view-tile.line::after,.s-r-view-tile.line::after{
+  content: '';
+  width: 95vw;
+  height: 0.25vh;
+  margin-top: 2.5vh;
+  background-color: var(--lighter-brand-color);
+  position: absolute;
+  left: 2.5vw;
+}
+.view-tiles.light.line::after,.r-view-tile.light.line::after,.s-r-view-tile.light.line::after{
+  background-color: var(--light-lighter-brand-color);
 }
 div.view-panes, div.r-view-pane {
   margin: 0;
@@ -1506,7 +1530,7 @@ footer .bullet{
   top: 0.3vw;
 }
 footer pre{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Lato", sans-serif;
   text-align: center;
   font-size: 1vw;
   color: whitesmoke;
@@ -1534,11 +1558,20 @@ footer pre{
   display: none;
 }
 
-
+@media(min-width:1180px){
+  #search{
+    height:4vh!important;
+    opacity: 1!important;
+  }  
+  #menu-search-icon{
+    display: none!important;
+  }
+}
 /* for tablets in landscape view */
 @media(min-width:600px) and (max-width:1180px) and (min-height: 500px) and (orientation: landscape){
   #search{
     height:4vh!important;
+    opacity: 1!important;
   }  
   #menu-search-icon{
     display: none!important;
@@ -1602,7 +1635,7 @@ footer pre{
     padding: 0!important;
     margin: 0 0 2vh 0!important;
   }
-  .view-tiles, .r-view-tile {
+  .view-tiles, .r-view-tile,.s-r-view-tile {
     margin: 3.5vh 0 1vh 0!important;
   }
   #demo{
@@ -1906,16 +1939,19 @@ footer pre{
     color: rgb(161, 201, 182);
   }
   #search {
+    height: 4vh!important;
+    opacity: 1!important;
     top:1vh;
     right:1vw;
-    opacity: 1.0; 
     width: 29vw;
     padding-right: 0.5vw;
     border: none;
-    height: 4vh;
     transition: width ease 0.1s, opacity ease 0.1s;
     -webkit-transition: width ease 0.1s, opacity ease 0.1s;
     -moz-transition: width ease 0.1s, opacity ease 0.1s;
+  }
+  .menu-search-icon{
+    display: none!important;
   }
   #search:hover{
     transition: width 0.5s ease-in-out;
@@ -1969,7 +2005,7 @@ footer pre{
     width: 32vw;
     border-radius: 0.4em;
   }
-  .view-tiles, .r-view-tile {
+  .view-tiles, .r-view-tile,.s-r-view-tile {
     margin: 1.05vh 0 0.5vh 0;
   }
   .info{
@@ -2215,12 +2251,13 @@ footer pre{
     color: rgb(161, 201, 182);
   }
   #search {
+    opacity: 1!important;
+    height: 4vh!important;
     top:1.25vh;
     right:1vw;
     width:30vw;
     padding-right: 0.5vw;
     border: none;
-    height: 4vh;
     opacity: 1.0; 
     transition: width ease 0.1s, opacity ease 0.1s;
     -webkit-transition: width ease 0.1s, opacity ease 0.1s;
@@ -2230,6 +2267,9 @@ footer pre{
     transition: width 0.5s ease-in-out;
     width: 30vw;
     color: black;
+  }
+  .menu-search-icon{
+    display: none!important;
   }
   #hidden-navigator-panel #menu{
     margin:0 0 4.5vh 0;
@@ -2302,7 +2342,7 @@ footer pre{
     width:58%;
     font-size: 1.4vh;
   }
-  .view-tiles, .r-view-tile {
+  .view-tiles, .r-view-tile,.s-r-view-tile {
     margin: 1.05vh 0 0.5vh 0;
   }
   .hide{
@@ -2389,9 +2429,11 @@ footer pre{
   .search-icon{
     left: 0.15vh; 
     font-size: 4.5vh;
+    height: 10vh;
   }
   #x-search-menu{
     font-size: 9vh;
+    height: 10vh;
     top: 0vh;
     color: red;
   }
@@ -2417,8 +2459,18 @@ footer pre{
   #moving-word{
     font-size: 2.5vh;
   }
+  #search-div{
+    height: 6vh;
+  }
+  #search-error{
+    font-size: 3.25vh;
+  }
   .menu-bar-icon{
     display: none;
+  }
+  #search-glass{
+    display: block;
+    font-size: 3vh;
   }
   .topnav{
     width: 45vw;
@@ -2565,13 +2617,14 @@ footer pre{
   .panels a p{
     font-size: 0.45em;
   }
-  .view-tiles, .r-view-tile {
+  .view-tiles, .r-view-tile,.s-r-view-tile {
     margin: 3.5vh 0 1vh 0;
   }
   #search{
+    opacity: 1!important;
     height: 5.5vh!important;
     right: 0.5vw;
-    font-size: 4vh;
+    font-size: 3vh;
   }
   #insert{
     width: 8.5vh;
@@ -2582,14 +2635,14 @@ footer pre{
   #user-image{
     width: 8.5vh;
     height: 5.5vh;
-    border-radius: 10%;
+    border-radius: 7.5%;
     display: block;
   }
   .menu-search-icon{
     display: none;
   }
   h3{
-    font-size: 0.85em;
+    font-size: 1.25em;
     word-spacing: 0.1em;
     margin-top: 0.5em;
     margin-left: 0.5em;
@@ -2599,7 +2652,7 @@ footer pre{
   }
   h3::after{
     display: block;
-    top: 4.35vh;
+    top: 6vh;
     height: .25vh;
     border-radius: .125vh;
   }
@@ -2944,9 +2997,10 @@ footer pre{
     z-index: 10;
   }
   #search {
+    top: 5.2vh;
     right:0vw;
     margin:0.15vw 0vw 1vw 1vw;
-    font-size: 2.25vh;
+    font-size: 2vh;
     border-radius: 0 0 0 0;
     text-align: left;
     direction:ltr;
@@ -2957,11 +3011,11 @@ footer pre{
     opacity: 1;
     height: 4vh;
   }
+  #search-glass{
+    display: none;
+  }
   #search:hover{
     width: 100vw;
-  }
-  .search-icon{
-    font-size: 1.75vh;
   }
   #hidden-navigator-panel #menu{
     margin:0 0 4.5vh 0;
@@ -3040,12 +3094,13 @@ footer pre{
     box-shadow: none;
   }
   .search-icon{
-    top: 1.8vh;
+    height: 5.75vh;
     left: 0.05vh; 
     font-size: 2.25vh;
   }
   #x-search-menu{
     font-size: 5vh;
+    height: 5.75vh;
     top: 0vh;
     color: red;
   }
@@ -3100,7 +3155,7 @@ footer pre{
     font-size: 0.6em;
   }
   h3{
-    font-size: 0.9em;
+    font-size: 1.2em;
     word-spacing: 0.1em;
     margin-top: 0.5em;
     margin-bottom: 1.05em;
@@ -3109,7 +3164,7 @@ footer pre{
   h3::after{
     display: none;
   }
-  .view-tiles, .r-view-tile {
+  .view-tiles, .r-view-tile,.s-r-view-tile {
     margin: 1.25em 0 0.5em 0;
   }
   #content-box{

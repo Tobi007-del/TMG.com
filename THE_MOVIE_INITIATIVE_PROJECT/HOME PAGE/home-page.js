@@ -83,7 +83,6 @@ document.addEventListener('scroll',()=>{
     menuSearchIcon.style.display = "none";
     searchBar.style.height = "4vh";
     searchBar.style.opacity = "1";
-
   } else{
     menuSearchIcon.style.display = "none";
     searchBar.style.height = "4vh";
@@ -306,7 +305,7 @@ document.getElementById("insert").addEventListener('change', (evt) => {
 
 
 function lightMode() {
-    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,.topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right");
+    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,.topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right,.view-tiles,.r-view-tile,.s-r-view-tile");
     if(lighter === 1){
       lighter = 0;
       localStorage.lighter = lighter;
@@ -730,7 +729,10 @@ function cancelMenuFunction() {
     document.getElementById("top-content").style.opacity="1";
     document.getElementById("content-box").style.opacity="1";
 }
-
+var afters = document.querySelectorAll(".view-tiles,.r-view-tile");
+afters.forEach(after=>{
+    after.classList.add("line");
+})
 function Category(genre, genrename, nav) {
     document.getElementById("moving-container").classList.remove("about");
     document.getElementById("top-content").classList.remove("about");
@@ -744,6 +746,9 @@ function Category(genre, genrename, nav) {
     document.getElementById("about-site").style.display="none";
     document.getElementById("moving-pictures").style.display="flex";
     if (genre === "home" || genrename === "home"){
+    afters.forEach(after=>{
+    after.classList.add("line");
+    })
     document.getElementById("moving-pictures").classList.remove("about");
     var navName = document.getElementsByClassName("navigate");
     for (var y= 0; y < navName.length; y++){
@@ -787,6 +792,9 @@ function Category(genre, genrename, nav) {
         typeName.style.display = "block";
     }
     } else{ 
+    afters.forEach(after=>{
+    after.classList.remove("line");
+    })
     noMovingPicture(t);
     document.getElementById("content-box").classList.add("about");
     var category = document.querySelectorAll(".view-panes");
@@ -812,7 +820,7 @@ function Category(genre, genrename, nav) {
             document.getElementById(nav).style.fontWeight = "bold";
             document.getElementById(nav).classList.add('active');
             document.getElementById("home-nav").classList.remove('active');
-            document.getElementById("home-nav").style.fontWeight = "lighter";
+            document.getElementById("home-nav").style.fontWeight = "light";
         }
     }  else {
         var navName = document.getElementsByClassName("navigate");
@@ -822,7 +830,7 @@ function Category(genre, genrename, nav) {
             navNam.classList.remove('active');
             navNam.classList.remove('active');
             document.getElementById("home-nav").classList.remove('active');
-            document.getElementById("home-nav").style.fontWeight = "lighter";
+            document.getElementById("home-nav").style.fontWeight = "light";
         }
     }
     if (genrename === "about"){
