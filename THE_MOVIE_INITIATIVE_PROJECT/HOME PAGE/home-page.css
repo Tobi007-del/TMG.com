@@ -572,7 +572,7 @@ footer pre.light{
 #moving-container{
   position: absolute;
   width: 100%;
-  top: 3.75vh;
+  top: 4.25vh;
   overflow: hidden;
   text-align: left;
   z-index: 1;
@@ -1048,7 +1048,7 @@ footer pre.light{
   text-indent: 1vw;
   border: none;
   outline: none; 
-  transition: all 1s ease;
+  transition: width .5s ease;
   background: linear-gradient(to right,darkslategray,darkslategray,darkslategray,slategray,darkslategray,darkslategray);
 }
 #search::placeholder{

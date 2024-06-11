@@ -41,7 +41,7 @@ setTimeout(()=>{
 window.onloadstart = preloader();
 
 document.onreadystatechange = () => {
-if(document.readyState === "complete"){
+if(document.readyState === "interactive"){
     loadingPage.style.display = "none";
     document.getElementById("body").style.display = "block";
     GardenerNameFunction();
