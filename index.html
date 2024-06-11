@@ -118,7 +118,10 @@
     <div><svg class="left-arrow" id="left-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></div>
     <div><svg class="right-arrow" id="right-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></div>
   </div>
-    <input id="search" placeholder="Search" type="text" onclick="revealSearchMenu()" autocomplete="off" readonly/>
+  <!-- <div id="search-div"> -->
+    <input type="text"  placeholder="Search for a movie title" id="search" onclick="revealSearchMenu()" autocomplete="off" readonly>
+    <!-- <i id="search-glass" class="fa-solid fa-magnifying-glass attention"></i> -->
+  <!-- </div> -->
 </div>
 </div>
 <div id="moving-pictures"> 
@@ -1138,10 +1141,8 @@
 
 
 <div class="r-view-tile" id="r-viewtile">
-  <h3 class = "pane-title" id="recently-added">RECENTLY ADDED</h3>
+  <h3 class = "pane-title" id="recently-added" data-title="Recently Added" onclick="Category('recently-addeds','recently-added')">Recently Added:</h3>
   <div id="recently-addeds" title="RECENTLY ADDED" class="r-view-pane view-panes">
-
- 
   <div class="r-panels">
     <div class="r-panel" id="madame-web-r-panel">
       <img alt="TMG-image" src="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/Madame Web/madame-web.jpeg">
@@ -2218,7 +2219,7 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="action">ACTION</h3>
+  <h3 class = "pane-title" id="action" data-title="Action:" onclick="Category('actions','action')">Action:</h3>
   <div id="actions" title="ACTION" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/CARTOONS/Batman Bad Blood/batman-bad-blood.html">
@@ -2361,7 +2362,7 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="adventure">ADVENTURE</h3>
+  <h3 class = "pane-title" id="adventure" data-title="Adventure;" onclick="Category('adventures','adventure')">Adventure:</h3>
   <div id="adventures" title="ADVENTURE" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/CARTOONS/Coco/coco.html">
@@ -2450,7 +2451,7 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="comedy">COMEDY</h3>
+  <h3 class = "pane-title" id="comedy" data-title="Comedy:" onclick="Category('comedies','comedy')">Comedy:</h3>
   <div id="comedies" title="COMEDY" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/The Underdoggs/the-underdoggs.html">
@@ -2557,7 +2558,7 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="family">FAMILY</h3>
+  <h3 class = "pane-title" id="family" data-title="Family:" onclick="Category('families','family')">Family:</h3>
   <div id="families" title="FAMILY" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/Homeless for the Holidays/homeless-for-the-holidays.html">
@@ -2670,7 +2671,7 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="nollywood">NOLLYWOOD</h3>
+  <h3 class = "pane-title" id="nollywood" data-title="Nollywood:" onclick="Category('nollywoods','nollywood')">Nollywood:</h3>
    <div id="nollywoods" title="NOLLY WOOD" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/A Tribe Called Judah/a-tribe-called-judah.html">
@@ -2735,7 +2736,7 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="fantasy">FANTASY</h3>  
+  <h3 class = "pane-title" id="fantasy" data-title="Fantasy:" onclick="Category('fantasies','fantasy')">Fantasy:</h3>  
   <div id="fantasies" title="FANTASY" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/ANIME/Avatar Legend of Korra/avatar-legend-of-korra.html">
@@ -3038,8 +3039,8 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="gore">GORE</h3>
-  <div id="gores" title="GORE" class="view-panes">
+  <h3 class = "pane-title" id="gore" data-title="Gore" onclick="Category('gores','gore')">Gore:</h3>
+  <div id="gores" title="GORE" class="view-panes" data-title="GORE">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/ANIME/Attack on Titans/attack-on-titans.html">
        <img alt="TMG-image" src="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/ANIME/Attack on Titans/attack-on-titan.jpeg">
@@ -3109,8 +3110,8 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="horror">HORROR</h3>
-  <div id="horrors" title="HORROR" class="view-panes">
+  <h3 class = "pane-title" id="horror" data-title="Horror" onclick="Category('horrors','horror')">Horror:</h3>
+  <div id="horrors" title="HORROR" class="view-panes" data-title="HORROR">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/A Quiet Place/a-quiet-place.html">
         <img alt="TMG-image" src="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/A Quiet Place/a-quiet-place.jpeg">
@@ -3191,7 +3192,7 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="musical">MUSICAL</h3>
+  <h3 class = "pane-title" id="musical" data-title="Musical:" onclick="Category('musicals','musical')">Musical:</h3>
   <div id="musicals" title="MUSICAL" class="view-panes">
     <div class="panels">   
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/CARTOONS/Sing/sing.html">
@@ -3255,7 +3256,7 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="romance">ROMANCE</h3>
+  <h3 class = "pane-title" id="romance" data-title="Romance:" onclick="Category('romances','romance')">Romance:</h3>
   <div id="romances" title="ROMANCE" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/After/after.html">
@@ -3349,7 +3350,7 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="sci-fi">SCI-FI</h3>
+  <h3 class = "pane-title" id="sci-fi" data-title="Sci-fi:" onclick="Category('sci-fis','sci-fi')">Sci-fi:</h3>
   <div id="sci-fis" title="SCI-FI" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/The Darkest Minds/the-darkest-minds.html">
@@ -3498,7 +3499,7 @@
 
 
 <div class="view-tiles">
-  <h3 class = "pane-title" id="thriller">THRILLER</h3>
+  <h3 class = "pane-title" id="thriller" data-title="Thriller:" onclick="Category('thrillers','thriller')">Thriller:</h3>
   <div id="thrillers" title="THRILLER" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/Argylle/argylle.html">
@@ -3660,7 +3661,7 @@
 
 
 <div class="view-tiles" id="series-view-pane">
-  <h3 class = "pane-title" id="series">TV/SERIES</h3>
+  <h3 class = "pane-title" id="series" data-title="TV/SERIES" onclick="Category('serie','series','series-nav')">TV/SERIES</h3>
   <div id="serie" title="TV/SERIES" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SERIES/Bridgerton/bridgerton.html">
@@ -3761,7 +3762,7 @@
 
 
 <div class="view-tiles" id="animes-view-pane">
-  <h3 class = "pane-title" id="anime">ANIME</h3>
+  <h3 class = "pane-title" id="anime" data-title="ANIME" onclick="Category('animes','anime','anime-nav')">ANIME</h3>
   <div id="animes" title="ANIME" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/ANIME/Attack on Titans/attack-on-titans.html">
@@ -3856,7 +3857,7 @@
 
 
 <div class="view-tiles" id="cartoons-view-pane">
-  <h3 class = "pane-title" id="cartoons">CARTOONS</h3>
+  <h3 class = "pane-title" id="cartoons" data-title="CARTOONS" onclick="Category('cartoon','cartoons','cartoons-nav')">CARTOONS</h3>
   <div id="cartoon" title="CARTOONS" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/CARTOONS/Batman and Superman Battle of the SuperSons/batman-and-super-man-battle-of-the-super-sons.html">
@@ -3999,7 +4000,7 @@
 
 
 <div class="view-tiles" id="movies-view-pane">
-  <h3 class = "pane-title" id="movies">MOVIES</h3>
+  <h3 class = "pane-title" id="movies" data-title="MOVIES" onclick="Category('movie','movies','movies-nav')">MOVIES</h3>
   <div id="movie" title="MOVIES" class="view-panes">
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/A Quiet Place/a-quiet-place.html">
@@ -4094,7 +4095,7 @@
     <div class="panels">
       <a href="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/Birds of Prey/birds-of-prey.html">
         <img alt="TMG-image" src="/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/MOVIES/Birds of Prey/birds-of-prey-II.jpeg">
-      <p>Birds of Prey (and the Fantabulous Emmancip...</p>
+      <p>Birds of Prey (and the Fantabulous...</p>
       </a>
     </div>
     <div class="panels">
@@ -4672,7 +4673,7 @@
   <pre id="footer-container">
   <div  class="footer-container">The best collection of movies on the internet.......</div>
   With such thrilling shows that keep you wanting more and makes your leisure time something to look forward to.
-  This site was built with the sole purpose to make a wide variety of movies avaailable to those searching.
+  This site was built with the sole purpose to make a wide variety of movies available to those searching.
 
 
   Sponsored By TCI&reg[Tobi's Certified Industries]&#8482;      &copyCopy Right 2024.
@@ -5616,7 +5617,7 @@
     </figure>
   </div>
   <div class="s-r-view-tile" id="s-r-viewtile">
-    <h3 class = "s-pane-title" id="new-releases">NEW RELEASES</h3>
+    <h3 class = "s-pane-title" id="new-releases" data-title="NEW RELEASES">NEW RELEASES</h3>
     <div id="new-release" title="NEW RELEASES" class="s-r-view-pane">
       <div class="r-panels">
         <div class="r-panel" id="s-road-house-r-panel">
@@ -6090,7 +6091,7 @@
   </div>
   </div>
   <div class="s-r-view-tile" id="s-w-viewtile">
-    <h3 class = "s-pane-title" id="worthy-of-notes">WORTHY OF NOTE</h3>
+    <h3 class = "s-pane-title" id="worthy-of-notes" data-title="#WORTHY OF NOTE">#WORTHY OF NOTE</h3>
     <div id="worthy-of-note" title="WORTHY OF NOTE" class="s-r-view-pane">
     <div class="r-panels">
       <div class="r-panel" id="s-avengers-saga-r-panel">
