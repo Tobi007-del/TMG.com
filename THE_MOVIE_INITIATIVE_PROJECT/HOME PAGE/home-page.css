@@ -242,7 +242,7 @@ h3.light::after{
   color: black!important;
 }
 .search-icon.light{
-  color: black!important;
+  color: var(--light-lighter-brand-color)!important;
 }
 #x-search-menu.light{
   color: red!important;
@@ -545,7 +545,7 @@ footer pre.light{
 }
 @keyframes title{
     0%{opacity: 1;}
-    30%{opacity: 0.1;}
+    25%{opacity: 0.1;}
     70%{opacity: 0.1;}
 }
 #title-container{
@@ -635,7 +635,7 @@ footer pre.light{
   direction: ltr;
 }
 .moving-picture-image-cover-left.light,.moving-picture-image-cover-right.light{
-  background: linear-gradient(#00000000 60%,rgba(236, 236, 236, 0.65));
+  background: linear-gradient(#00000000 65%,rgb(236, 236, 236));
 }
 .moving-picture-image-cover-left.inactive,.moving-picture-image-cover-right.inactive{
   width: 0!important;
@@ -1390,18 +1390,18 @@ footer pre.light{
 }
 .view-tiles, .r-view-tile,.s-r-view-tile {
   display: block;
-  width: 100%;
+  width: 100vw;
   margin: 3.5vh 0 7.5vh 0;
   padding:0;
 }
 .view-tiles.line::after,.r-view-tile.line::after,.s-r-view-tile.line::after{
   content: '';
-  width: 95vw;
+  width: 95%;
   height: 0.25vh;
   margin-top: 2.5vh;
   background-color: var(--lighter-brand-color);
   position: absolute;
-  left: 2.5vw;
+  left: calc(2.5%);
 }
 .view-tiles.light.line::after,.r-view-tile.light.line::after,.s-r-view-tile.light.line::after{
   background-color: var(--light-lighter-brand-color);
@@ -2515,7 +2515,7 @@ footer pre{
     top: 5vh;
   }
   #moving-word{
-    font-size: 2.5vh;
+    font-size: 3.5vh;
   }
   #search-div{
     height: 6vh;
