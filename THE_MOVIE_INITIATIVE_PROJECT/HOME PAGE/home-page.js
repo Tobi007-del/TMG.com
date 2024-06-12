@@ -40,14 +40,13 @@ setTimeout(()=>{
 }
 window.onloadstart = preloader();
 
-document.onreadystatechange = () => {
-if(document.readyState === "interactive"){
+document.addEventListener("DOMContentLoaded", () => {
     loadingPage.style.display = "none";
     document.getElementById("body").style.display = "block";
     GardenerNameFunction();
     intervalManager(true, movingFrame, 35000);
-}
-};
+  });
+
 
 if (!('serviceWorker' in navigator)) {
     // Service Worker isn't supported on this browser, disable or hide UI.
@@ -65,7 +64,7 @@ var allLinks = document.querySelectorAll('.moving-picture-link, .panels a, .sear
 allLinks.forEach((allLink) => {
 allLink.addEventListener('click', (event)=>{
     event.preventDefault();
-    alert("The site is still in developement so no movies are available at the moment, we apologize!!!");
+    alert("The site is still in developement so no movies are available at the moment, we apologize!!! but you can preview some movie trailers at the top of the home page");
 })})
 
 var menuSearchIcon = document.getElementById("menu-search-icon");
@@ -305,7 +304,7 @@ document.getElementById("insert").addEventListener('change', (evt) => {
 
 
 function lightMode() {
-    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,.topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right,.view-tiles,.r-view-tile,.s-r-view-tile");
+    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,.topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right,.view-tiles,.r-view-tile,.s-r-view-tile,.moving-picture-title,.moving-picture-about,.moving-picture-button,.moving-picture-link,.watch-trailer-buttons,.preview-button,.end-preview-button");
     if(lighter === 1){
       lighter = 0;
       localStorage.lighter = lighter;
@@ -753,12 +752,11 @@ function Category(genre, genrename, nav) {
     var navName = document.getElementsByClassName("navigate");
     for (var y= 0; y < navName.length; y++){
         var navNam = navName[y];
-        navNam.style.fontWeight = "lighter";
+        navNam.style.fontWeight = "400";
         navNam.classList.remove('active');
-        document.getElementById("home-nav").style.fontWeight = "bold";
-        document.getElementById("home-nav").classList.add('active');
     }
-    document.getElementById("home-nav").style.fontWeight = "bold";
+    document.getElementById("home-nav").classList.add('active');
+    document.getElementById("home-nav").style.fontWeight = "900";
     document.getElementById("top-content").style.opacity="1";
     document.getElementById("content-box").style.opacity="1";
     document.getElementById("hidden-navigator-panel").style.width="0vw";
@@ -815,22 +813,22 @@ function Category(genre, genrename, nav) {
         var x;
         for (x = 0; x < navName.length; x++){
             var navNom = navName[x];
-            navNom.style.fontWeight = "lighter";
+            navNom.style.fontWeight = "400";
             navNom.classList.remove('active');
-            document.getElementById(nav).style.fontWeight = "bold";
+            document.getElementById(nav).style.fontWeight = "900";
             document.getElementById(nav).classList.add('active');
             document.getElementById("home-nav").classList.remove('active');
-            document.getElementById("home-nav").style.fontWeight = "light";
+            document.getElementById("home-nav").style.fontWeight = "400";
         }
     }  else {
         var navName = document.getElementsByClassName("navigate");
         for (var y= 0; y < navName.length; y++){
             var navNam = navName[y];
-            navNam.style.fontWeight = "lighter";
+            navNam.style.fontWeight = "400";
             navNam.classList.remove('active');
             navNam.classList.remove('active');
             document.getElementById("home-nav").classList.remove('active');
-            document.getElementById("home-nav").style.fontWeight = "light";
+            document.getElementById("home-nav").style.fontWeight = "400";
         }
     }
     if (genrename === "about"){

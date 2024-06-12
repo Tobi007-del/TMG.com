@@ -6,6 +6,9 @@
   --brand-color: #e26e02;
   --lighter-brand-color: #ed8f23;
   --light-lighter-brand-color: gray;
+  --tmg-blue: #0082c6;
+  --tmg-white: rgb(236, 236, 236);
+  --tmg-other-white: rgb(246, 246, 246);
 }
 .white-text{
   color: white;
@@ -22,7 +25,7 @@
   position: fixed;
   top: 0;
   z-index: 100;
-  background:white url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-gray;gif) no-repeat center center; 
+  background:white url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/two-balls-gray.gif) no-repeat center center; 
   background-size: 12vh;
   animation: ball_one 1s infinite ease-in-out;
 }
@@ -167,7 +170,7 @@ body::after{
   color: var(--light-lighter-brand-color)!important;
 }
 #hidden-navigator-panel.light{
-  background-color: rgb(236, 236, 236)!important;
+  background-color: var(--tmg-other-white)!important;
 }
 #hidden-navigator-panel li.light{
   border-bottom: solid 2px rgba(0,0,0,0.5)!important;
@@ -192,7 +195,7 @@ body::after{
   color: red!important;
 }
 #top-box.light{
-  background-color: rgb(246, 246, 246)!important;
+  background-color: var(--tmg-other-white)!important;
 }
 .navigate.light{
   color: black!important;
@@ -212,7 +215,7 @@ body::after{
   background-color: var(--light-lighter-brand-color)!important;
 }
 body.light{
-  background-color: rgb(236, 236, 236)!important;
+  background-color: var(--tmg-white)!important;
 }
 h3.light{
   color: var(--light-lighter-brand-color)!important;
@@ -229,7 +232,7 @@ h3.light::after{
   box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
   -webkit-box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
   -moz-box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.25), inset 0px 0px 2px rgba(0, 0, 0, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.03);
-  background: rgb(246, 246, 246);
+  background: var(--tmg-other-white);
 } 
 #search.light:hover,#my-menu-search.light:hover{
   background: rgb(238, 237, 237);
@@ -318,7 +321,7 @@ h3.light::after{
 }
 #about-site.light div{
   background-image: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/tape-3.png);
-  border: solid 0.5vw rgb(236, 236, 236);
+  border: solid 0.5vw var(--tmg-white);
 }
 #about-site a.light{
   color: black!important;
@@ -351,7 +354,7 @@ footer pre.light{
   top:6.5vh;
   height: .4vh;
   width:100vw;
-  background-color: #0082c6;
+  background-color: var(--tmg-blue);
 }
 #top-content{
   position: relative;
@@ -480,7 +483,7 @@ footer pre.light{
 #home-nav{
   text-decoration: none;
   color: white;
-  font-weight: bold;
+  font-weight: 900;
 }
 .topnav li{
   color: white;
@@ -489,7 +492,7 @@ footer pre.light{
   display: flex;
   height: 6.5vh;
   align-items: center;
-  font-weight: light;
+  font-weight: 400;
 }
 .topnav li.active::after{
   overflow: hidden;
@@ -662,15 +665,15 @@ footer pre.light{
   pointer-events: none;
   z-index: 1;
 }
-.moving-picture-title.trailer:hover{
+.moving-picture-title.trailer:hover,.moving-picture-title.trailer.light:hover{
   background-color:rgba(8, 8, 8, 0.623);
   color: white;
   right: 2.5vh;
   cursor: default;
 }
-.moving-picture-about.trailer:hover{
+.moving-picture-about.trailer:hover,.moving-picture-about.trailer.light:hover{
   background-color:rgba(8, 8, 8, 0.623);
-  color: white;
+  color: var(--tmg-other-white);
   right: 2.5vh;
   cursor: default;
 }
@@ -679,36 +682,47 @@ footer pre.light{
   cursor: pointer;
 }
 .moving-picture-button.trailer:hover .moving-picture-link.trailer{
-  color: white; 
+  color: var(--tmg-other-white); 
+}
+.moving-picture-button.trailer.light:hover .moving-picture-link.trailer.light{
+  color: var(--tmg-white); 
 }
 .moving-picture-title.trailer{
-  background-color: lightvar(--light-lighter-brand-color);
-  color: lightvar(--light-lighter-brand-color);
+  background-color: var(--lighter-brand-color);
+  color: var(--lighter-brand-color);
   text-shadow: none;
   width: 25vw;
   right: -20vw;
   top: 0vh;
-  opacity: 0.2;
   pointer-events: all;
 }
+.moving-picture-title.trailer.light{
+  background-color: var(--light-lighter-brand-color);
+  color: var(--light-lighter-brand-color);
+}
 .moving-picture-about.trailer{
-  background-color: lightvar(--light-lighter-brand-color);
-  color: lightvar(--light-lighter-brand-color);
+  background-color: var(--lighter-brand-color);
+  color: var(--lighter-brand-color);
   right: -40vw;
   top: 25vh;
   height:fit-content;
-  opacity: 0.2;
   pointer-events: all;
   z-index: 1;
+}
+.moving-picture-about.trailer.light{
+  background-color: var(--light-lighter-brand-color);
+  color: var(--light-lighter-brand-color);
 }
 .moving-picture-button.trailer{
   right: -8vh;
   bottom: 10vh;
-  opacity: 0.2;
   z-index: 1;
 }
 .moving-picture-link.trailer{
   color:var(--lighter-brand-color);
+}
+.moving-picture-link.trailer.light{
+  color:var(--light-lighter-brand-color);
 }
 .moving-picture.trailer:hover .moving-picture-title.trailer,
 .moving-picture.trailer:hover .moving-picture-about.trailer,
@@ -718,7 +732,7 @@ footer pre.light{
 .moving-picture-video.trailer:hover .moving-picture-button.trailer,
 .moving-picture.trailer:hover .end-preview-button.trailer,
 .moving-picture.trailer:hover .preview-button.trailer{
-  opacity: 1;
+  opacity: 1!important;
   transition: opacity .25s ease-in-out;
 }
 .moving-picture-button{
@@ -734,6 +748,7 @@ footer pre.light{
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--tmg-other-white);
 }
 .watch-trailer-buttons{
   position: absolute;
@@ -750,7 +765,11 @@ footer pre.light{
   right: 29vh;
   font-size: 2.35vh;
   font-weight: bold;
-  color: white;
+  color: var(--tmg-other-white);
+}
+.moving-picture-button.light,.watch-trailer-buttons.light{
+  background-color: var(--light-lighter-brand-color);
+  color: var(--tmg-white);
 }
 .preview-button,.end-preview-button{
   display: none;
@@ -761,13 +780,17 @@ footer pre.light{
   outline: none;
   border-radius: 1.5vh;
   text-align: center;
-  background-color: var(--brand-color);
+  background-color: var(--lighter-brand-color);
   bottom: 4vh;
   font-size: 2.35vh;
   font-weight: bold;
-  color: black;
-  opacity: 0;
+  color: var(--tmg-other-white);
   z-index: 1;
+  opacity: 0;
+}
+.preview-button.light,.end-preview-button.light{
+  background-color: var(--light-lighter-brand-color);
+  color: var(--tmg-white);
 }
 .preview-button{
   left: 40vh;
@@ -780,7 +803,10 @@ footer pre.light{
   text-decoration: none;
   font-size: 2.35vh;
   font-weight: bold;
-  color: white;
+  color: var(--tmg-other-white);
+}
+.moving-picture-link.light{
+  color: var(--tmg-white);
 }
 .moving-picture-about{
   position: absolute;
@@ -791,24 +817,56 @@ footer pre.light{
   background-color: rgba(8, 8, 8, 0.623);
   bottom: 10vh;
   right: 6vh;
-  color: whitesmoke;
+  color: var(--tmg-other-white);
   pointer-events: none;
 }
 .moving-picture-title,.moving-picture-about,.moving-picture-button,.watch-trailer-buttons{
   opacity: 0;
+  animation: show 10s infinite ease-in-out normal;
+}
+.moving-picture-title.trailer,.moving-picture-about.trailer,.moving-picture-button.trailer,.preview-button,.end-preview-button{
+  animation: showtoo 5s infinite ease-in-out normal;
+}
+@keyframes show{
+  5%{
+    opacity: 0;
+  }
+  60%{
+    opacity: 0.985;
+  }
+  90%{
+    opacity: 0.985;
+  }
+}
+@keyframes showtoo{
+  5%{
+    opacity: 0.2;
+  }
+  60%{
+    opacity: 0.2;
+  }
+  90%{
+    opacity: 0.2;
+  }
 }
 .moving-picture:hover .moving-picture-title,
 .moving-picture:hover .moving-picture-about,
 .moving-picture:hover .moving-picture-button,
 .moving-picture:hover .watch-trailer-buttons{
-  opacity: 1;
-  transition: opacity 2s ease-in-out;
+  opacity: 1!important;
+  transition: opacity 1s ease-in-out;
 }
 .moving-picture-button:hover,.watch-trailer-buttons:hover{
   transition: all 0.75s ease-in-out!important;
   transform: scale(1.1);
   background-color: var(--brand-color);
   cursor: pointer;
+}
+.moving-picture-button.light:hover,.watch-trailer-buttons.light:hover,.preview-button.light:hover,.end-preview-button.light:hover{
+  background-color: rgb(85, 85, 85)
+}
+.moving-picture-title:hover,.moving-picture-about:hover{
+  transition: all 0.5s ease-in-out!important;
 }
 .preview-button:hover,.end-preview-button:hover{
   transition: transform 0.75s ease-in-out!important;
@@ -2757,6 +2815,10 @@ footer pre{
 
 /* for phones and tablets with small screens */
 @media(max-width:500px){
+  .moving-picture-image:nth-child(1){
+    /* background: url(/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/justice-league-b-s.jpeg); */
+    background: red!important;
+  }
   #content-box.about{
     top: 8.5vh;
   }
