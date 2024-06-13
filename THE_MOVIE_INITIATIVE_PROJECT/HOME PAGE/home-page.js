@@ -2,7 +2,7 @@ const UNIQUE_ID = "Tobi-00703181011";
 const UNIQUE_TEXT = "WELCOME CREATOR";
 const UNIQUE_IMAGE_L = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/compman.gif";
 const UNIQUE_IMAGE_D = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/compman_lowres.gif";
-
+var t = 0;
 
 var first = document.getElementById("first-text");
 var second = document.getElementById("second-text");
@@ -325,10 +325,11 @@ document.getElementById("insert").addEventListener('change', (evt) => {
 })
 
 
-
+var light = 0;
 
 function lightMode() {
-    var toggleItems = document.querySelectorAll(".topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right,.view-tiles,.r-view-tile,.s-r-view-tile,.moving-picture-title,.moving-picture-about,.moving-picture-button,.moving-picture-link,.watch-trailer-buttons,.preview-button,.end-preview-button");
+    light ++;
+    var toggleItems = document.querySelectorAll(".topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right,.view-tiles,.r-view-tile,.s-r-view-tile,.moving-picture-title,.moving-picture-about,.moving-picture-button,.moving-picture-link,.watch-trailer-buttons,.preview-button,.end-preview-button,.white-text,#loading-page,#another-two-balls,.preloader-text");
     if(lighter === 1){
       lighter = 0;
       localStorage.lighter = lighter;
@@ -340,7 +341,12 @@ function lightMode() {
     }
     var lightItems = document.getElementsByClassName("light");
     for(var i = 0; i < toggleItems.length; i++){
-     toggleItems[i].classList.toggle("light");
+    if(light === 1){
+     toggleItems[i].classList.add("light");
+    } else{
+        light = 0;
+        toggleItems[i].classList.remove("light");
+    }
      if(lightItems.length >= 1){
         document.getElementById("themes-phrase").innerHTML="Toggle Dark Mode";
      } 

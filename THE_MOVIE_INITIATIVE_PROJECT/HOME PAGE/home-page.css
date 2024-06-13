@@ -11,7 +11,7 @@
   --tmg-other-white: rgb(246, 246, 246);
 }
 .white-text{
-  color: white;
+  color: var(--tmg-white);
 }
 .white-text.light{
   color: var(--light-lighter-brand-color);
@@ -24,26 +24,14 @@
   top: 0;
   background: linear-gradient(to right,slategray,darkslategray,darkslategray,darkslategray,darkslategray,slategray,darkslategray,darkslategray);
   color: var(--brand-color);
-  animation: alt 1s 1.075s infinite ease-in-out normal;
+  animation: alt 1.75s infinite linear normal;
 }
 @keyframes alt {
-  0%{
-    background: linear-gradient(to right,slategray,darkslategray,darkslategray,darkslategray,darkslategray,darkslategray);
+  from{
+    background: linear-gradient(to right,darkslategray,darkslategray,darkslategray,rgba(105, 123, 140, 0.925),darkslategray,darkslategray);
   }
-  20%{
-    background: linear-gradient(to right,darkslategray,slategray,darkslategray,darkslategray,darkslategray,darkslategray); 
-  }
-  40%{
-    background: linear-gradient(to right,darkslategray,darkslategray,slategray,darkslategray,darkslategray,darkslategray);
-  }
-  60%{
-    background: linear-gradient(to right,darkslategray,darkslategray,darkslategray,slategray,darkslategray,darkslategray); 
-  }
-  80%{
-    background: linear-gradient(to right,darkslategray,darkslategray,darkslategray,darkslategray,slategray,darkslategray);
-  }
-  100%{
-    background: linear-gradient(to right,darkslategray,darkslategray,darkslategray,darkslategray,darkslategray,slategray); 
+  to{
+    background: linear-gradient(to right,rgba(112, 128, 144, 0.925),darkslategray,darkslategray,darkslategray,darkslategray,rgba(112, 128, 144, 0.925),darkslategray); 
   }
 }
 .img::after{
