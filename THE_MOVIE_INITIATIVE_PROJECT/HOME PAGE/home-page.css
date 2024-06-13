@@ -24,36 +24,12 @@
   top: 0;
   color: var(--brand-color);
   border: solid 0.05vh #e26e029b;
-  animation: alt 1.75s infinite linear normal;
+  overflow: hidden;
 }
 .img.light{
   border: solid 0.075vh var(--light-lighter-brand-color);
-  animation: white-alt 1.75s infinite linear normal!important;
+  background-color: lightgray;
 }
-@keyframes white-alt {
-  from{
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.45) 60%, rgba(0, 0, 0, 0));
-  }
-  to{
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.1));
-  }
-}
-@keyframes alt {
-  from{
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.45) 20%, rgba(255, 255, 255, 0.45) 60%, rgba(255, 255, 255, 0));
-  }
-  to{
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0.1));
-  }
-}
-/* @keyframes alt {
-  from{
-    background: linear-gradient(to right,darkslategray,darkslategray,darkslategray,rgba(105, 123, 140, 0.925),darkslategray,darkslategray);
-  }
-  to{
-    background: linear-gradient(to right,rgba(112, 128, 144, 0.925),darkslategray,darkslategray,darkslategray,darkslategray,rgba(112, 128, 144, 0.925),darkslategray); 
-  }
-} */
 .img::after{
   content: attr(data-alt);
   width: 100%;
@@ -64,6 +40,27 @@
   text-align: center;
   position: relative;
   top: 0;
+}
+.img::before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0));
+  animation: load 1s infinite;
+}
+@keyframes load {
+  100% {
+    transform: translateX(100%);
+  }
+}
+@media(min-width: 1180px){
+  .img{
+    border-radius: 0!important;
+  }
 }
 #loading-page.light{
   display: flex;
@@ -222,14 +219,14 @@ body::after{
   border-bottom: solid 2px rgba(0,0,0,0.5)!important;
 }
 #hidden-navigator-panel li a.light{
-  color: black!important;
+  color: black;
 }
 #hidden-navigator-panel p a.light{
-  color: black!important;
+  color: black;
 }
 #hidden-navigator-panel p.light{
   font-weight: bold!important;
-  color: black!important;
+  color: black;
 }
 #moving-word.light{
   color: black!important;
@@ -3103,7 +3100,10 @@ footer pre{
     left: 55vw;
   }
   #hidden-navigator-panel li, #hidden-navigator-panel li a{
-    color: rgb(161, 201, 182);
+    color: rgb(161, 201, 182)!important;
+  }
+  #hidden-navigator-panel li.light, #hidden-navigator-panel li.light a{
+    color: rgb(161, 201, 182)!important;
   }
   #navigator{
     height: 3.5vh; 
