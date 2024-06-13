@@ -2,7 +2,7 @@ const UNIQUE_ID = "Tobi-00703181011";
 const UNIQUE_TEXT = "WELCOME CREATOR";
 const UNIQUE_IMAGE_L = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/compman.gif";
 const UNIQUE_IMAGE_D = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/compman_lowres.gif";
-var t = 0;
+
 
 var first = document.getElementById("first-text");
 var second = document.getElementById("second-text");
@@ -11,9 +11,12 @@ var fourth = document.getElementById("fourth-text");
 var fifth = document.getElementById("fifth-text");
 var sixth = document.getElementById("sixth-text");
 var loadingPage = document.getElementById("loading-page");
+var preloaderTextContainer = document.getElementById("preloader-text-container");
 
+
+
+const preloaderTexts = document.querySelectorAll(".preloader-text");
 const preload = () => {
-    const preloaderTexts = document.querySelectorAll(".preloader-text");
     preloaderTexts.forEach((preloaderText)=>{
     preloaderText.style.display = "none";
 })
@@ -24,19 +27,19 @@ function preloader(){
 setTimeout(()=>{
    preload()
    third.style.display = "block";
-},25000);
+},2000);
 setTimeout(()=>{
    preload()
    fourth.style.display = "block";
-},35000);
+},4000);
 setTimeout(()=>{
    preload()
    fifth.style.display = "block";
-},45000);
+},6000);
 setTimeout(()=>{
    preload()
    sixth.style.display = "block";
-},65000);
+},8000);
 }
 window.onloadstart = preloader();
 
@@ -44,8 +47,29 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingPage.style.display = "none";
     document.getElementById("body").style.display = "block";
     GardenerNameFunction();
-    intervalManager(true, movingFrame, 35000);
-  });
+});
+
+
+var images = document.querySelectorAll('.actual-img');
+var imgs = document.querySelectorAll('.img');
+
+var movieTitle;
+images.forEach((img,i) => {
+    movieTitle = img.nextElementSibling.innerHTML; 
+    imgs[i].setAttribute('data-alt', movieTitle);
+})
+
+
+function removeImageAlt(){
+    imgs.forEach(image => {
+        image.style.display = "none";
+    })
+}
+document.onreadystatechange = function(){
+    if(document.readyState === "complete"){
+        removeImageAlt()
+    }
+}
 
 
 if (!('serviceWorker' in navigator)) {
@@ -304,7 +328,7 @@ document.getElementById("insert").addEventListener('change', (evt) => {
 
 
 function lightMode() {
-    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,.topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right,.view-tiles,.r-view-tile,.s-r-view-tile,.moving-picture-title,.moving-picture-about,.moving-picture-button,.moving-picture-link,.watch-trailer-buttons,.preview-button,.end-preview-button");
+    var toggleItems = document.querySelectorAll(".topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right,.view-tiles,.r-view-tile,.s-r-view-tile,.moving-picture-title,.moving-picture-about,.moving-picture-button,.moving-picture-link,.watch-trailer-buttons,.preview-button,.end-preview-button");
     if(lighter === 1){
       lighter = 0;
       localStorage.lighter = lighter;
@@ -382,9 +406,9 @@ function lightExist(){
         lighter = 0;
         lightMode();
     }
-}
-
-window.onloadstart = lightExist();
+    }
+  
+    lightExist();
 
 
 async function registerServiceWorkerForPush(pusherValue) {
@@ -439,7 +463,6 @@ const movingTitles = document.querySelectorAll(".moving-picture-title");
 const movingAbouts = document.querySelectorAll(".moving-picture-about");                                                                                             
 const movingButtons = document.querySelectorAll(".moving-picture-button");
 const movingLinks = document.querySelectorAll(".moving-picture-link");
-const preloaderTextContainer = document.getElementById("preloader-text-container");
 const movingPictureImageCoversLeft = document.getElementsByClassName("moving-picture-image-cover-left");
 const movingPictureImageCoversRight = document.getElementsByClassName("moving-picture-image-cover-right");
 
@@ -545,6 +568,7 @@ function intervalManager(flag, animate, time) {
     }
 }
 
+intervalManager(true, movingFrame, 35000);
 
 function movingFrame() {
     loadingPage.classList.remove('buffering');
