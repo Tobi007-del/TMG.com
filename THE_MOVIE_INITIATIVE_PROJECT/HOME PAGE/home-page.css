@@ -397,10 +397,15 @@ footer pre.light{
   z-index:3;
   position: absolute;
   left:0;
-  top:6.5vh;
   height: .4vh;
   width:100vw;
   background-color: var(--tmg-blue);
+}
+#top-box::after{
+  top:6.5vh;
+}
+#search-menu::after{
+  top:6.95vh;
 }
 #top-content{
   position: relative;
