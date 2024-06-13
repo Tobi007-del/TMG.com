@@ -2871,8 +2871,11 @@ footer pre{
   #content-box.about{
     top: 8.5vh;
   }
-  #top-box::after,#search-menu::after{
+  #top-box::after{
     top: 5vh;
+  }
+  #search-menu::after{
+    top: 5.9vh;
   }
   #menu-search-icon{
     font-size: 2.25vh;
