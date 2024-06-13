@@ -55,13 +55,15 @@ var imgs = document.querySelectorAll('.img');
 
 var movieTitle;
 images.forEach((img,i) => {
+    img.style.opacity = "0";
     movieTitle = img.nextElementSibling.innerHTML; 
     imgs[i].setAttribute('data-alt', movieTitle);
 })
 
 
 function removeImageAlt(){
-    imgs.forEach(image => {
+    imgs.forEach((image,i) => {
+        images[i].style.opacity = "1";
         image.style.display = "none";
     })
 }
@@ -99,7 +101,7 @@ document.addEventListener('scroll',()=>{
   if((window.innerWidth <= 600) && (window.scrollY > 0)){
     searchClickCounter = "0";
     menuSearchIcon.style.display = "block";
-    searchBar.style.transition = ".05s";
+    searchBar.style.transition = ".052s";
     searchBar.style.height = "0";
     searchBar.style.opacity = "0";
   } else if(window.innerWidth <= 600){
@@ -329,7 +331,7 @@ var light = 0;
 
 function lightMode() {
     light ++;
-    var toggleItems = document.querySelectorAll(".topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right,.view-tiles,.r-view-tile,.s-r-view-tile,.moving-picture-title,.moving-picture-about,.moving-picture-button,.moving-picture-link,.watch-trailer-buttons,.preview-button,.end-preview-button,.white-text,#loading-page,#another-two-balls,.preloader-text");
+    var toggleItems = document.querySelectorAll(".topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#search-menu,#Search,.search-icon,#x-search-menu,.search-lines,.search-lines a,.search-footer a,#no-search-result,#no-search-result h2,#no-search-result p,.search-footer,#search-error,.panels a p,#about-site,#about-site a,.footer-text p,.bullet,footer pre,#cancel-menu,.hidden-r-panel,.hidden-r-panel a p,.hidden-r-panel-about-header,.hidden-r-panel-about-text,.hide,.worthy,#toggle-push-ball,#n-toggle,#search,#my-menu-search,#demo,.moving-picture-image-cover-left,.moving-picture-image-cover-right,.view-tiles,.r-view-tile,.s-r-view-tile,.moving-picture-title,.moving-picture-about,.moving-picture-button,.moving-picture-link,.watch-trailer-buttons,.preview-button,.end-preview-button,.white-text,#loading-page,#another-two-balls,.preloader-text,.img");
     if(lighter === 1){
       lighter = 0;
       localStorage.lighter = lighter;
