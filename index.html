@@ -34,6 +34,7 @@
     <p id="fifth-text" class="preloader-text">You can try reloading the page or wait a little longer</p>
     <p id="sixth-text" class="preloader-text">We advise you to check your network connection!</p>
     </div>
+  <div id="skip-wait-btn-wrapper"><button id="skip-wait-btn">Skip the wait</button></div>
   </div>
 
 
@@ -136,7 +137,7 @@
     const UNIQUE_TEXT = "WELCOME CREATOR";
     const UNIQUE_IMAGE_L = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/compman.gif";
     const UNIQUE_IMAGE_D = "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/compman_lowres.gif";
-    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text");
+    var toggleItems = document.querySelectorAll(".white-text,#loading-page,#another-two-balls,.preloader-text,#skip-wait-btn");
     if(lighter === 1){
       lighter = 0;
       localStorage.lighter = lighter;
@@ -183,6 +184,14 @@
     }
   
     window.onloadstart = lightExist();
+    
+    function page(){
+    loadingPage.style.display = "none";
+    document.getElementById("body").style.display = "block";
+    }
+    document.querySelector("#skip-wait-btn").addEventListener('click', ()=>{
+      page();
+    })
   </script>
 <div id="moving-pictures"> 
   <div class="moving-picture"> 

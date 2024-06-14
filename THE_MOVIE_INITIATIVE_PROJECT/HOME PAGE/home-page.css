@@ -2,6 +2,9 @@
 *{
   box-sizing: border-box;
 }
+#body{
+  display: none;
+}
 :root{
   --brand-color: #e26e02;
   --lighter-brand-color: #ed8f23;
@@ -141,6 +144,42 @@
     height: 7vh;
   }
 }
+#skip-wait-btn{
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(.65vw + .65vh);
+  border-radius: calc(.25vw + .25vh);
+  font-weight: bold;
+  color: rgb(226, 226, 226);
+  background-color: var(--lighter-brand-color);
+  transition: transform 1s ease-in-out;
+}
+#skip-wait-btn:hover{
+  cursor: pointer;
+  color: white;
+  background-color: var(--brand-color);
+  transform: scale(1.05);
+}
+#skip-wait-btn.light{
+  background-color: var(--light-lighter-brand-color);
+}
+#skip-wait-btn.light:hover{
+  background-color: rgb(85, 85, 85);
+}
+#skip-wait-btn-wrapper{
+  position: absolute;
+  bottom: 0;
+  padding-right: 5vw;
+  height: 20vh;
+  display: inline-flex;
+  width: 100vw;
+  height: 50vh;
+  align-items: center;
+  justify-content: flex-end;
+}
 #preloader-header{
   position: relative;
   color: var(--brand-color); 
@@ -174,6 +213,9 @@
 #preloader-text-container.buffering{
   display: none;
 }
+#skip-wait-btn.buffering{
+  display: none;
+}
 #first-text{
    display: block;
 }
@@ -200,14 +242,10 @@ body{
   width: 100vw;
   overflow-x: hidden;
   background-color: black;
-  font-family:  "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 button,input,p{
   font-family:  "Lato", sans-serif; 
-}
-body::after{
-  content: "";
-  display: none;
 }
 #demo.light{
   color: var(--light-lighter-brand-color)!important;
@@ -583,7 +621,7 @@ footer pre.light{
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  animation: title 35s infinite ease-in-out both;
+  animation: title 30s infinite ease-in-out both;
 }
 #title.light{
   background: linear-gradient(to right,var(--light-lighter-brand-color),var(--brand-color), var(--light-lighter-brand-color));
@@ -906,7 +944,7 @@ footer pre.light{
 }
 .moving-picture-button:hover,.watch-trailer-buttons:hover{
   transition: all 0.75s ease-in-out!important;
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: var(--brand-color);
   cursor: pointer;
 }
@@ -918,7 +956,7 @@ footer pre.light{
 }
 .preview-button:hover,.end-preview-button:hover{
   transition: transform 0.75s ease-in-out!important;
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: var(--brand-color);
   cursor: pointer;
 }
@@ -1075,7 +1113,7 @@ footer pre.light{
   z-index: 2;
   top: 0.05vw;
   left: 0.105vw;
-  transition: transform 0.25s linear;
+  transition: transform 0.05s linear;
 }
 #toggle-ball,#toggle-push-ball.push{
   transform: translateX(1.595vw);
@@ -1674,6 +1712,7 @@ footer pre{
   #search{
     height:4vh!important;
     opacity: 1!important;
+    display: inline-flex!important;
   }  
   #menu-search-icon{
     display: none!important;
@@ -2189,7 +2228,7 @@ footer pre{
     height:4vh!important;
   }  
   #menu-search-icon{
-    display: none!important;
+    display: block;
   }
   #toggle-container,#n-toggle-container{
     min-height: 3.8vh;
@@ -2272,7 +2311,7 @@ footer pre{
     top: 38.5vh;
   }
   #moving-container{
-    top: 4.2vh;
+    top: 4.725vh;
   }
   #moving-word{
     font-size: 2vh;
@@ -2365,6 +2404,7 @@ footer pre{
   #search {
     top:1.25vh;
     right:1vw;
+    font-size: 1.95vh;
     width:30vw;
     padding-right: 0.5vw;
     border: none;
@@ -2514,7 +2554,7 @@ footer pre{
   }
   .topnav li.active::after{
     content: '';
-    top: 4.35vh;
+    top: 5.5vh!important;
     height: .5vh;
   }
   .topnav li::after{
@@ -2670,6 +2710,7 @@ footer pre{
   }
   #top-box::after,#search-menu::before{
     top: 7.5vh;
+    height: .5vh!important;
   }
    .r-panel {
     height: 10em;
@@ -2737,7 +2778,9 @@ footer pre{
     opacity: 1!important;
     height: 5.5vh!important;
     right: 0.5vw;
-    font-size: 3vh;
+  }
+  #search::placeholder{
+    font-size: 3vh!important;
   }
   #insert{
     width: 8.5vh;
@@ -2874,13 +2917,19 @@ footer pre{
     top: 8.5vh;
   }
   #top-box::after{
-    top: 5vh;
+    top: 5.75vh;
   }
   #search-menu::after{
     top: 5.75vh;
   }
   #menu-search-icon{
-    font-size: 2.25vh;
+    display: flex;
+    height: 5.75vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0.35vh;
+    font-size: 2.45vh;
     color: var(--brand-color);
   }
   #menu-search-icon.attention{
@@ -2892,12 +2941,13 @@ footer pre{
     }
   }
   #demo{
-    font-size: 1.85vh;
+    font-size: 1.95vh;
     text-wrap: nowrap;
-    left: 2vh;
+    position: relative;
+    left: 1.5vh;
   }
   #demo-container{
-    height: 5vh;
+    height: 5.75vh;
     align-content: center;
     right: 0vh;
   }
@@ -2914,7 +2964,7 @@ footer pre{
     height: 4vh;
   }
   #top-box{
-    height: 5vh;
+    height: 5.75vh;
   }
   .topnav li{
     font-size: 2.2vh;
@@ -2970,14 +3020,10 @@ footer pre{
   }
   #home-nav{
     display: none;
-    flex-flow: row-nowrap;
-    position: relative;
-    right: 4vw;
-    top: 0.35vh;
   }
   #tmg{
-    font-size: 3vh;
-    margin: 0.1vh 0 0 0;
+    font-size: 3.5vh;
+    margin: 0.85vh 0 0 0;
     left: -6.5vw;
   }
   #title{
@@ -2996,13 +3042,13 @@ footer pre{
     height: 0.45vh;
   }
   #moving-container{
-    top: 8.25vh;
+    top: 4.95vh;
   }
   #moving-word{
     font-size: 1.5vh;
   }
   #moving-pictures{
-    top: 9vh;
+    top: 5.5vh;
   }
   .moving-picture{
     height: 47.5vh;
@@ -3106,15 +3152,16 @@ footer pre{
     color: rgb(161, 201, 182)!important;
   }
   #navigator{
-    height: 3.5vh; 
+    height: 3.75vh; 
     position: relative;
     min-width: 10vw;
-    top: 0.75vh;
+    top: 1vh;
     left: 0;
     z-index: 10;
   }
   #search {
-    top: 5.2vh;
+    display: none;
+    top: 5.95vh;
     right:0vw;
     margin:0.15vw 0vw 1vw 1vw;
     font-size: 2vh;
@@ -3288,6 +3335,9 @@ footer pre{
     height: 45vh;
   }
   .optional-bar{
+    display: block;
+  }
+  .view-panes::-webkit-scrollbar,.r-view-pane::-webkit-scrollbar,.s-r-view-pane::-webkit-scrollbar{
     display: block;
   }
   }
