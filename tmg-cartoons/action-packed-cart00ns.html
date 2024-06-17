@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Come visit TMG cartoons page to enjoy all the heart touching and exciting cartoons we have available for viewing..."/>
+  <meta name="description" content="action packed cartoons are available at TMG.."/>
   <meta name="robots" content="index,follow">
   <meta name="googlebot" content="index,follow">
   <title>TMG.com</title>
@@ -20,10 +20,21 @@
 
 
 
-<body id="cartoons-page">
+<body id="adventure-filled-cartoons-page">
     <style>
         .actual-img{
             opacity: 0;
+        }
+        #content-box{
+            position: relative;
+            top: 6.5vh;
+        }
+        #movies::after{
+            display: none!important;
+        }
+        #movies::before{
+            display: block!important;
+            transform: scale(1);
         }
     </style>
     <div id="loading-page">
@@ -93,22 +104,12 @@
 </div>
 
 
-  
-<div id="top-content">
+
 <div id="initial">
   <div id="top-box">
     <svg id="navigator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
   </div>
   <div id="top">
-  <div id="title-container"> 
-  <h1 id="title"><strong>THE MOVIE GARDEN</strong></h1>
-  </div>
-  <div class="moving-line"></div>
-  <div class="bottom">
-    <div id="moving-container">
-    <div id="moving-word"><p>Tour the site and make your choice among our exclusive movies and tv shows.</p></div>
-  </div> 
-  </div>
     <ul class="topnav">
       <p id="tmg"><a href = "/TMG.com/index.html"><span class="white-text">T</span>M<span class="white-text">G</span></a></p>
       <li class="nav navigate active" id="home-nav" data-title="Homeeei"><a href = "/TMG.com/index.html"><i class="fa-solid fa-house menu-bar-icon"></i>Home</a></li>
@@ -123,16 +124,12 @@
     <input type="file" id="insert" accept="image/*">
     <img alt="TMG-image" src="/TMG.com/SPARE-PICS/person.png" id="user-image">
   </div>
-  <div id="arrows-container">
-    <div><svg class="left-arrow" id="left-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></div>
-    <div><svg class="right-arrow" id="right-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></div>
-  </div>
   <div id="search-div">
     <i id="search-glass" class="fa-solid fa-magnifying-glass attention"></i>
   </div>
     <input type="text"  placeholder="Search for a movie title" id="search" onclick="revealSearchMenu()" autocomplete="off" readonly>
 </div>
-</div>
+
 <script>
     function lightMode() {
       let toggleItems = document.querySelectorAll("body,.topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#demo,.white-text,#search,#search-glass");
@@ -152,16 +149,14 @@
       window.onloadstart = lightExist();
       
       let navName = document.getElementsByClassName("navigate");
-      let nav = "cartoons-nav";
         let x;
         for (x = 0; x < navName.length; x++){
             let navNom = navName[x];
             navNom.style.fontWeight = "400";
             navNom.classList.remove('active');
-            document.getElementById(nav).style.fontWeight = "900";
-            document.getElementById(nav).classList.add('active');
             document.getElementById("home-nav").classList.remove('active');
             document.getElementById("home-nav").style.fontWeight = "400";
+            document.getElementById("cartoons-nav").classList.add('active');
         }
 
     
@@ -169,7 +164,7 @@
 function GardenerNameFunction(){
 console.log(localStorage.greetGardener);
     if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'undefined'){
-      console.log("Over to you, js file!")
+        console.log("Over to you, js file!")
     }  else {
         document.getElementById("demo").innerHTML = localStorage.greetGardener;
 }
@@ -179,282 +174,17 @@ window.onloadstart = GardenerNameFunction();
 
 
     </script>
-<div id="moving-pictures"> 
-  <div class="moving-picture"> 
-    <video class="moving-picture-video" controls>
-      <source src="/TMG.com/CARTOONS/Kung Fu Panda/KUNG FU PANDA 4 _ New Final Trailer (HD).mp4" type="video/mp4">
-      Your browser does not support html videos.
-    </video>
-    <button class="preview-button">Keep Watching</button>
-    <button class="end-preview-button">End Watch</button>
-    <div style = "background:url('/TMG.com/SPARE-PICS/kung-fu-panda-4.png') no-repeat center top, linear-gradient(to right,slategray,darkslategray,darkslategray,darkslategray,darkslategray,slategray,darkslategray,darkslategray);" class="moving-picture-image"></div>
-    <div class="moving-picture-image-cover-left"></div>
-    <div class="moving-picture-image-cover-right"></div>
-    <h4 class="moving-picture-title">Kung Fu Panda 4</h4>
-    <button class="moving-picture-button">
-      <a class="moving-picture-link" href="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.html">Watch Now</a>
-    </button>
-    <button class="watch-trailer-buttons"><i class="fa-solid fa-play"></i>Play Trailer</button>
-    <p class="moving-picture-about">
-      After Po is tapped to become the Spiritual Leader of the Valley of
-      Peace, he needs to find and train a new Dragon Warrior, while a wicked 
-      sorceress plans to re-summon all the master villians whom Po has vanquished
-      to the spirit realm.
-    </p>
-  </div>
-  <div class="moving-picture"> 
-    <video class="moving-picture-video" controls>
-      <source src="/TMG.com/CARTOONS/Invincible/Invincible - Atom Eve Special Episode Trailer _ Prime Video.mp4" type="video/mp4">
-      Your browser does not support html videos.
-    </video>
-    <button class="preview-button">Keep Watching</button>
-    <button class="end-preview-button">End Watch</button>
-    <div style = "background:url('/TMG.com/SPARE-PICS/invincible_atom_eve-4.jpeg') no-repeat center top, linear-gradient(to right,slategray,darkslategray,darkslategray,darkslategray,darkslategray,slategray,darkslategray,darkslategray);" class="moving-picture-image"></div>
-    <div class="moving-picture-image-cover-left"></div>
-    <div class="moving-picture-image-cover-right"></div>
-    <h4 class="moving-picture-title">Invincible: Atom Eve</h4>
-    <button class="moving-picture-button">
-      <a class="moving-picture-link" href="/TMG.com/CARTOONS/Invincible/invincible.html#video-atom-eve">Watch Now</a>
-    </button>
-    <button class="watch-trailer-buttons"><i class="fa-solid fa-play"></i>Play Trailer</button>
-    <p class="moving-picture-about">
-      In this special prequel episode, Samantha 'Atom Eve' Wilkins discovers 
-      her superpowers as a young girl - and must come to terms with her own
-      sinister origins as she discovers a family she never knew she had.
-    </p>
-  </div>
-  <div class="moving-picture"> 
-    <video class="moving-picture-video" controls>
-      <source src="/TMG.com/CARTOONS/Sing/Sing 2 - Official Trailer [HD] (1).mp4" type="video/mp4">
-      Your browser does not support html videos.
-    </video>
-    <button class="preview-button">Keep Watching</button>
-    <button class="end-preview-button">End Watch</button>
-    <div style = "background:url('/TMG.com/SPARE-PICS/sing-II-b.jpg') no-repeat center top, linear-gradient(to right,slategray,darkslategray,darkslategray,darkslategray,darkslategray,slategray,darkslategray,darkslategray);" class="moving-picture-image"></div>
-    <div class="moving-picture-image-cover-left"></div>
-    <div class="moving-picture-image-cover-right"></div>
-    <h4 class="moving-picture-title">Sing 2</h4>
-    <button class="moving-picture-button">
-      <a class="moving-picture-link" href="/TMG.com/CARTOONS/Sing/sing.html">Watch Now</a>
-    </button>
-    <button class="watch-trailer-buttons"><i class="fa-solid fa-play"></i>Play Trailer</button>
-    <p class="moving-picture-about">
-      Buster Moon and his friends must persuade reclusive rock star
-      Clay Calloway to join them for the opening of a new show.
-    </p>
-  </div>
-  <div class="moving-picture"> 
-    <video class="moving-picture-video" controls>
-      <source src="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/SPIDER-MAN_ ACROSS THE SPIDER-VERSE - Official Trailer (HD).mp4" type="video/mp4">
-      Your browser does not support html videos.
-    </video>
-    <button class="preview-button">Keep Watching</button>
-    <button class="end-preview-button">End Watch</button>
-    <div style = "background:url('/TMG.com/SPARE-PICS/spiderman-across-the-spiderverse-c.jpeg') no-repeat center top, linear-gradient(to right,slategray,darkslategray,darkslategray,darkslategray,darkslategray,slategray,darkslategray,darkslategray);" class="moving-picture-image"></div>
-    <div class="moving-picture-image-cover-left"></div>
-    <div class="moving-picture-image-cover-right"></div>
-    <h4 class="moving-picture-title">Spiderman: Across the Spiderverse</h4>
-    <button class="moving-picture-button">
-      <a class="moving-picture-link" href="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.html">Watch Now</a>
-    </button>
-    <button class="watch-trailer-buttons"><i class="fa-solid fa-play"></i>Play Trailer</button>
-    <p class="moving-picture-about">
-      Miles Morales catapults across the multiverse, where he encounters a team of 
-      Spider-people charged with protecting its very existence. When the heroes clash 
-      on how to handle a new threat, Miles must redefine what it means to be a hero.
-    </p>
-  </div>
 </div>
-</div>
-
-
 
 
 
 
 <div id="content-box">
-  <div id="no-search-party">
-    <div class="r-view-tile" id="r-viewtile">
-      <a class = "pane-links" href ="/TMG.com/tmg-cartoons/recently-added-cart00ns.html"><h3 class = "pane-title" id="recently-added" data-title="Recently added cart00ns">Recently added &nbsp;<strong><em>cart00ns</em></strong>:</h3></a>
-      <div class = "panel-toggler-wrapper">
-        <span class ="panel-toggler">Open all</span>
-      </div>
-        <div id="recently-addeds" title="RECENTLY ADDED CART00NS" class="r-view-pane view-panes">
-        <div class="r-panels">        
-            <div class="r-panel" id="kung-fu-panda-IV-r-panel">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.jpeg">
-              <span class="info" onclick="openPanel('kung-fu-panda-IV-r-panel','kung-fu-panda-IV-hidden-r-panel')">(i)</span>
-              </div>
-              <div class="hidden-r-panel" id="kung-fu-panda-IV-hidden-r-panel">
-                <div class="hidden-r-panel-main">
-                <a href="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.html">
-                  <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.jpeg">
-                <p>Kung Fu Panda 4</p>
-                </a>
-                </div>
-                <div class="hidden-r-panel-about">
-                <p class="hidden-r-panel-about-header">About Movie:</p>
-                <span class="hide" onclick="openPanel('kung-fu-panda-IV-hidden-r-panel','kung-fu-panda-IV-r-panel')">&times;</span>
-                <p class="hidden-r-panel-about-text">
-                  After Po is tapped to become the Spiritual Leader of the Valley of
-                  Peace, he needs to find and train a new Dragon Warrior, while a wicked 
-                  sorceress plans to re-summon all the master villians whom Po has vanquished
-                  to the spirit realm.
-                </p>
-                </div>
-              </div>
-            </div>
-            <div class="r-panels">
-              <div class="r-panel" id="crisis-on-infinite-earths-r-panel">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.jpeg">
-              <span class="info" onclick="openPanel('crisis-on-infinite-earths-r-panel','crisis-on-infinite-earths-hidden-r-panel')">(i)</span>
-              </div>
-              <div class="hidden-r-panel" id="crisis-on-infinite-earths-hidden-r-panel">
-                <div class="hidden-r-panel-main">
-                <a href="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.html">
-                  <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.jpeg">
-                <p>Justice League: Crisis on Infinite Earths</p>
-                </a>
-                </div>
-                <div class="hidden-r-panel-about">
-                <p class="hidden-r-panel-about-header">About Movie:</p>
-                <span class="hide" onclick="openPanel('crisis-on-infinite-earths-hidden-r-panel','crisis-on-infinite-earths-r-panel')">&times;</span>
-                <p class="hidden-r-panel-about-text">
-                  The Anti-Monitor (the Monitor's evil counterpart) is released in the DC
-                  Multiverse and begins to destroy the different Earths that compose it. 
-                  The Monitor attempts to recruit heroes from across the Multiverse, but 
-                  is murdered.
-                </p>
-                </div>
-              </div>
-            </div>
-            <div class="r-panels">
-              <div class="r-panel" id="invincible-atom-eve-r-panel">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible-atom-eve.jpeg">
-              <span class="info" onclick="openPanel('invincible-atom-eve-r-panel','invincible-atom-eve-hidden-r-panel')">(i)</span>
-              </div>
-              <div class="hidden-r-panel" id="invincible-atom-eve-hidden-r-panel">
-                <div class="hidden-r-panel-main">
-                <a href="/TMG.com/CARTOONS/Invincible/invincible.html#video-atom-eve">
-                  <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible-atom-eve.jpeg">
-                <p>Invincible: Atom Eve</p>
-                </a>
-                </div>
-                <div class="hidden-r-panel-about">
-                <p class="hidden-r-panel-about-header">About Movie:</p>
-                <span class="hide" onclick="openPanel('invincible-atom-eve-hidden-r-panel','invincible-atom-eve-r-panel')">&times;</span>
-                <p class="hidden-r-panel-about-text">
-                  In this special prequel episode, Samantha 'Atom Eve' Wilkins discovers 
-                  her superpowers as a young girl - and must come to terms with her own
-                  sinister origins as she discovers a family she never knew she had.
-                </p>
-                </div>
-              </div>
-            </div>
-            <div class="r-panels">
-              <div class="r-panel" id="invincible-r-panel">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible.jpeg">
-              <span class="info" onclick="openPanel('invincible-r-panel','invincible-hidden-r-panel')">(i)</span>
-              </div>
-              <div class="hidden-r-panel" id="invincible-hidden-r-panel">
-                <div class="hidden-r-panel-main">
-                <a href="/TMG.com/CARTOONS/Invincible/invincible.html">
-                  <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible.jpeg">
-                <p>Invincible</p>
-                </a>
-                </div>
-                <div class="hidden-r-panel-about">
-                <p class="hidden-r-panel-about-header">About Movie:</p>
-                <span class="hide" onclick="openPanel('invincible-hidden-r-panel','invincible-r-panel')">&times;</span>
-                <p class="hidden-r-panel-about-text">
-                  An adult animated series based on the Skybound/Image comic about a
-                  teenager whose father is the most powerful superhero on the planet.
-                </p>
-                </div>
-              </div>
-            </div>
-            <div class="r-panels">
-              <div class="r-panel" id="sing-II-r-panel">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Sing/sing-II.jpeg">
-              <span class="info" onclick="openPanel('sing-II-r-panel','sing-II-hidden-r-panel')">(i)</span>
-              </div>
-              <div class="hidden-r-panel" id="sing-II-hidden-r-panel">
-                <div class="hidden-r-panel-main">
-                <a href="/TMG.com/CARTOONS/Sing/sing.html">
-                  <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Sing/sing-II.jpeg">
-                <p>Sing 2</p>
-                </a>
-                </div>
-                <div class="hidden-r-panel-about">
-                <p class="hidden-r-panel-about-header">About Movie:</p>
-                <span class="hide" onclick="openPanel('sing-II-hidden-r-panel','sing-II-r-panel')">&times;</span>
-                <p class="hidden-r-panel-about-text">
-                  Buster Moon and his friends must persuade reclusive rock star
-                  Clay Calloway to join them for the opening of a new show.
-                </p>
-                </div>
-              </div>
-            </div>
-            <div class="r-panels">
-              <div class="r-panel" id="mega-mind-II-r-panel">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Megamind/mega-mind-vs-doom-syndicate.jpeg">
-              <span class="info" onclick="openPanel('mega-mind-II-r-panel','mega-mind-II-hidden-r-panel')">(i)</span>
-              </div>
-              <div class="hidden-r-panel" id="mega-mind-II-hidden-r-panel">
-                <div class="hidden-r-panel-main">
-                <a href="/TMG.com/CARTOONS/Megamind/megamind.html">
-                  <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Megamind/mega-mind-vs-doom-syndicate.jpeg">
-                <p>Mega Mind Vs. The Doom Syndicate</p>
-                </a>
-                </div>
-                <div class="hidden-r-panel-about">
-                <p class="hidden-r-panel-about-header">About Movie:</p>
-                <span class="hide" onclick="openPanel('mega-mind-II-hidden-r-panel','mega-mind-II-r-panel')">&times;</span>
-                <p class="hidden-r-panel-about-text">
-                  Megamind's former villian team, The Doom Syndicate, has returned. 
-                  Our newly crowned hero must now keep up evil appearances until he 
-                  can assemble his friends to stop his former evil teammates from 
-                  launching Metro City to the Moon.
-                </p>
-                </div>
-              </div>
-            </div>
-            <div class="r-panels">
-              <div class="r-panel" id="spiderman-across-the-spider-verse-r-panel">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.jpeg">
-              <span class="info" onclick="openPanel('spiderman-across-the-spider-verse-r-panel','spiderman-across-the-spider-verse-hidden-r-panel')">(i)</span>
-              </div>
-              <div class="hidden-r-panel" id="spiderman-across-the-spider-verse-hidden-r-panel">
-                <div class="hidden-r-panel-main">
-                <a href="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.html">
-                  <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.jpeg">
-                <p>Spiderman: Across the Spiderverse</p>
-                </a>
-                </div>
-                <div class="hidden-r-panel-about">
-                <p class="hidden-r-panel-about-header">About Movie:</p>
-                <span class="hide" onclick="openPanel('spiderman-across-the-spider-verse-hidden-r-panel','spiderman-across-the-spider-verse-r-panel')">&times;</span>
-                <p class="hidden-r-panel-about-text">
-                  Miles Morales catapults across the multiverse, where he encounters a team of 
-                  Spider-people charged with protecting its very existence. When the heroes clash 
-                  on how to handle a new threat, Miles must redefine what it means to be a hero.
-                </p>
-                </div>
-              </div>
-            </div>
-        </div>
-      
-      
-      </div>
-      
-      
-      
-      
-      
-      
-      <div class="view-tiles">
-        <a class = "pane-links" href ="/TMG.com/tmg-cartoons/action-packed-cart00ns.html"><h3 class = "pane-title" id="action" data-title="Action packed cart00ns">Action packed &nbsp;<strong><em>cart00ns</em></strong>:</h3></a>
-        <div id="actions" title="ACTION PACKED CART00NS" class="view-panes">
+
+
+    <div class="view-tiles">
+        <h3 class = "pane-title" id="movies" data-title="Action packed cart00ns">Action packed &nbsp;<strong><em>cart00ns</em></strong>:</h3>
+        <div id="movie" title="ACTION PACKED CART00NS" class="view-panes">
         <div class="panels">
             <a href="/TMG.com/CARTOONS/Batman and Superman Battle of the SuperSons/batman-and-super-man-battle-of-the-super-sons.html">
               <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Batman and Superman Battle of the SuperSons/batman-and-superman-battle-of-the-supersons.jpeg">
@@ -532,563 +262,8 @@ window.onloadstart = GardenerNameFunction();
       
       
       
-      
-      
-      
-      <div class="view-tiles">
-        <a class = "pane-links" href ="/TMG.com/tmg-cartoons/adventure-filled-cart00ns.html"><h3 class = "pane-title" id="adventure" data-title="Adventure filled cart00ns">Adventure filled &nbsp;<strong><em>cart00ns</em></strong>:</h3></a>
-        <div id="adventures" title="ADVENTURE FILLED CART00NS" class="view-panes">
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Coco/coco.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Coco/coco.jpeg">
-            <p>Coco</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Ferdinand/ferdinand.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Ferdinand/ferdinand.jpeg">
-            <p>Ferdinand</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/How to train your dragon/how-to-train-your-dragon.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/How to train your dragon/how-to-train-your-dragon.jpeg">
-            <p>How to train your dragon</p>
-            </a>
-          </div>
-          <div class="panels">   
-            <a href="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.jpeg">
-            <p>Kung Fu Panda 4</p>
-            </a>  
-          </div>
-          <div class="panels">   
-            <a href="/TMG.com/CARTOONS/Sing/sing.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Sing/sing-II.jpeg">
-            <p>Sing 2</p>
-            </a>  
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Soul/soul.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Soul/soul.jpeg">
-              <p>Soul</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Boss Baby/the-boss-baby.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Boss Baby/the-boss-baby-family-business.jpeg">
-              <p>Boss Baby: Family Business</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Croods/the-croods.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Croods/the-croods-a-new-age.jpg">
-              <p>The Croods: A New Age</p>
-            </a>
-          </div>  
-        </div>
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <div class="view-tiles">
-        <a class = "pane-links" href ="/TMG.com/tmg-cartoons/funny-cart00ns.html"><h3 class = "pane-title" id="comedy" data-title="Funny cart00ns">Funny &nbsp;<strong><em>cart00ns</em></strong>:</h3></a>
-        <div id="comedies" title="FUNNY CART00NS" class="view-panes">
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Coco/coco.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Coco/coco.jpeg">
-            <p>Coco</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Ferdinand/ferdinand.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Ferdinand/ferdinand.jpeg">
-            <p>Ferdinand</p>
-            </a>
-          </div>
-          <div class="panels">   
-            <a href="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.jpeg">
-            <p>Kung Fu Panda 4</p>
-            </a>  
-          </div>
-          <div class="panels">   
-            <a href="/TMG.com/CARTOONS/Sing/sing.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Sing/sing-II.jpeg">
-            <p>Sing 2</p>
-            </a>  
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Megamind/megamind.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Megamind/mega-mind-vs-doom-syndicate.jpeg">
-            <p>Mega Mind Vs Doom Syndicate</p>
-            </a>  
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Soul/soul.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Soul/soul.jpeg">
-              <p>Soul</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Addams Family/the-addams-family.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Addams Family/the-addams-family.jpeg">
-              <p>The Addams Family</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Addams Family/the-addams-family.html#video-II">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Addams Family/the-addams-family-II.jpeg">
-              <p>The Addams Family 2</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Boss Baby/the-boss-baby.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Boss Baby/the-boss-baby-family-business.jpeg">
-              <p>Boss Baby: Family Business</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Croods/the-croods.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Croods/the-croods-a-new-age.jpg">
-              <p>The Croods: A New Age</p>
-            </a>
-          </div>  
-        </div>
-      </div>
-      
-      
-      
-      
-      
-      
-      <div class="view-tiles">
-        <a class = "pane-links" href ="/TMG.com/tmg-cartoons/cart00ns-for-the-whole-family.html"><h3 class = "pane-title" id="family" data-title="Cart00ns for the whole family"><strong><em>Cart00ns</em></strong>&nbsp; for the whole family:</h3></a>
-        <div id="families" title="CARTOONS FOR THE WHOLE FAMILY" class="view-panes">
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.jpeg">
-              <p>Spiderman: Across the Spiderverse</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Batman Bad Blood/batman-bad-blood.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Batman Bad Blood/batman-bad-blood.jpeg">
-            <p>Batman: Bad Blood</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Coco/coco.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Coco/coco.jpeg">
-            <p>Coco</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/How to train your dragon/how-to-train-your-dragon.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/How to train your dragon/how-to-train-your-dragon.jpeg">
-            <p>How to train your dragon</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Invincible/invincible.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible.jpeg">
-            <p>Invincible</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Invincible/invincible.html#video-atom-eve">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible-atom-eve.jpeg">
-            <p>Invincible: Atom Eve</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Vs Teen Titans/justice-league-vs-teen-titans.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Vs Teen Titans/justice-league-vs-teen-titans.jpeg">
-            <p>Justice league vs Teen titans</p>
-            </a>
-          </div>
-          <div class="panels">   
-            <a href="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.jpeg">
-            <p>Kung Fu Panda 4</p>
-            </a>  
-          </div>
-          <div class="panels">   
-            <a href="/TMG.com/CARTOONS/Sing/sing.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Sing/sing-II.jpeg">
-            <p>Sing 2</p>
-            </a>  
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Soul/soul.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Soul/soul.jpeg">
-              <p>Soul</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Death and Return of Superman/the-death-and-return-of-superman.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Death and Return of Superman/the-death-and-return-of-superman.jpeg">
-              <p>The Death and return of superman</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Young Justice/young-justice.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Young Justice/young-justice.jpeg">
-              <p>Young Justice</p>
-            </a>
-          </div>         
-        </div>
-      </div>
-      
-      
-      
-      
-      
 
-      <div class="view-tiles">
-        <a class = "pane-links" href ="/TMG.com/tmg-cartoons/gory-cart00ns.html"><h3 class = "pane-title" id="gore" data-title="Gory cart00ns">Gory &nbsp;<strong><em>cart00ns</em></strong>:</h3></a>
-        <div id="gores" title="GORY CARTOONS" class="view-panes">
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Invincible/invincible.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible.jpeg">
-            <p>Invincible</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Invincible/invincible.html#video-atom-eve">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible-atom-eve.jpeg">
-            <p>Invincible: Atom Eve</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.jpeg">
-            <p>Justice League: Crisis on Infinite Earths</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Gods and Monsters/justice-league-gods-and-monsters.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Gods and Monsters/justice-league-gods-and-monsters.jpeg">
-            <p>Justice League: Gods and Monsters</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Vs Teen Titans/justice-league-vs-teen-titans.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Vs Teen Titans/justice-league-vs-teen-titans.jpeg">
-            <p>Justice league vs Teen titans</p>
-            </a>
-          </div>
-        </div>
-      </div> 
-      
-      
-      
-      
-      
-      
-      <div class="view-tiles">
-        <a class = "pane-links" href ="/TMG.com/tmg-cartoons/dark-cart00ns.html"><h3 class = "pane-title" id="horror" data-title="Dark Cart00ns">Dark &nbsp;<strong><em>cart00ns</em></strong>:</h3></a>
-        <div id="horrors" title="DARK CART00NS" class="view-panes">
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Addams Family/the-addams-family.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Addams Family/the-addams-family.jpeg">
-              <p>The Addams Family</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Addams Family/the-addams-family.html#video-II">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Addams Family/the-addams-family-II.jpeg">
-              <p>The Addams Family 2</p>
-            </a>
-          </div>            
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Batman Bad Blood/batman-bad-blood.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Batman Bad Blood/batman-bad-blood.jpeg">
-            <p>Batman: Bad Blood</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Batman Vs Robin/batman-vs-robin.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Batman Vs Robin/batman-vs-robin.jpeg">
-            <p>Batman Vs Robin</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Invincible/invincible.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible.jpeg">
-            <p>Invincible</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.jpeg">
-            <p>Justice League: Crisis on Infinite Earths</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Gods and Monsters/justice-league-gods-and-monsters.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Gods and Monsters/justice-league-gods-and-monsters.jpeg">
-            <p>Justice League: Gods and Monsters</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Vs Teen Titans/justice-league-vs-teen-titans.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Vs Teen Titans/justice-league-vs-teen-titans.jpeg">
-            <p>Justice league vs Teen titans</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Young Justice/young-justice.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Young Justice/young-justice.jpeg">
-              <p>Young Justice</p>
-            </a>
-          </div>   
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Invincible/invincible.html#video-atom-eve">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible-atom-eve.jpeg">
-            <p>Invincible: Atom Eve</p>
-            </a>
-          </div>     
-        </div>
-      </div>
-      
-      
-      
-      
-      
-      
-      <div class="view-tiles">
-        <a class = "pane-links" href ="/TMG.com/tmg-cartoons/thrilling-cart00ns.html"><h3 class = "pane-title" id="thriller" data-title="Thrilling cart00ns">Thrilling &nbsp;<strong><em>cart00ns</em></strong>:</h3></a>
-        <div id="thrillers" title="THRILLING CART00NS" class="view-panes">
-        <div class="panels">
-            <a href="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.jpeg">
-              <p>Spiderman: Across the Spiderverse</p>
-            </a>
-        </div>        
-        <div class="panels">
-            <a href="/TMG.com/CARTOONS/Batman and Superman Battle of the SuperSons/batman-and-super-man-battle-of-the-super-sons.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Batman and Superman Battle of the SuperSons/batman-and-superman-battle-of-the-supersons.jpeg">
-            <p>Batman and Superman: Battle of the super sons</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Batman Vs Robin/batman-vs-robin.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Batman Vs Robin/batman-vs-robin.jpeg">
-            <p>Batman Vs Robin</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/How to train your dragon/how-to-train-your-dragon.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/How to train your dragon/how-to-train-your-dragon.jpeg">
-            <p>How to train your dragon</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Invincible/invincible.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible.jpeg">
-            <p>Invincible</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.jpeg">
-            <p>Justice League: Crisis on Infinite Earths</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Vs Teen Titans/justice-league-vs-teen-titans.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Vs Teen Titans/justice-league-vs-teen-titans.jpeg">
-            <p>Justice league vs Teen titans</p>
-            </a>
-          </div>
-          <div class="panels">   
-            <a href="/TMG.com/CARTOONS/Sing/sing.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Sing/sing-II.jpeg">
-            <p>Sing 2</p>
-            </a>  
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Megamind/megamind.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Megamind/mega-mind-vs-doom-syndicate.jpeg">
-            <p>Mega Mind Vs Doom Syndicate</p>
-            </a>  
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Boss Baby/the-boss-baby.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Boss Baby/the-boss-baby-family-business.jpeg">
-              <p>Boss Baby: Family Business</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Death and Return of Superman/the-death-and-return-of-superman.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Death and Return of Superman/the-death-and-return-of-superman.jpeg">
-              <p>The Death and return of superman</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Young Justice/young-justice.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Young Justice/young-justice.jpeg">
-              <p>Young Justice</p>
-            </a>
-          </div>         
-        </div>
-      </div>
-      
-    </div>
-
-
-  <div id="search-party">
-
-
-  <div class="view-tiles" id="movies-view-pane">
-    <a class = "pane-links" href ="/TMG.com/tmg-cartoons/available-cart00ns.html"><h3 class = "pane-title" id="cartoons" data-title="Available cartoons">Avialable &nbsp;<strong><em>cart00ns</em></strong>:</h3></a>
-    <div id="cartoon" title="AVAILABLE CARTOONS" class="view-panes">
-        <div class="panels">
-            <a href="/TMG.com/CARTOONS/Batman and Superman Battle of the SuperSons/batman-and-super-man-battle-of-the-super-sons.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Batman and Superman Battle of the SuperSons/batman-and-superman-battle-of-the-supersons.jpeg">
-            <p>Batman and Superman: Battle of the super sons</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Batman Bad Blood/batman-bad-blood.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Batman Bad Blood/batman-bad-blood.jpeg">
-            <p>Batman: Bad Blood</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Batman Vs Robin/batman-vs-robin.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Batman Vs Robin/batman-vs-robin.jpeg">
-            <p>Batman Vs Robin</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Coco/coco.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Coco/coco.jpeg">
-            <p>Coco</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Ferdinand/ferdinand.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Ferdinand/ferdinand.jpeg">
-            <p>Ferdinand</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/How to train your dragon/how-to-train-your-dragon.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/How to train your dragon/how-to-train-your-dragon.jpeg">
-            <p>How to train your dragon</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Invincible/invincible.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible.jpeg">
-            <p>Invincible</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Invincible/invincible.html#video-atom-eve">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Invincible/invincible-atom-eve.jpeg">
-            <p>Invincible: Atom Eve</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.jpeg">
-            <p>Justice League: Crisis on Infinite Earths</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Gods and Monsters/justice-league-gods-and-monsters.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Gods and Monsters/justice-league-gods-and-monsters.jpeg">
-            <p>Justice League: Gods and Monsters</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Justice League Vs Teen Titans/justice-league-vs-teen-titans.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Vs Teen Titans/justice-league-vs-teen-titans.jpeg">
-            <p>Justice league vs Teen titans</p>
-            </a>
-          </div>
-          <div class="panels">   
-            <a href="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.jpeg">
-            <p>Kung Fu Panda 4</p>
-            </a>  
-          </div>
-          <div class="panels">   
-            <a href="/TMG.com/CARTOONS/Sing/sing.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Sing/sing-II.jpeg">
-            <p>Sing 2</p>
-            </a>  
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Megamind/megamind.html">
-            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Megamind/mega-mind-vs-doom-syndicate.jpeg">
-            <p>Mega Mind Vs Doom Syndicate</p>
-            </a>  
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Soul/soul.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Soul/soul.jpeg">
-              <p>Soul</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.jpeg">
-              <p>Spiderman: Across the Spiderverse</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Addams Family/the-addams-family.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Addams Family/the-addams-family.jpeg">
-              <p>The Addams Family</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Addams Family/the-addams-family.html#video-II">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Addams Family/the-addams-family-II.jpeg">
-              <p>The Addams Family 2</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Boss Baby/the-boss-baby.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Boss Baby/the-boss-baby-family-business.jpeg">
-              <p>Boss Baby: Family Business</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Croods/the-croods.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Croods/the-croods-a-new-age.jpg">
-              <p>The Croods: A New Age</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/The Death and Return of Superman/the-death-and-return-of-superman.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/The Death and Return of Superman/the-death-and-return-of-superman.jpeg">
-              <p>The Death and return of superman</p>
-            </a>
-          </div>
-          <div class="panels">
-            <a href="/TMG.com/CARTOONS/Young Justice/young-justice.html">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Young Justice/young-justice.jpeg">
-              <p>Young Justice</p>
-            </a>
-          </div>
-    </div>
-  </div>
-  
-  </div>
-  
-  
-
+ 
   <footer>
     <div class="footer-text">
     <span class="bullet" id="bullet"></span>
@@ -1106,9 +281,8 @@ window.onloadstart = GardenerNameFunction();
     Sponsored By TCI&reg[Tobi's Certified Industries]&#8482;      &copyCopy Right 2024.
     </pre>
   </footer>
-    
-  </div>
-  
+</div>
+
   
   
   
@@ -2044,11 +1218,34 @@ window.onloadstart = GardenerNameFunction();
       </figure>
     </div>
     <div class="s-r-view-tile line" id="s-r-viewtile">
-      <a class = "pane-links" href ="/TMG.com/tmg-cartoons/trending-cartoons.html"><h3 class = "s-pane-title" id="new-releases" data-title="Trending cartoons">Trending &nbsp;<strong><em>cart00ns</em></strong>:</h3></a>
+      <a class = "pane-links" href ="/TMG.com/new-releases.html"><h3 class = "s-pane-title" id="new-releases" data-title="New Releases:">New Releases:</h3></a>
       <div class = "panel-toggler-wrapper">
         <span class ="panel-toggler">Open all</span>
       </div>
-      <div id="new-release" title="TRENDING CARTOONS" class="s-r-view-pane">
+      <div id="new-release" title="NEW RELEASES" class="s-r-view-pane">
+        <div class="r-panels">
+          <div class="r-panel" id="s-road-house-r-panel">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Road House/road-house.jpeg">
+          <span class="info" onclick="openPanel('s-road-house-r-panel','s-road-house-hidden-r-panel')">(i)</span>
+          </div>
+          <div class="hidden-r-panel" id="s-road-house-hidden-r-panel">
+            <div class="hidden-r-panel-main">
+            <a href="/TMG.com/MOVIES/Road House/road-house.html">
+              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Road House/road-house.jpeg">
+            <p>Road House</p>
+            </a>
+            </div>
+            <div class="hidden-r-panel-about">
+            <p class="hidden-r-panel-about-header">About Movie:</p>
+            <span class="hide" onclick="openPanel('s-road-house-hidden-r-panel','s-road-house-r-panel')">&times;</span>
+            <p class="hidden-r-panel-about-text">
+              Ex-UFC fighter Dalton takes a job as a bouncer at a Florida
+              Keys roadhouose, only to discover that his paradise is not all 
+              it seems.
+            </p>
+            </div>
+          </div>
+        </div>
         <div class="r-panels">
           <div class="r-panel" id="s-kung-fu-panda-IV-r-panel">
             <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Kung Fu Panda/kung-fu-panda-IV.jpeg">
@@ -2074,110 +1271,572 @@ window.onloadstart = GardenerNameFunction();
           </div>
         </div>
         <div class="r-panels">
-            <div class="r-panel" id="s-crisis-on-infinite-earths-r-panel">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.jpeg">
-            <span class="info" onclick="openPanel('crisis-on-infinite-earths-r-panel','crisis-on-infinite-earths-hidden-r-panel')">(i)</span>
+        <div class="r-panel" id="s-the-underdoggs-r-panel">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/The Underdoggs/the-underdoggs.jpeg">
+          <span class="info" onclick="openPanel('s-the-underdoggs-r-panel','s-the-underdoggs-hidden-r-panel')">(i)</span>
+          </div>
+          <div class="hidden-r-panel" id="s-the-underdoggs-hidden-r-panel">
+            <div class="hidden-r-panel-main">
+            <a href="/TMG.com/MOVIES/The Underdoggs/the-underdoggs.html">
+              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/The Underdoggs/the-underdoggs.jpeg">
+            <p>The Underdoggs</p>
+            </a>
             </div>
-            <div class="hidden-r-panel" id="s-crisis-on-infinite-earths-hidden-r-panel">
-              <div class="hidden-r-panel-main">
-              <a href="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.html">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.jpeg">
-              <p>Justice League: Crisis on Infinite Earths</p>
-              </a>
-              </div>
-              <div class="hidden-r-panel-about">
-              <p class="hidden-r-panel-about-header">About Movie:</p>
-              <span class="hide" onclick="openPanel('crisis-on-infinite-earths-hidden-r-panel','crisis-on-infinite-earths-r-panel')">&times;</span>
-              <p class="hidden-r-panel-about-text">
-                The Anti-Monitor (the Monitor's evil counterpart) is released in the DC
-                Multiverse and begins to destroy the different Earths that compose it. 
-                The Monitor attempts to recruit heroes from across the Multiverse, but 
-                is murdered.
-              </p>
+            <div class="hidden-r-panel-about">
+            <p class="hidden-r-panel-about-header">About Movie:</p>
+            <span class="hide" onclick="openPanel('s-the-underdoggs-hidden-r-panel','s-the-underdoggs-r-panel')">&times;</span>
+            <p class="hidden-r-panel-about-text">
+              Jaycen "Two Js" Jennings is a washed-up ex-professional football star who
+              has hit rock bottom. When Jaycen is sentenced to community service coaching
+              an unruly pee-wee football team, he sees it as an opportunity to turn his 
+              life around.
+            </p>
+            </div>
+          </div>
+        </div> 
+        <div class="r-panels">
+          <div class="r-panel" id="s-madame-web-r-panel">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Madame Web/madame-web.jpeg">
+          <span class="info" onclick="openPanel('s-madame-web-r-panel','s-madame-web-hidden-r-panel')">(i)</span>
+          </div>
+          <div class="hidden-r-panel" id="s-madame-web-hidden-r-panel">
+            <div class="hidden-r-panel-main">
+            <a href="/TMG.com/MOVIES/Madame Web/madame-web.html">
+              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Madame Web/madame-web.jpeg">
+            <p>Madame Web</p>
+            </a>
+            </div>
+            <div class="hidden-r-panel-about">
+            <p class="hidden-r-panel-about-header">About Movie:</p>
+            <span class="hide" onclick="openPanel('s-madame-web-hidden-r-panel','s-madame-web-r-panel')">&times;</span>
+            <p class="hidden-r-panel-about-text">
+              Cassandra Web is a New York metropolis paramedic who begins to 
+              demonstrate signs of clairvoyance. Forced to challenge revelations
+              about her past, she needs to safeguard three young women from a 
+              deadly adversary who wants them destroyed.
+            </p>
             </div>
           </div>
         </div>
         <div class="r-panels">
-            <div class="r-panel" id="s-sing-II-r-panel">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Sing/sing-II.jpeg">
-            <span class="info" onclick="openPanel('s-sing-II-r-panel','s-sing-II-hidden-r-panel')">(i)</span>
+          <div class="r-panel" id="s-the-book-of-clarence-r-panel">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/The Book of Clarence/the-book-of-clarence.jpeg">
+          <span class="info" onclick="openPanel('s-the-book-of-clarence-r-panel','s-the-book-of-clarence-hidden-r-panel')">(i)</span>
+          </div>
+          <div class="hidden-r-panel" id="s-the-book-of-clarence-hidden-r-panel">
+            <div class="hidden-r-panel-main">
+            <a href="/TMG.com/MOVIES/The Book of Clarence/the-book-of-clarence.html">
+              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/The Book of Clarence/the-book-of-clarence.jpeg">
+            <p>The Book of Clarence</p>
+            </a>
             </div>
-            <div class="hidden-r-panel" id="s-sing-II-hidden-r-panel">
-              <div class="hidden-r-panel-main">
-              <a href="/TMG.com/CARTOONS/Sing/sing.html">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Sing/sing-II.jpeg">
-              <p>Sing 2</p>
-              </a>
-              </div>
-              <div class="hidden-r-panel-about">
-              <p class="hidden-r-panel-about-header">About Movie:</p>
-              <span class="hide" onclick="openPanel('s-sing-II-hidden-r-panel','s-sing-II-r-panel')">&times;</span>
-              <p class="hidden-r-panel-about-text">
-                Buster Moon and his friends must persuade reclusive rock star
-                Clay Calloway to join them for the opening of a new show.
-              </p>
+            <div class="hidden-r-panel-about">
+            <p class="hidden-r-panel-about-header">About Movie:</p>
+            <span class="hide" onclick="openPanel('s-the-book-of-clarence-hidden-r-panel','s-the-book-of-clarence-r-panel')">&times;</span>
+            <p class="hidden-r-panel-about-text">
+              Struggling to find a better life, Clarence is captivated by
+              the power of the rising Messiah and soon risks everything to 
+              carve a path to a divine existence.
+            </p>
             </div>
           </div>
         </div>
-        <div class="r-panels">
-            <div class="r-panel" id="s-mega-mind-II-r-panel">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Megamind/mega-mind-vs-doom-syndicate.jpeg">
-            <span class="info" onclick="openPanel('s-mega-mind-II-r-panel','s-mega-mind-II-hidden-r-panel')">(i)</span>
-            </div>
-            <div class="hidden-r-panel" id="s-mega-mind-II-hidden-r-panel">
-              <div class="hidden-r-panel-main">
-              <a href="/TMG.com/CARTOONS/Megamind/megamind.html">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Megamind/mega-mind-vs-doom-syndicate.jpeg">
-              <p>Mega Mind Vs. The Doom Syndicate</p>
-              </a>
-              </div>
-              <div class="hidden-r-panel-about">
-              <p class="hidden-r-panel-about-header">About Movie:</p>
-              <span class="hide" onclick="openPanel('s-mega-mind-II-hidden-r-panel','s-mega-mind-II-r-panel')">&times;</span>
-              <p class="hidden-r-panel-about-text">
-                Megamind's former villian team, The Doom Syndicate, has returned. 
-                Our newly crowned hero must now keep up evil appearances until he 
-                can assemble his friends to stop his former evil teammates from 
-                launching Metro City to the Moon.
-              </p>
-            </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-argylle-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Argylle/argylle.jpeg">
+        <span class="info" onclick="openPanel('s-argylle-r-panel','s-argylle-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-argylle-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Argylle/argylle.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Argylle/argylle.jpeg">
+          <p>Argylle</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-argylle-hidden-r-panel','s-argylle-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            A reclusive author who writes espionage novels about a 
+            secret agent and a global spy syndicate realizes the 
+            plot of the new book she's writing starts to mirror 
+            real-world events, in real time.
+          </p>
           </div>
         </div>
-        <div class="r-panels">
-            <div class="r-panel" id="s-spiderman-across-the-spider-verse-r-panel">
-              <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.jpeg">
-            <span class="info" onclick="openPanel('spiderman-across-the-spider-verse-r-panel','spiderman-across-the-spider-verse-hidden-r-panel')">(i)</span>
-            </div>
-            <div class="hidden-r-panel" id="s-spiderman-across-the-spider-verse-hidden-r-panel">
-              <div class="hidden-r-panel-main">
-              <a href="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.html">
-                <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Spider-Man Across the Spider-Verse/spider-man-across-the-spider-verse.jpeg">
-              <p>Spiderman: Across the Spiderverse</p>
-              </a>
-              </div>
-              <div class="hidden-r-panel-about">
-              <p class="hidden-r-panel-about-header">About Movie:</p>
-              <span class="hide" onclick="openPanel('s-spiderman-across-the-spider-verse-hidden-r-panel','s-spiderman-across-the-spider-verse-r-panel')">&times;</span>
-              <p class="hidden-r-panel-about-text">
-                Miles Morales catapults across the multiverse, where he encounters a team of 
-                Spider-people charged with protecting its very existence. When the heroes clash 
-                on how to handle a new threat, Miles must redefine what it means to be a hero.
-              </p>
-            </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-ricky-stanicky-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Ricky Stanicky/ricky-stanicky.jpeg">
+        <span class="info" onclick="openPanel('s-ricky-stanicky-r-panel','s-ricky-stanicky-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-ricky-stanicky-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Ricky Stanicky/ricky-stanicky.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Ricky Stanicky/ricky-stanicky.jpeg">
+          <p>Ricky Stanicky</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-ricky-stanicky-hidden-r-panel','s-ricky-stanicky-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            When three childhood best friends pull a prank that goes wrong,
+            they invent the imaginary Ricky Stanicky to get them out of trouble. 
+            Twenty years later, they still use the non-existent Ricky as a
+            handy alibi for their immature behavior.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-netflix-avatar-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/ANIME/Avatar the last airbender Netflix/avatar-the-last-airbender-netflix.png">
+        <span class="info" onclick="openPanel('s-netflix-avatar-r-panel','s-netflix-avatar-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-netflix-avatar-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/ANIME/Avatar the last airbender Netflix/avatar-the-last-airbender-netflix.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/ANIME/Avatar the last airbender Netflix/avatar-the-last-airbender-netflix.png">
+          <p>Aang: The Last Airbender</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-netflix-avatar-hidden-r-panel','s-netflix-avatar-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            A young boy known as the Avatar must master the four elemental
+            powers to save the world, and fight against an enemy bent on 
+            stopping him.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-damsel-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/SPARE-PICS/damsel-b-s.jpeg">
+        <span class="info" onclick="openPanel('s-damsel-r-panel','s-damsel-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-damsel-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Damsel/damsel.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/SPARE-PICS/damsel-b-s.jpeg">
+          <p>Damsel</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-damsel-hidden-r-panel','s-damsel-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            A dutiful damsel agrees to marry a handsome prince, only to 
+            find the royal family has recruited her as a sacrifice to 
+            repay an ancient debt.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-crisis-on-infinite-earths-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.jpeg">
+        <span class="info" onclick="openPanel('s-crisis-on-infinite-earths-r-panel','s-crisis-on-infinite-earths-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-crisis-on-infinite-earths-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/CARTOONS/Justice League Crisis on Infinite Earths/justice-league-crisis-on-infinite-earths.jpeg">
+          <p>Justice League: Crisis on Infinite Earths</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-crisis-on-infinite-earths-hidden-r-panel','s-crisis-on-infinite-earths-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            The Anti-Monitor (the Monitor's evil counterpart) is released in the DC
+            Multiverse and begins to destroy the different Earths that compose it. 
+            The Monitor attempts to recruit heroes from across the Multiverse, but 
+            is murdered.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-a-tribe-called-judah-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/A Tribe Called Judah/a-tribe-called-judah.jpeg">
+        <span class="info" onclick="openPanel('s-a-tribe-called-judah-r-panel','s-a-tribe-called-judah-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-a-tribe-called-judah-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/A Tribe Called Judah/a-tribe-called-judah.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/A Tribe Called Judah/a-tribe-called-judah.jpeg">
+          <p>A Tribe Called Judah</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="opanPanel('s-a-tribe-called-judah-hidden-r-panel','s-a-tribe-called-judah-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            A family plans to rob a mall but find armed robbers already inside when 
+            arrive leading to an unexpected turn of events that lead to a somewhat 
+            acceptable end.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-the-thundermans-return-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/The Thundermans Return/the-thundermans-return.jpeg">
+        <span class="info" onclick="openPanel('s-the-thundermans-return-r-panel','s-the-thundermans-return-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-the-thundermans-return-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/The Thundermans Return/the-thundermans-return.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/The Thundermans Return/the-thundermans-return.jpeg">
+          <p>The Thundermans Return</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-the-thundermans-return-hidden-r-panel','s-the-thundermans-return-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            It centers on the family as they begin a new era of superhero crimefighting.
+            When one save goes wrong, the Thundermans are sent back to Hiddenville quite 
+            unaware of what is actually going on in the shadows but soon it all comes 
+            to light and it becomes a fight between the good and the bad guys.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-the-marvels-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/The Marvels/the-marvels.jpeg">
+        <span class="info" onclick="openPanel('s-the-marvels-r-panel','s-the-marvels-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-the-marvels-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/The Marvels/the-marvels.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/The Marvels/the-marvels.jpeg">
+          <p>The Marvels</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-the-marvels-hidden-r-panel','s-the-marvels-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            Carol Danvers gets her powers entagled with those of Kamala 
+            Khan and Monica Rambeau, forcing them to work together to save 
+            the universe.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-gen-v-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/SERIES/Gen V/gen-v.jpeg">
+        <span class="info" onclick="openPanel('s-gen-v-r-panel','s-gen-v-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-gen-v-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/SERIES/Gen V/gen-v.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/SERIES/Gen V/gen-v.jpeg">
+          <p>Gen V</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-gen-v-hidden-r-panel','s-gen-v-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            From the world of "The Boys" comes "Gen V", which explores
+            the first generation of superheroes to know that their super 
+            powers are from Compoud V. These heroes put their physical and 
+            moral boundaries to the test competing for the school's top making.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-aquaman-II-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Aquaman/aquaman-II-2.jpeg">
+        <span class="info" onclick="openPanel('s-aquaman-II-r-panel','s-aquaman-II-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-aquaman-II-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Aquaman/aquaman.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Aquaman/aquaman-II-2.jpeg">
+          <p>Aquaman: The Lost Kingdom</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-aquaman-II-hidden-r-panel','s-aquaman-II-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            Black Manta seeks revenge on Aquaman for his father's death.
+            Wielding the Black Trident's power, he becomes a formidable foe. 
+            To defend Atlantis, Aquaman forges an alliance with his imprisoned 
+            brother. They must protect the kingdom.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-queen-charlotte-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/SERIES/Queen Charlotte/queen-charlotte.jpeg">
+        <span class="info" onclick="openPanel('s-queen-charlotte-r-panel','s-queen-charlotte-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-queen-charlotte-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/SERIES/Queen Charlotte/queen-charlotte.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/SERIES/Queen Charlotte/queen-charlotte.jpeg">
+          <p>Queen Charlotte: A Bridgerton Story</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-queen-charlotte-hidden-r-panel','s-queen-charlotte-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            Bethrothed against her will to King George, young Charlotte 
+            arrives in London on her wedding day and faces scrutiny from
+            the monarch's cunning mother.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-the-beekeeper-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/The BeeKeeper/the-beekeeper.jpeg">
+        <span class="info" onclick="openPanel('s-the-beekeeper-r-panel','s-the-beekeeper-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-the-beekeeper-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/The BeeKeeper/the-beekeeper.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/The BeeKeeper/the-beekeeper.jpeg">
+          <p>The Beekeeper</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-the-beekeeper-hidden-r-panel','s-the-beekeeper-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            One man's brutal campaign for vengeance takes on national stakes
+            after he is revealed to be a former operative of a powerful and 
+            clandestine organization known as "Beekeepers".
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-guardians-of-the-galaxy-III-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Guardians of the Galaxy/guardians-of-the-galaxy-III.jpeg">
+        <span class="info" onclick="openPanel('s-guardians-of-the-galaxy-III-r-panel','s-guardians-of-the-galaxy-III-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-guardians-of-the-galaxy-III-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Guardians of the Galaxy/guardians-of-the-galaxy.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Guardians of the Galaxy/guardians-of-the-galaxy-III.jpeg">
+          <p>Guardians of the Galaxy Vol. 3</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-guardians-of-the-galaxy-III-hidden-r-panel','s-guardians-of-the-galaxy-III-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            Still reeling from the loss of Gamora, Peter Quill rallies his team to defend
+            the universe and one of their own - a mission that could mean the end of the 
+            Guardians if not successful.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-enola-holmes-II-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Enola Holmes/enola-holmes-II.jpeg">
+        <span class="info" onclick="openPanel('s-enola-holmes-II-r-panel','s-enola-holmes-II-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-enola-holmes-II-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Enola Holmes/enola-holmes.html#videoII">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Enola Holmes/enola-holmes-II.jpeg">
+          <p>Enola Holmes 2</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-enola-holmes-II-hidden-r-panel','s-enola-holmes-II-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            Now a detective-for-hire, Enola Holmes takes on her first official
+            case to find a missing girl as the sparks of a dangerous conspiracy ignite
+            a mystery that requires the help of friends - and Sherlock himself - to 
+            unravel.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-rise-of-the-beast-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Transformers/rise-of-the-beast.jpeg">
+        <span class="info" onclick="openPanel('s-rise-of-the-beast-r-panel','s-rise-of-the-beast-hidden-r-panel')">(i)</span>
+        </div>
+        <div class="hidden-r-panel" id="s-rise-of-the-beast-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Transformers/transformers.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Transformers/rise-of-the-beast.jpeg">
+          <p>Transformers: Rise of the Beast</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movie:</p>
+          <span class="hide" onclick="openPanel('s-rise-of-the-beast-hidden-r-panel','s-rise-of-the-beast-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            During the '90s, a new faction of the Transformers - the Maximals
+            - join the Autobots as allies in the battle for Earth.
+          </p>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div class="s-r-view-tile line" id="s-w-viewtile">
-      <a class = "pane-links" href ="/TMG.com/"><h3 class = "s-pane-title" id="worthy-of-notes" data-title="#Worthy of note">#Worthy of Note:</h3></a>
+    </div>
+    <div class="s-r-view-tile line" id="s-w-viewtile">
+      <a class = "pane-links" href = "/TMG.com/worthy-of-note.html"><h3 class = "s-pane-title" id="worthy-of-notes" data-title="#Worthy of Note">#Worthy of Note:</h3></a> 
+      <div id="worthy-of-note" title="WORTHY OF NOTE" class="s-r-view-pane">
       <div class = "panel-toggler-wrapper">
         <span class ="panel-toggler">Open all</span>
       </div>
-      <div id="worthy-of-note" title="WORTHY OF NOTE" class="s-r-view-pane">
       <div class="r-panels">
+        <div class="r-panel" id="s-avengers-saga-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Avengers/avengers.jpeg">
+        <span class="info" onclick="openPanel('s-avengers-saga-r-panel','s-avengers-saga-hidden-r-panel')">(i)</span>
+        <p class="worthy">#worthy of note</p>
+        </div>
+        <div class="hidden-r-panel" id="s-avengers-saga-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Avengers/avengers.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Avengers/avengers-end-game.jpeg">
+          <p>The Avengers Saga</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movies:</p>
+          <span class="hide" onclick="openPanel('s-avengers-saga-hidden-r-panel','s-avengers-saga-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            The Avengers Saga is a collection of four prequel documentaries 
+            to the mainstream Earth 101420. It features the assembly and disassembly
+            of the Avengers team and their four chapters: Avengers, Age of Ultron,
+            Infinity War and End Game. Founded by S.H.I.E.L.D Director Nick Fury, the avengers alias 
+            'Earth's mightiest Heroes' are committed to earth's protection.
+          </p>
+          </div>
+        </div>
       </div>
-    </div>
-    </div> -->
+      <div class="r-panels">
+        <div class="r-panel" id="s-captain-america-saga-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Captain America/captain-america.jpeg">
+        <span class="info" onclick="openPanel('s-captain-america-saga-r-panel','s-captain-america-saga-hidden-r-panel')">(i)</span>
+        <p class="worthy">#worthy of note</p>
+        </div>
+        <div class="hidden-r-panel" id="s-captain-america-saga-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Captain America/captain-america.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Captain America/captain-america-III.jpeg">
+          <p>The Captain America Trilogy</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movies:</p>
+          <span class="hide" onclick="openPanel('s-captain-america-saga-hidden-r-panel','s-captain-america-saga-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            Recipient of the Super Soldier serum, World War II hero Steve Rogers
+            fights for American ideals as one of the world's mighties heroes and the
+            leader of the Avengers. America's World War II Super-Soldier continues 
+            his fight in the present as an Avenger and untiring sentinel of liberty.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-twilight-saga-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Twilight/twilight.jpeg">
+        <span class="info" onclick="openPanel('s-twilight-saga-r-panel','s-twilight-saga-hidden-r-panel')">(i)</span>
+        <p class="worthy">#worthy of note</p>
+        </div>
+        <div class="hidden-r-panel" id="s-twilight-saga-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Twilight/twilight.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Twilight/twilight-the-breaking-dawn-2.jpeg">
+          <p>The Twilight Saga</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movies:</p>
+          <span class="hide" onclick="openPanel('s-twilight-saga-hidden-r-panel','s-twilight-saga-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            Twilight follows the life of Isabella "Bella" Swan, a human teenager
+            who moves to Forks, Washington and finds her life turned upside-down 
+            when she falls in love with a vampire named Edward Cullen. The series is
+            seen primarily from Bella's perspective. The series tells the story - 
+            fraught with danger, suspense and searing passion of teenager Bella Swan
+            and her vampire boyfriend, Edward Cullen.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-harry-potter-saga-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Harry Potter/harry-potter-VII.jpg">
+        <span class="info" onclick="openPanel('s-harry-potter-saga-r-panel','s-harry-potter-saga-hidden-r-panel')">(i)</span>
+        <p class="worthy">#worthy of note</p>
+        </div>
+        <div class="hidden-r-panel" id="s-harry-potter-saga-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Harry Potter/harry-potter.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Harry Potter/harry-potter-VIII.jpg">
+          <p>The Harry Potter Saga</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movies:</p>
+          <span class="hide" onclick="openPanel('s-harry-potter-saga-r-panel','s-harry-potter-saga-hidden-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            Harry Potter, fictional character, a boy wizard created by British 
+            author J.K.Rowling. His coming-of-age exploites were the subject of 
+            seven enormously popular novels (1997-2007), which were adapted into 
+            eight films(2001-11). Harry Potter, an 11-year old boy who discovers
+            he is the son of famous wizards and will attend Hogwarts School of 
+            Witchcraft and Wizardry and then learns of an entire society of wizards 
+            and witches.
+          </p>
+          </div>
+        </div>
+      </div>
+      <div class="r-panels">
+        <div class="r-panel" id="s-iron-man-saga-r-panel">
+          <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Iron Man/iron-man.jpeg">
+        <span class="info" onclick="openPanel('s-iron-man-saga-r-panel','s-iron-man-saga-hidden-r-panel')">(i)</span>
+        <p class="worthy">#worthy of note</p>
+        </div>
+        <div class="hidden-r-panel" id="s-iron-man-saga-hidden-r-panel">
+          <div class="hidden-r-panel-main">
+          <a href="/TMG.com/MOVIES/Iron Man/iron-man.html">
+            <div class="img" data-alt = ""></div><img class="actual-img" alt="TMG-image" src="/TMG.com/MOVIES/Iron Man/iron-man-III.jpeg">
+          <p>The Iron Man Trilogy</p>
+          </a>
+          </div>
+          <div class="hidden-r-panel-about">
+          <p class="hidden-r-panel-about-header">About Movies:</p>
+          <span class="hide" onclick="openPanel('s-iron-man-saga-hidden-r-panel','s-iron-man-saga-r-panel')">&times;</span>
+          <p class="hidden-r-panel-about-text">
+            After being held in an Afghan cave, billionaire engineer Tony Stark 
+            creates a weaponized suit of armor to fight evil and then in the first 
+            sequel, with the world now aware of his identity, Stark must contend with 
+            his declining health and a vengeful mad man with ties to his father's legacy
+            which then leads us to the second sequel when Tony Stark's world is torn apart by a 
+            formidable terrorist called the Mandarin, he starts an odyssey of rebuilding
+            and retribution.
+          </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>    
+
     <footer id="search-footer">
     <p class="search-footer"><a href="mailto: tobioketade007@gmail.com">Contact Us!</a></p>
     <p class="search-footer"><a href="tel: +2349052425395">+2349052425395</a></p>
@@ -2206,7 +1865,7 @@ window.onloadstart = GardenerNameFunction();
   
   
   
-    <script src="/TMG.com/ACMS.js"></script>
+    <script src="/TMG.com/others.js"></script>
   
   </body>
   </html>

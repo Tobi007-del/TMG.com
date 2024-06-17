@@ -1828,6 +1828,9 @@ footer pre{
   .r-panels:hover .hidden-r-panel{
     display: block;
   }
+  .hidden-r-panel:hover .hide{
+    display: none;
+  }
   .hidden-r-panel.close:hover .hide{
     display: none;
   }

@@ -638,13 +638,16 @@ circle.style.strokeDashoffset = length;
 
 
 function scrollfunction() {
-  let scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-
-  let draw = length * scrollpercent;
-
-  // Reverse the drawing (when scrolling upwards)
-  circle.style.strokeDashoffset = length - draw;
-}
+    let scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+  
+    let draw = length * scrollpercent;
+    let angle = 180 * scrollpercent;
+  
+    // Reverse the drawing (when scrolling upwards)
+    quickScrollShow.style.transform = `rotate(${angle}deg)`;
+    circle.style.strokeDashoffset = length - draw;
+  }
+  
 
 
 function pageBottom () {
