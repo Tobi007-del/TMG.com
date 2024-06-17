@@ -33,7 +33,7 @@ async function removeImageAlt() {
             images[i].style.opacity = "1";
             image.style.display = "none";
         })
-      myResolve("images varibles not needed no more");
+      myResolve("images variables not needed no more");
     });
     myPromise.then(function(value){
         console.log(value)
@@ -807,8 +807,10 @@ function toggleAllPanels(panelToggler){
     })  
     if(tcheck === 1){
         rPanels.forEach((rPanel,i) => {
-            rPanel.style.display = "none";
-            hiddenrPanels[i].style.display = "block";
+            rPanel.classList.add('close');
+            rPanel.classList.remove('open');
+            hiddenrPanels[i].classList.add('open');
+            hiddenrPanels[i].classList.remove('close');
             panelToggler.innerHTML = "Close All";
             panelTogglers.forEach(panelToggle => {
                 panelToggle.innerHTML = "Close All";
@@ -817,8 +819,10 @@ function toggleAllPanels(panelToggler){
     } else {
         tcheck = 0;
         rPanels.forEach((rPanel,i) => {
-            rPanel.style.display = "block";
-            hiddenrPanels[i].style.display = "none";
+            rPanel.classList.add('open');
+            rPanel.classList.remove('close');
+            hiddenrPanels[i].classList.add('close');
+            hiddenrPanels[i].classList.remove('open');
             panelToggler.innerHTML = "Open All";
             panelTogglers.forEach(panelToggle => {
                 panelToggle.innerHTML = "Open All";
@@ -829,8 +833,10 @@ function toggleAllPanels(panelToggler){
 
 
 function openPanel(panelName, hiddenPanelName){
-    document.getElementById(panelName).style.display = "none";
-    document.getElementById(hiddenPanelName).style.display = "block";
+    document.getElementById(panelName).classList.add('close');
+    document.getElementById(panelName).classList.remove('open');
+    document.getElementById(hiddenPanelName).classList.add('open');
+    document.getElementById(hiddenPanelName).classList.remove('close');
 }
 
 function pager(){

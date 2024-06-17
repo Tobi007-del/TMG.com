@@ -94,7 +94,7 @@ async function removeImageAlt() {
             images[i].style.opacity = "1";
             image.style.display = "none";
         })
-      myResolve("images varibles not needed no more");
+      myResolve("images variables not needed no more");
     });
     myPromise.then(function(value){
         console.log(value)
@@ -169,7 +169,7 @@ menuSearchIcon.addEventListener('click',()=>{
 let maxCharacters = 8;
 
 function GardenerNameFunction(){
-console.log(localStorage.greetGardener);
+
 if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'undefined'){
     document.onreadystatechange = function() {
     if(document.readyState === "complete"){
@@ -232,11 +232,11 @@ if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'u
           if (dlightItems.length < 2 && ((localStorage.picsrc === undefined) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
             document.getElementById("user-image").src = "/TMG.com/SPARE-PICS/person.png";
             localStorage.picsrc = "/TMG.com/SPARE-PICS/person.png";
-            console.log(localStorage.greetGardener);
+            
          } else if (dlightItems.length > 0 && ((localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined) || (localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
           document.getElementById("user-image").src = "/TMG.com/SPARE-PICS/person_one.jpg";
           localStorage.picsrc = "/TMG.com/SPARE-PICS/person_one.jpg";
-          console.log(localStorage.greetGardener);
+          
         }
     } else{
           newTxt = "Welcome " + newPerson;
@@ -246,11 +246,11 @@ if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'u
           if (dlightItems.length < 2 && ((localStorage.picsrc === undefined) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
             document.getElementById("user-image").src = "/TMG.com/SPARE-PICS/person.png";
             localStorage.picsrc = "/TMG.com/SPARE-PICS/person.png";
-            console.log(localStorage.greetGardener);
+            
          } else if (dlightItems.length > 0 && ((localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined) || (localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
           document.getElementById("user-image").src = "/TMG.com/SPARE-PICS/person_one.jpg";
           localStorage.picsrc = "/TMG.com/SPARE-PICS/person_one.jpg";
-          console.log(localStorage.greetGardener);
+          
         }
     }}
     else if (newPerson == UNIQUE_ID){
@@ -261,11 +261,11 @@ if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'u
           if(dlightItems.length < 2 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined))){
             document.getElementById("user-image").src = UNIQUE_IMAGE_D;
             localStorage.picsrc = UNIQUE_IMAGE_D;
-            console.log(localStorage.greetGardener);
+            
           } else if (dlightItems.length > 0 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined))){
           document.getElementById("user-image").src = UNIQUE_IMAGE_L;
           localStorage.picsrc = UNIQUE_IMAGE_L;
-          console.log(localStorage.greetGardener);
+          
         }
     }
     else {
@@ -418,19 +418,15 @@ function lightMode() {
     if(lightItems.length < 2 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined))){
         document.getElementById("user-image").src = UNIQUE_IMAGE_D;
         localStorage.picsrc = UNIQUE_IMAGE_D;
-        console.log(localStorage.greetGardener);
     } else if (lightItems.length > 0 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined))){
       document.getElementById("user-image").src = UNIQUE_IMAGE_L;
       localStorage.picsrc = UNIQUE_IMAGE_L;
-      console.log(localStorage.greetGardener);
     } else if (lightItems.length < 2 && ((localStorage.picsrc === undefined) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
         document.getElementById("user-image").src = "/TMG.com/SPARE-PICS/person.png";
         localStorage.picsrc = "/TMG.com/SPARE-PICS/person.png";
-        console.log(localStorage.greetGardener);
     } else if (lightItems.length > 0 && ((localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined) || (localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
       document.getElementById("user-image").src = "/TMG.com/SPARE-PICS/person_one.jpg";
       localStorage.picsrc = "/TMG.com/SPARE-PICS/person_one.jpg";
-      console.log(localStorage.greetGardener);
     }
     toggleItems = null;
 } 
@@ -847,8 +843,10 @@ function toggleAllPanels(panelToggler){
     })  
     if(tcheck === 1){
         rPanels.forEach((rPanel,i) => {
-            rPanel.style.display = "none";
-            hiddenrPanels[i].style.display = "block";
+            rPanel.classList.add('close');
+            rPanel.classList.remove('open');
+            hiddenrPanels[i].classList.add('open');
+            hiddenrPanels[i].classList.remove('close');
             panelToggler.innerHTML = "Close All";
             panelTogglers.forEach(panelToggle => {
                 panelToggle.innerHTML = "Close All";
@@ -857,8 +855,10 @@ function toggleAllPanels(panelToggler){
     } else {
         tcheck = 0;
         rPanels.forEach((rPanel,i) => {
-            rPanel.style.display = "block";
-            hiddenrPanels[i].style.display = "none";
+            rPanel.classList.add('open');
+            rPanel.classList.remove('close');
+            hiddenrPanels[i].classList.add('close');
+            hiddenrPanels[i].classList.remove('open');
             panelToggler.innerHTML = "Open All";
             panelTogglers.forEach(panelToggle => {
                 panelToggle.innerHTML = "Open All";
@@ -869,8 +869,10 @@ function toggleAllPanels(panelToggler){
 
 
 function openPanel(panelName, hiddenPanelName){
-    document.getElementById(panelName).style.display = "none";
-    document.getElementById(hiddenPanelName).style.display = "block";
+    document.getElementById(panelName).classList.add('close');
+    document.getElementById(panelName).classList.remove('open');
+    document.getElementById(hiddenPanelName).classList.add('open');
+    document.getElementById(hiddenPanelName).classList.remove('close');
 }
 
 function pager(){
@@ -927,8 +929,10 @@ function scrollfunction() {
   let scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
 
   let draw = length * scrollpercent;
+  let angle = 180 * scrollpercent;
 
   // Reverse the drawing (when scrolling upwards)
+  quickScrollShow.style.transform = `rotate(${angle}deg)`;
   circle.style.strokeDashoffset = length - draw;
 }
 
