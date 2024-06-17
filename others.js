@@ -475,7 +475,7 @@ async function registerServiceWorkerForPush(pusherValue) {
     
 
 function searchMenuFunction(){
-    let input, filter, ul, li, p, i;
+    let input, filter, ul, li, p, i, menuFound;
     input= document.getElementById("my-menu-search");
     filter=input.value.toUpperCase();
     ul=document.getElementById("myMenuBar");
@@ -484,7 +484,7 @@ function searchMenuFunction(){
         p = li[i].getElementsByTagName("p")[0];
         if
         (p.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            let menuFound = true;
+            menuFound = true;
             li[i].style.display="block";
         } else {
             li[i].style.display="none";
