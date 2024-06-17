@@ -81,9 +81,9 @@ self.addEventListener("push", e => {
     const pushTitle = data.title;
     const pushOptions = {
         body: `Dear Gardener, movies will be available soon!!!, ready your seatbelts and anticipate our official launch` , 
-        icon: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/movieicon-two.jpeg",
-        badge: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png", 
-        image: "/TMG.com/THE_MOVIE_INITIATIVE_PROJECT/SPARE-PICS/tape-2.png",
+        icon: "/TMG.com/SPARE-PICS/movieicon-two.jpeg",
+        badge: "/TMG.com/SPARE-PICS/icons8-clapperboard-100.png", 
+        image: "/TMG.com/SPARE-PICS/tape-2.png",
         actions: [
             {
                 action: 'open-site',
