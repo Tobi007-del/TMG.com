@@ -19,7 +19,6 @@ let imgs = document.querySelectorAll('.img');
 
 let movieTitle;
 images.forEach((img,i) => {
-    img.style.opacity = "0";
     movieTitle = img.nextElementSibling.innerHTML; 
     imgs[i].setAttribute('data-alt', movieTitle);
     img.alt = movieTitle;

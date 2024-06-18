@@ -26,19 +26,19 @@ let fifth = document.getElementById("fifth-text");
 let sixth = document.getElementById("sixth-text");
    first.style.display = "block";
    second.style.display = "block";
-setTimeout(()=>{
+let a = setTimeout(()=>{
    preload()
    third.style.display = "block";
 },75000);
-setTimeout(()=>{
+let b = setTimeout(()=>{
    preload()
    fourth.style.display = "block";
 },15000);
-setTimeout(()=>{
+let c = setTimeout(()=>{
    preload()
    fifth.style.display = "block";
 },22500);
-setTimeout(()=>{
+let d = setTimeout(()=>{
    preload()
    sixth.style.display = "block";
 },35000);
@@ -73,6 +73,11 @@ window.onloadstart = GardenerNameFunction();
 function page(){
     loadingPage.style.display = "none";
     document.getElementById("body").style.display = "block";
+    loadingPage = null;
+    clearTimout(a)
+    clearTimout(b)
+    clearTimout(c)
+    clearTimout(d)
 }
 
 let images = document.querySelectorAll('.actual-img');
@@ -80,7 +85,6 @@ let imgs = document.querySelectorAll('.img');
 
 let movieTitle;
 images.forEach((img,i) => {
-    img.style.opacity = "0";
     movieTitle = img.nextElementSibling.innerHTML; 
     imgs[i].setAttribute('data-alt', movieTitle);
     img.alt = movieTitle;

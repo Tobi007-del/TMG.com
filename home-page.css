@@ -1,3 +1,6 @@
+.actual-img{
+  opacity: 0;
+}  
 *{
   box-sizing: border-box;
 }
@@ -54,7 +57,7 @@ button,input,p{
   display: flex;
 }
 #quick-scroll-show{
-  font-size: calc(2vh + 1.5vw);
+  font-size: calc(1.5vw + 2.5vh);
   color: white;
   z-index: 1;
   width: 90%;
@@ -992,20 +995,6 @@ footer pre.light{
 .moving-picture-title,.moving-picture-about,.moving-picture-button,.watch-trailer-buttons{
   opacity: 0;
   animation: show 10s infinite ease-in-out normal;
-}
-.moving-picture-title.trailer,.moving-picture-about.trailer,.moving-picture-button.trailer,.preview-button,.end-preview-button{
-  animation: showtoo 5s infinite ease-in-out normal;
-}
-@keyframes show{
-  5%{
-    opacity: 0;
-  }
-  60%{
-    opacity: 0.985;
-  }
-  90%{
-    opacity: 0.985;
-  }
 }
 @keyframes showtoo{
   5%{
