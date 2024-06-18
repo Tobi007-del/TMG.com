@@ -555,12 +555,6 @@ function concealSearchMenu(){
     document.getElementById("search-error").style.display="none";
     document.getElementById("no-search-result").style.display="none";
     document.getElementById("Search").value='';
-    const panels = document.querySelectorAll(".r-panel")
-    for(let i=0; i< panels.length; i++){
-      panels[i].style.display="block";
-      let hiddenPanel = document.querySelectorAll(".hidden-r-panel");
-      hiddenPanel[i].style.display = "none";
-    }
 }
 
 document.getElementById("navigator").addEventListener('click', ()=> {
