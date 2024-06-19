@@ -151,7 +151,6 @@
     const UNIQUE_IMAGE_L = "/TMG.com/SPARE-PICS/compman.gif";
     const UNIQUE_IMAGE_D = "/TMG.com/SPARE-PICS/compman_lowres.gif";
     var toggleItems = document.querySelectorAll("body,.topnav,#hidden-navigator-panel,#title,#hidden-navigator-panel li,#hidden-navigator-panel p a,#hidden-navigator-panel li a,#hidden-navigator-panel p,#moving-word,#navigator,#top-box,.navigate,#toggle,#toggle-ball,body,h3,#left-arrow,#right-arrow,#demo,.white-text,#search,#search-glass");
-    var lightItems = document.getElementsByClassName("light");
     for(var i = 0; i < toggleItems.length; i++){
      toggleItems[i].classList.toggle("light");
     }
@@ -166,14 +165,6 @@
     }
   
     window.onloadstart = lightExist();
-    
-    function page(){
-    loadingPage.style.display = "none";
-    document.getElementById("body").style.display = "block";
-    }
-    document.querySelector("#skip-wait-btn").addEventListener('click', ()=>{
-      page();
-    })
   </script>
 <div id="moving-pictures"> 
   <div class="moving-picture"> 

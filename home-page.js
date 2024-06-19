@@ -17,6 +17,7 @@ const preloaderTexts = document.querySelectorAll(".preloader-text");
     preloaderText.style.display = "none";
 })
 }
+var a,b,c,d;
 function preloader(){
 let first = document.getElementById("first-text");
 let second = document.getElementById("second-text");
@@ -26,19 +27,19 @@ let fifth = document.getElementById("fifth-text");
 let sixth = document.getElementById("sixth-text");
    first.style.display = "block";
    second.style.display = "block";
-let a = setTimeout(()=>{
+a = setTimeout(()=>{
    preload()
    third.style.display = "block";
 },75000);
-let b = setTimeout(()=>{
+b = setTimeout(()=>{
    preload()
    fourth.style.display = "block";
 },15000);
-let c = setTimeout(()=>{
+c = setTimeout(()=>{
    preload()
    fifth.style.display = "block";
 },22500);
-let d = setTimeout(()=>{
+d = setTimeout(()=>{
    preload()
    sixth.style.display = "block";
 },35000);
@@ -50,9 +51,10 @@ document.querySelector("#skip-wait-btn").addEventListener('click', ()=>{
         document.querySelector("#skip-wait-btn").removeEventListener("click", page());
     } ;
 })}
+
 if(sessionStorage.current === '1'){
     sessionStorage.current = 1;
-    document.onreadystatechange = function(){
+    document.onreadystatechange = function() {
         if(document.readyState === "complete"){
             removeImageAlt();
         }
@@ -61,7 +63,7 @@ if(sessionStorage.current === '1'){
     window.onloadstart = skipWait()
     window.onloadstart = preloader();
     
-    document.onreadystatechange = function(){
+    document.onreadystatechange = function() {
         if(document.readyState === "complete"){
             page();
             removeImageAlt();
@@ -69,15 +71,13 @@ if(sessionStorage.current === '1'){
     }
 }
 
-window.onloadstart = GardenerNameFunction();
 function page(){
     loadingPage.style.display = "none";
     document.getElementById("body").style.display = "block";
-    loadingPage = null;
-    clearTimout(a)
-    clearTimout(b)
-    clearTimout(c)
-    clearTimout(d)
+    clearTimeout(a)
+    clearTimeout(b)
+    clearTimeout(c)
+    clearTimeout(d)
 }
 
 let images = document.querySelectorAll('.actual-img');
@@ -169,14 +169,14 @@ menuSearchIcon.addEventListener('click',()=>{
     }
 })
 
+window.onloadstart = GardenerNameFunction();
 
 let maxCharacters = 8;
 
 function GardenerNameFunction(){
 
 if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'undefined'){
-    document.onreadystatechange = function() {
-    if(document.readyState === "complete"){
+    window.onload = function() {
         sessionStorage.current = 1;
         let txt;
         let person = prompt("What should we call you:", "Gardener");
@@ -206,7 +206,6 @@ if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'u
           document.getElementById("demo").innerHTML = txt;
           localStorage.greetGardener = txt; 
           displayNotification(txt);
-    }
     }
     }  else {
         document.getElementById("demo").innerHTML = localStorage.greetGardener;
