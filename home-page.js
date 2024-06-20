@@ -53,6 +53,7 @@ document.querySelector("#skip-wait-btn").addEventListener('click', ()=>{
 })}
 
 if(sessionStorage.current === '1'){
+    GardenerNameFunction()
     sessionStorage.current = 1;
     document.onreadystatechange = function() {
         if(document.readyState === "complete"){

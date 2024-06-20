@@ -165,6 +165,16 @@
     }
   
     window.onloadstart = lightExist();
+    function GardenerNameFunction(){
+    console.log(localStorage.greetGardener);
+      if(localStorage.greetGardener === undefined || localStorage.greetGardener === 'undefined'){
+        console.log("Over to you, js file!")
+      }  else {
+        document.getElementById("demo").innerHTML = localStorage.greetGardener;
+      }
+    }
+
+    window.onloadstart = GardenerNameFunction();
   </script>
 <div id="moving-pictures"> 
   <div class="moving-picture"> 
