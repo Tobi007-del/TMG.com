@@ -315,6 +315,7 @@ button,input,p{
   margin-left: calc(50vw - 6vh);
   margin-top: calc(80vh/2 - 6vh);
   top: 6.5vh;
+  pointer-events: none;
 }
 #preloader-text-container.buffering{
   display: none;
@@ -3250,7 +3251,7 @@ footer pre{
   }
   #loading-page.buffering{
     margin-top: calc(47.5vh/2 - 6vh);
-    top: 5.5vh;
+    top: 4vh;
   }
   .moving-picture-title{
     top: 15vh;
