@@ -72,6 +72,7 @@ if(sessionStorage.current === '1'){
 }
 
 function page(){
+    GardenerNameFunction()
     loadingPage.style.display = "none";
     document.getElementById("body").style.display = "block";
     clearTimeout(a)
@@ -169,7 +170,7 @@ menuSearchIcon.addEventListener('click',()=>{
     }
 })
 
-window.onloadstart = GardenerNameFunction();
+
 
 let maxCharacters = 8;
 
