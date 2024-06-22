@@ -377,6 +377,10 @@ function lightMode() {
     toggleItems = null;
 } 
 
+document.getElementById("themes-phrase").addEventListener('click',()=>{
+    lightMode();
+})
+
 pusherExist();
 var pusher;
 function pusherExist(){
@@ -439,7 +443,7 @@ function lightExist(){
     }
 }
   
-    lightExist();
+window.onloadstart = lightExist();
 
 
 async function registerServiceWorkerForPush(pusherValue) {

@@ -129,7 +129,13 @@ button,input,p{
 .white-text{
   color: var(--tmg-white);
 }
+#T,#G{
+  color: var(--tmg-white);
+}
 .white-text.light{
+  color: var(--light-lighter-brand-color);
+}
+#T.light,#G.light{
   color: var(--light-lighter-brand-color);
 }
 .r-panel,.hidden-r-panel,.search-lines,.panels{
@@ -387,7 +393,7 @@ button,input,p{
 #toggle-ball.light{
   background-color: var(--tmg-other-white)!important;
   transform: translateX(-0.0795vw)!important;
-  transition: transform 0.25s linear;
+  transition: transform 0.5s linear;
 }
 #toggle-push-ball.light{
   background-color: var(--tmg-other-white)!important;
@@ -2444,41 +2450,30 @@ footer pre{
   #user-image{
     left: -4vh;
   }
-  #toggle-container,#n-toggle-container{
-    right: 1vw;
-    min-height: 2.8vw;
-  }
-  #toggle,#n-toggle{
-    height: 1.75vw; 
-    width: 3.4vw;
-    border-radius: 0.875vw;
-    margin-left: 0vw; 
-  }
   #toggle-ball,#toggle-push-ball{
-    height: 1.65vw;
-    width: 1.65vw;
-    border-radius: 0.825vw;
-    top: 0.075vw;
-    left: 0.105vw;
+    height: 2.2vh;
+    width: 2.2vh;
+    border-radius: 1.1vh;
+    top: 0.075vh;
+    left: 0.1vh;
+    transition: transform 0.25s linear;
   }
   #toggle-ball,#toggle-push-ball.push{
-    transform: translateX(1.5995vw);
+    transform: translateX(2.2vh);
   }
-  #toggle-push-ball,#toggle-ball.light{
-    transform: translateX(-0.079vw);
+  #toggle-push-ball{
+    transform: translateX(0);
   }
   .toggle-moon{
-    width: 1.4vw;
-    height: 1.4vw;
-    left: 0.15vw;
-    top: 0.2vw;
+    width: 2.2vh;
+    height: 2.2vh;
+    top: 0.1vh;
   }
   .toggle-sun{
-    width: 1.4vw;
-    height: 1.4vw;
-    top: 0.2vw;
-    left: 0.35vw;
-    right: 0;
+    width: 2vh;
+    height: 2vh;
+    top: 0.2vh;
+    left: 0.15vh;
   }
   #left-arrow,#right-arrow{
     top: 31vh;
@@ -2735,7 +2730,7 @@ footer pre{
 }
 
 /* for phones in landscpae view */
-@media (min-width:600px) and (max-width:1300px) and (max-height: 500px) and (orientation:landscape){
+@media (min-width:500px) and (max-width:1300px) and (max-height: 500px) and (orientation:landscape){
   #menu-search-icon{
     display: none!important;
   }
@@ -2814,7 +2809,7 @@ footer pre{
   }
   #tmg{
     margin: 0.25vh 0vh 0.75vh 0vh;
-    right: 4vh;
+    right: 7vh;
     font-size: 4.75vh;
   }
   #moving-container{
@@ -2831,6 +2826,7 @@ footer pre{
   }
   .topnav{
     width: 45vw;
+    margin-right: 6vh!important;
   }
   .moving-line{
     top: 30.5vh;
@@ -3091,27 +3087,40 @@ footer pre{
     right: 2vw;
   }
   #toggle-container,#n-toggle-container{
-    right: 2vw;
-    min-height: 3.8vw;
+    right: 1vw;
+    min-height: 2.8vw;
   }
   #toggle,#n-toggle{
-    height: 2.35vw; 
-    width: 4.5vw;
-    border-radius: 1.1525vw;
-    margin-left: 2vw; 
+    height: 1.75vw; 
+    width: 3.4vw;
+    border-radius: 0.875vw;
+    margin-left: 0vw; 
   }
   #toggle-ball,#toggle-push-ball{
-    height: 2.2vw;
-    width: 2.2vw;
-    border-radius: 1.1vw;
+    height: 1.65vw;
+    width: 1.65vw;
+    border-radius: 0.825vw;
     top: 0.075vw;
-    left: 0.1vw;
+    left: 0.105vw;
   }
   #toggle-ball,#toggle-push-ball.push{
-    transform: translateX(2.1vw);
+    transform: translateX(1.5995vw);
   }
-  #toggle-push-ball{
-    transform: translateX(-0.1vw);
+  #toggle-push-ball,#toggle-ball.light{
+    transform: translateX(-0.079vw);
+  }
+  .toggle-moon{
+    width: 1.4vw;
+    height: 1.4vw;
+    left: 0.15vw;
+    top: 0.2vw;
+  }
+  .toggle-sun{
+    width: 1.4vw;
+    height: 1.4vw;
+    top: 0.2vw;
+    left: 0.35vw;
+    right: 0;
   }
   .toggle-moon{
     width: 2.2vw;
@@ -3122,7 +3131,7 @@ footer pre{
     width: 2vw;
     height: 2vw;
     top: 0.2vw;
-    left: 0.15vw;
+    left: 0.195vw;
     right: 0;
   }
   #cancel-menu{
