@@ -3087,40 +3087,27 @@ footer pre{
     right: 2vw;
   }
   #toggle-container,#n-toggle-container{
-    right: 1vw;
-    min-height: 2.8vw;
+    right: 2vw;
+    min-height: 3.8vw;
   }
   #toggle,#n-toggle{
-    height: 1.75vw; 
-    width: 3.4vw;
-    border-radius: 0.875vw;
-    margin-left: 0vw; 
+    height: 2.35vw; 
+    width: 4.5vw;
+    border-radius: 1.1525vw;
+    margin-left: 2vw; 
   }
   #toggle-ball,#toggle-push-ball{
-    height: 1.65vw;
-    width: 1.65vw;
-    border-radius: 0.825vw;
-    top: 0.075vw;
-    left: 0.105vw;
+    height: 2.2vw;
+    width: 2.2vw;
+    border-radius: 1.1vw;
+    top: 0.085vw;
+    left: 0.1vw;
   }
   #toggle-ball,#toggle-push-ball.push{
-    transform: translateX(1.5995vw);
+    transform: translateX(2.1vw);
   }
-  #toggle-push-ball,#toggle-ball.light{
-    transform: translateX(-0.079vw);
-  }
-  .toggle-moon{
-    width: 1.4vw;
-    height: 1.4vw;
-    left: 0.15vw;
-    top: 0.2vw;
-  }
-  .toggle-sun{
-    width: 1.4vw;
-    height: 1.4vw;
-    top: 0.2vw;
-    left: 0.35vw;
-    right: 0;
+  #toggle-push-ball{
+    transform: translateX(0vw);
   }
   .toggle-moon{
     width: 2.2vw;
