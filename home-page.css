@@ -2458,14 +2458,14 @@ footer pre{
     height: 1.65vw;
     width: 1.65vw;
     border-radius: 0.825vw;
-    top: 0.05vw;
+    top: 0.075vw;
     left: 0.105vw;
   }
   #toggle-ball,#toggle-push-ball.push{
     transform: translateX(1.5995vw);
   }
   #toggle-push-ball,#toggle-ball.light{
-    transform: translateX(-0.0795vw);
+    transform: translateX(-0.079vw);
   }
   .toggle-moon{
     width: 1.4vw;
