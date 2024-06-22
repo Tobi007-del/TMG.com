@@ -70,6 +70,7 @@ button,input,p{
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 #quick-scrolls{
   display: none;
@@ -105,6 +106,7 @@ button,input,p{
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0;
   background: linear-gradient(rgba(0,0,0,0.5),rgba(255,255,255,0.5)), var(--lighter-brand-color);
 }
 #to-top,#to-bottom{
@@ -2442,30 +2444,41 @@ footer pre{
   #user-image{
     left: -4vh;
   }
+  #toggle-container,#n-toggle-container{
+    right: 1vw;
+    min-height: 2.8vw;
+  }
+  #toggle,#n-toggle{
+    height: 1.75vw; 
+    width: 3.4vw;
+    border-radius: 0.875vw;
+    margin-left: 0vw; 
+  }
   #toggle-ball,#toggle-push-ball{
-    height: 2.2vh;
-    width: 2.2vh;
-    border-radius: 1.1vh;
-    top: 0.075vh;
-    left: 0.1vh;
-    transition: transform 0.25s linear;
+    height: 1.65vw;
+    width: 1.65vw;
+    border-radius: 0.825vw;
+    top: 0.05vw;
+    left: 0.105vw;
   }
   #toggle-ball,#toggle-push-ball.push{
-    transform: translateX(2.15vh);
+    transform: translateX(1.5995vw);
   }
-  #toggle-push-ball{
-    transform: translateX(0);
+  #toggle-push-ball,#toggle-ball.light{
+    transform: translateX(-0.0795vw);
   }
   .toggle-moon{
-    width: 2.2vh;
-    height: 2.2vh;
-    top: 0.1vh;
+    width: 1.4vw;
+    height: 1.4vw;
+    left: 0.15vw;
+    top: 0.2vw;
   }
   .toggle-sun{
-    width: 2vh;
-    height: 2vh;
-    top: 0.2vh;
-    left: 0.15vh;
+    width: 1.4vw;
+    height: 1.4vw;
+    top: 0.2vw;
+    left: 0.35vw;
+    right: 0;
   }
   #left-arrow,#right-arrow{
     top: 31vh;
@@ -3098,7 +3111,7 @@ footer pre{
     transform: translateX(2.1vw);
   }
   #toggle-push-ball{
-    transform: translateX(0);
+    transform: translateX(-0.1vw);
   }
   .toggle-moon{
     width: 2.2vw;
@@ -3203,10 +3216,10 @@ footer pre{
     transition: transform 0.25s linear;
   }
   #toggle-ball,#toggle-push-ball.push{
-    transform: translateX(2.2vh);
+    transform: translateX(2.15vh);
   }
   #toggle-push-ball{
-    transform: translateX(0);
+    transform: translateX(0vw);
   }
   .toggle-moon{
     width: 2.2vh;
@@ -3361,12 +3374,6 @@ footer pre{
     top: 5.5vh;
     left: 55vw;
   }
-  #hidden-navigator-panel li, #hidden-navigator-panel li a{
-    color: rgb(161, 201, 182)!important;
-  }
-  #hidden-navigator-panel li.light, #hidden-navigator-panel li.light a{
-    color: rgb(161, 201, 182)!important;
-  }
   #navigator{
     height: 3.75vh; 
     position: relative;
@@ -3400,16 +3407,16 @@ footer pre{
   #hidden-navigator-panel #menu{
     margin:0 0 4.5vh 0;
     font-size: 3vh;   
-    color: black!important;
   }
   #hidden-navigator-panel li p{
     line-height: 3.9vh;
     font-size: 2vh;
-    color: black!important;
   }
   #hidden-navigator-panel p{
     font-size: 1.3vh;
     line-height: 0.5vh;
+  }
+  #hidden-navigator-panel li a.light,#hidden-navigator-panel p a.light,#hidden-navigator-panel p.light{
     color: black!important;
   }
   #my-menu-search{
