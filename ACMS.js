@@ -377,12 +377,10 @@ function lightMode() {
     toggleItems = null;
 } 
 
-
 pusherExist();
-
+var pusher;
 function pusherExist(){
 let togglePushBall = document.getElementById("toggle-push-ball");
-let pusher;
 console.log("Local Storage Pusher: ", localStorage.pusher);
 if(localStorage.pusher === undefined){
     pusher = 1;
@@ -402,6 +400,15 @@ if(localStorage.pusher === undefined){
 }
 
 togglePushBall.addEventListener('click',()=>{
+    subscribePush()
+})
+document.getElementById("push-phrase").addEventListener('click',()=>{
+    subscribePush()
+})
+}
+
+function subscribePush(){
+    let togglePushBall = document.getElementById("toggle-push-ball");
     if(pusher === 0){
     pusher ++;
     togglePushBall.classList.add('push');
@@ -415,8 +422,6 @@ togglePushBall.addEventListener('click',()=>{
     localStorage.pusher = pusher;
     console.log(`pusher disabled. Pusher = ${pusher}`)
     }
-})
-
 }
 
 
@@ -541,8 +546,8 @@ function movingPicture(){
         movingPictureImageCoversRight[x].classList.remove('inactive');
         watchTrailerButtons[x].style.display = "flex";
         mousedownCounter = 0;
-        header.style.display = "block";
-        movingLine.style.display = "block";
+        setTimeout(()=>{header.style.display = "block";},1500)
+        setTimeout(()=>{movingLine.style.display = "block";},1500)
         previewButtons[x].style.display = "none";
         endPreviewButtons[x].style.display = "none";
         movingVideos[x].style.height = "0%";

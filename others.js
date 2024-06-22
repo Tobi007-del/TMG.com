@@ -386,12 +386,10 @@ function lightMode() {
     toggleItems = null;
 } 
 
-
 pusherExist();
-
+var pusher;
 function pusherExist(){
 let togglePushBall = document.getElementById("toggle-push-ball");
-let pusher;
 console.log("Local Storage Pusher: ", localStorage.pusher);
 if(localStorage.pusher === undefined){
     pusher = 1;
@@ -411,6 +409,15 @@ if(localStorage.pusher === undefined){
 }
 
 togglePushBall.addEventListener('click',()=>{
+    subscribePush()
+})
+document.getElementById("push-phrase").addEventListener('click',()=>{
+    subscribePush()
+})
+}
+
+function subscribePush(){
+    let togglePushBall = document.getElementById("toggle-push-ball");
     if(pusher === 0){
     pusher ++;
     togglePushBall.classList.add('push');
@@ -424,10 +431,7 @@ togglePushBall.addEventListener('click',()=>{
     localStorage.pusher = pusher;
     console.log(`pusher disabled. Pusher = ${pusher}`)
     }
-})
-
 }
-
 
 function lightExist(){
     console.log("Local Storage Lighter: ", localStorage.lighter);
