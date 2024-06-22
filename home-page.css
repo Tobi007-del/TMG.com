@@ -800,7 +800,7 @@ footer pre.light{
   position: absolute;
   top: 0;
   margin: 0;
-  transition: all 1.5s ease-out;
+  transition: all 1s ease-out;
   background: linear-gradient(#00000000 60%,black);
 }
 .moving-picture-image-cover-left{
@@ -821,7 +821,7 @@ footer pre.light{
   position: absolute;
   height: 0;
   width: 100%;
-  transition: all 1.5s ease-in-out;
+  transition: all 1s ease-in-out;
   object-fit: fill;
   z-index: 1;
 }

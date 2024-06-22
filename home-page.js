@@ -586,8 +586,8 @@ function reversePlayTrailer(x){
     movingPictureImageCoversRight[x].classList.remove('inactive');
     watchTrailerButtons[x].style.display = "flex";
     mousedownCounter = 0;
-    setTimeout(()=>{header.style.display = "block";},1500)
-    setTimeout(()=>{movingLine.style.display = "block";},1500)
+    setTimeout(()=>{header.style.display = "block";},1000)
+    setTimeout(()=>{movingLine.style.display = "block";},1000)
     previewButtons[x].style.display = "none";
     endPreviewButtons[x].style.display = "none";
     movingVideos[x].style.height = "0%";
