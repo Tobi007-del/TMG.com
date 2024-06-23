@@ -326,6 +326,17 @@ document.getElementById("insert").addEventListener('change', (evt) => {
     reader.readAsDataURL(files[0]);
 })
 
+function toggleBallSG(ball,value){
+    document.querySelector(ball).classList.remove('scale');
+    document.querySelector(ball).classList.remove('scala');
+    if(value ===  1){
+        setTimeout(() => {document.querySelector(ball).classList.add('scala')} , 0);
+        setTimeout(() => {document.querySelector(ball).classList.remove('scala')} , 250);
+    } else {
+        setTimeout(() => {document.querySelector(ball).classList.add('scale')} , 0);
+        setTimeout(() => {document.querySelector(ball).classList.remove('scale')} , 250);
+    }
+}
 
 let light = 0;
 let lighter;
@@ -346,10 +357,12 @@ function lightMode() {
     if(light === 1){
         toggleItems[i].classList.add("light");
         document.getElementById("themes-phrase").innerHTML="Toggle Dark Mode";
+        toggleBallSG("#toggle-ball",light);
     } else{
         light = 0;
         toggleItems[i].classList.remove("light");
         document.getElementById("themes-phrase").innerHTML="Toggle Light Mode";
+        toggleBallSG("#toggle-ball",light);
     }
     }
     if(light === 0 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined))){
@@ -409,12 +422,14 @@ document.getElementById("push-phrase").addEventListener('click',()=>{
 function subscribePush(){
     let togglePushBall = document.getElementById("toggle-push-ball");
     if(pusher === 0){
+    toggleBallSG("#toggle-push-ball",pusher);
     pusher ++;
     togglePushBall.classList.add('push');
     registerServiceWorkerForPush(pusher)
     localStorage.pusher = pusher;
     console.log(`pusher enabled. Pusher = ${pusher}`)
     } else{
+    toggleBallSG("#toggle-push-ball",pusher);
     pusher = 0;
     togglePushBall.classList.remove('push');
     registerServiceWorkerForPush(pusher)
@@ -775,7 +790,7 @@ document.getElementById("navigator").addEventListener('mouseup', ()=> {
 
 function navigatorMenuOpenFunction() {
     document.getElementById("hidden-navigator-panel").style.width="65vw";
-    document.getElementById("top-content").style.opacity="0.35";
+    document.getElementById("top-content").style.opacity="0.7";
     document.getElementById("content-box").style.opacity="0.35";
 }
 function cancelMenuFunction() {
