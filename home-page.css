@@ -265,9 +265,9 @@ button,input,p{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(.65vw + 1vh);
+  padding: calc(.55vw + 1.15vh);
   border-radius: calc(.25vw + .25vh);
-  font-size: calc(.6vw + .9vh);
+  font-size: calc(.5vw + 1.05vh);
   font-weight: bold;
   color: white;
   background-color: var(--lighter-brand-color);
@@ -393,7 +393,7 @@ button,input,p{
 #toggle-ball.light{
   background-color: var(--tmg-other-white)!important;
   transform: translateX(-0.0795vw)!important;
-  transition: transform 0.5s linear;
+  transition: transform 0.25s linear;
 }
 #toggle-push-ball.light{
   background-color: var(--tmg-other-white)!important;
@@ -1214,7 +1214,7 @@ footer pre.light{
   z-index: 2;
   top: 0.0475vw;
   left: 0.105vw;
-  transition: transform 0.5s linear;
+  transition: transform 0.25s linear;
 }
 #toggle-ball,#toggle-push-ball.push{
   transform: translateX(1.5995vw);
@@ -1721,21 +1721,21 @@ h3:hover::after{
   transition: transform 0.25s ease;
 }
 h3:hover::before{
-  transform: scaleX(1);
-  transition: transform .5s ease;
+  transform: scale(1,1);
+  transition: all .5s ease;
 }
 h3::before{
   content: attr(data-title);
-  transform: scaleX(0.05);
+  transform: scale(0.05,1);
+  transform-origin: bottom left;
   position: absolute;
   top: 4.35vh;
   left: 0;
   height: .25vh;
   overflow: hidden;
-  border-radius: .125vh;
+  border-radius: .25vh;
   background-color: white;
-  transition: transform 1s ease;
-  transform-origin: bottom left;
+  transition: all 1s ease;
 }
 .pane-links{
   text-decoration: none;
@@ -2409,6 +2409,13 @@ footer pre{
   }
 }
 
+@media (min-width:600px) and (max-width:601px){
+  #search::placeholder{
+    width: calc(30vw - 6.75vw);
+    overflow: hidden;
+  }
+}
+
 /* for tablets in general */
 @media (min-width:499px) and (max-width:1180px){
   #anime-nav{
@@ -2736,31 +2743,36 @@ footer pre{
   }
 }
 
+@media (min-width:500px) and (max-width:700px) and (max-height:430px) and (orientation:landscape){
+  #anime-nav,#cartoons-nav,#movies-nav,#series-nav{
+    display: none!important;
+  }
+}
+
+
+@media (min-width:500px) and (max-width:600px) and (max-height:430px) and (orientation:landscape){
+  #search::placeholder{
+    font-size: calc(0.95vh + 0.95vw)!important;
+  }
+}
+
+
 /* for phones in landscpae view */
-@media (min-width:600px) and (max-width:1300px) and (max-height: 430px) and (orientation:landscape){
+@media (min-width:500px) and (max-width:1300px) and (max-height: 430px) and (orientation:landscape){
   #menu-search-icon{
     display: none!important;
   }
-  #anime-nav{
+  #anime-nav,#cartoons-nav,#movies-nav,#series-nav{
     display: block;
   }
   #anime-nav::after{
     content: 'Anime';
   }
-  #cartoons-nav{
-    display: block;
-  }
   #cartoons-nav::after{
     content: 'Cartoons';
   }
-  #movies-nav{
-    display: block;
-  }
   #movies-nav::after{
     content: 'Movies';
-  }
-  #series-nav{
-    display: block;
   }
   #series-nav::after{
     content: 'Series';
@@ -2769,7 +2781,11 @@ footer pre{
     content: 'Home';
   }
   .topnav{
+    width: 45vw;
+    margin-left: 15vh;
     height: 7.5vh;
+    display: inline-flex;
+    padding: 0;
   }
   .topnav li{
     font-size: 3.45vh;
@@ -2778,18 +2794,10 @@ footer pre{
   .topnav li.active::after{
     content: '';
     height: .5vh;
-    top: 5.8vh;
+    top: 5.85vh;
   }
-  .topnav li.active::after{
-    content: '';
-    top: 5.8vh;
-    height: .5vh;
-  }
-  .topnav li::after{
-    content: '';
-    left: 0;
-    height: .5vh;
-    top: 5.8vh;
+  .topnav li:hover::after{
+    display: none;
   }
   #demo{
     font-size: 3.1vh;
@@ -2797,7 +2805,7 @@ footer pre{
     text-wrap: nowrap;
   }
   #demo-container{
-    right: 28vw;
+    right: 25vw;
     top: .5vh;
   }
   #top-box{
@@ -2836,7 +2844,7 @@ footer pre{
   }
   #tmg{
     margin: 0.25vh 0vh 0.75vh 0vh;
-    right: 2.5vh;
+    right: 5vh;
     font-size: 4.75vh;
   }
   #moving-container{
@@ -2850,10 +2858,6 @@ footer pre{
   }
   .menu-bar-icon{
     display: none;
-  }
-  .topnav{
-    width: 45vw;
-    margin-left: 0;
   }
   .moving-line{
     top: 30.5vh;
@@ -2992,19 +2996,19 @@ footer pre{
   #search{
     height: 5.5vh!important;
     right: 0.5vw!important;
-    width: 27vw!important;
+    width: 24vw!important;
   }
   #search::placeholder{
-    font-size: 3.5vh;   
+    font-size: 2.6vh;   
     position: relative;
-    top: 0.5vh;
+    top: 0.25vh;
   }
   #search-div{
     height: 5.5vh;
   }
   #search-glass{
     display: block;
-    font-size: 3vh;
+    font-size: 2.9vh;
   }
   #insert{
     width: 6vh;
@@ -3014,7 +3018,7 @@ footer pre{
   #user-image{
     width: 6vh;
     height: 6vh;
-    left: calc(-7vh + 1vw);
+    left: calc(-6vh + 1vw);
     display: block;
   }
   .menu-search-icon{
@@ -3029,12 +3033,14 @@ footer pre{
     margin-top: 0.5em;
     margin-left: 0.5em;
     margin-bottom: 1.1em;
-    margin-top: 0;
   }
   h3::before{
     top: 1.2em;  
-    height: 0.11em;
-    border-radius: 0.055em;  
+    height: 0.1em;
+    border-radius: 0.1em;  
+  }
+  h3.light::before{
+    height: 0.12em!important;
   }
   .optional-bar{
     display: none;
@@ -3566,7 +3572,10 @@ footer pre{
   h3::before{
     top: 1.15em;
     height: 0.1em;
-    border-radius: 0.05em;
+    border-radius: 0.1em;
+  }
+  h3.light::before{
+    height: 0.12em!important;
   }
   .view-tiles, .r-view-tile,.s-r-view-tile {
     margin: 1.25em 0 0.5em 0;
