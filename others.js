@@ -96,7 +96,7 @@ function debounce(func, wait = 10, immediate = true) {
   }
 function searchScroll(){
 document.addEventListener('scroll', debounce(function(e){ 
-if((window.innerWidth <= 600) && (window.scrollY > 0)){
+if((window.innerWidth <= 499) && (window.scrollY > 0)){
     searchClickCounter = 0;
     searchBar.style.display = "none";
     menuSearchIcon.classList.add('attention');
@@ -354,31 +354,27 @@ function lightMode() {
     let lightItems = document.getElementsByClassName("light");
     for(let i = 0; i < toggleItems.length; i++){
     if(light === 1){
-     toggleItems[i].classList.add("light");
+        toggleItems[i].classList.add("light");
+        document.getElementById("themes-phrase").innerHTML="Toggle Dark Mode";
     } else{
         light = 0;
         toggleItems[i].classList.remove("light");
-    }
-     if(lightItems.length >= 1){
-        document.getElementById("themes-phrase").innerHTML="Toggle Dark Mode";
-     } 
-     else {
         document.getElementById("themes-phrase").innerHTML="Toggle Light Mode";
-     }
     }
-    if(lightItems.length < 2 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined))){
+    }
+    if(light === 0 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined))){
         document.getElementById("user-image").src = UNIQUE_IMAGE_D;
         localStorage.picsrc = UNIQUE_IMAGE_D;
         console.log(localStorage.greetGardener);
-    } else if (lightItems.length > 0 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined))){
+    } else if (light === 1 && localStorage.greetGardener === UNIQUE_TEXT && ((localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined))){
       document.getElementById("user-image").src = UNIQUE_IMAGE_L;
       localStorage.picsrc = UNIQUE_IMAGE_L;
       console.log(localStorage.greetGardener);
-    } else if (lightItems.length < 2 && ((localStorage.picsrc === undefined) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
+    } else if (light === 0 && ((localStorage.picsrc === undefined) || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
         document.getElementById("user-image").src = "/TMG.com/SPARE-PICS/person.png";
         localStorage.picsrc = "/TMG.com/SPARE-PICS/person.png";
         console.log(localStorage.greetGardener);
-    } else if (lightItems.length > 0 && ((localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined) || (localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
+    } else if (light === 1 && ((localStorage.picsrc === "/TMG.com/SPARE-PICS/person.png") || (localStorage.picsrc === "/TMG.com/SPARE-PICS/person_one.jpg") || (localStorage.picsrc === undefined) || (localStorage.picsrc === UNIQUE_IMAGE_D) || (localStorage.picsrc === UNIQUE_IMAGE_L))){
       document.getElementById("user-image").src = "/TMG.com/SPARE-PICS/person_one.jpg";
       localStorage.picsrc = "/TMG.com/SPARE-PICS/person_one.jpg";
       console.log(localStorage.greetGardener);
