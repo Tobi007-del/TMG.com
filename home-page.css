@@ -326,6 +326,7 @@ button,input,p{
   margin-top: calc(80vh/2 - 6vh);
   top: 6.5vh;
   pointer-events: none;
+  z-index: 3;
 }
 #preloader-text-container.buffering{
   display: none;
