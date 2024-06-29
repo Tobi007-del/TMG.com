@@ -375,8 +375,8 @@ if(localStorage.picsrc !== undefined){
     GardenerImage.src = localStorage.picsrc;
 }
 document.getElementById("insert").addEventListener('change', (evt) => {
-    let files = evt.target.files;
-    let reader = new FileReader();
+    var files = evt.target.files;
+    var reader = new FileReader();
     reader.onload = function(event) {
     try {
         localStorage.picsrc = event.target.result;
@@ -735,7 +735,7 @@ movingPicture()
 
 
 function searchMenuFunction(){
-    let input, filter, ul, li, p, i, menuFound;
+    var input, filter, ul, li, p, i, menuFound;
     input= document.getElementById("my-menu-search");
     filter=input.value.toUpperCase();
     ul=document.getElementById("myMenuBar");
@@ -765,7 +765,7 @@ const search = () =>{
     const movie = document.querySelectorAll(".search-lines");
     const mname = movieitems.getElementsByTagName("p");
     for(let n=0 ; n< mname.length; n++){
-        let match = movie[n].getElementsByTagName('p')[0];
+        var match = movie[n].getElementsByTagName('p')[0];
         if(match){
             let textvalue = match.textContent || match.innerHTML;
             let resultFound;

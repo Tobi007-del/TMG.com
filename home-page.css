@@ -1443,6 +1443,7 @@ footer pre.light{
   left: 15vh;
   word-spacing: 0.5vw;
   letter-spacing: 0.25vw;
+  font-size: 3vh;
 }
 #no-search-result{
   display: none;
@@ -1707,6 +1708,9 @@ div.view-panes, div.r-view-pane {
   margin: 0 0 2vh 0;
   color: whitesmoke;
 }
+.img::after{
+  font-size: 3vh;
+}
 .panels a{
   text-decoration: none;
   color: none;
@@ -1968,6 +1972,9 @@ footer pre{
     padding: 0!important;
     margin: 0 0 2vh 0!important;
   }
+  .img::after{
+    font-size: 2.5vh!important;
+  }
   .view-tiles, .r-view-tile,.s-r-view-tile {
     margin: 3.5vh 0 1vh 0!important;
   }
@@ -2005,6 +2012,9 @@ footer pre{
   }
   .search-glass{
     font-size: 2vh!important;
+  }
+  .search-lines a p{
+    font-size: 3vh!important;
   }
   .moving-picture-title{
     top: 16vh!important;
@@ -2327,6 +2337,9 @@ footer pre{
   #search-menu{
     height: 41vh;
   }
+  .search-lines a p{
+    font-size: 2.25vh;
+  }
   #content-box{
     top: 36vw;
   }
@@ -2348,6 +2361,9 @@ footer pre{
   }
   .panels a p{
     font-size: 1.5vh;
+  }
+  .img::after{
+    font-size: 3vh;
   }
   .r-panel {
     height: 23vh;
@@ -2672,6 +2688,9 @@ footer pre{
   #search-menu{
     height: 41vh;
   }
+  .search-lines a p{
+    font-size: 2.25vh;
+  }
   #content-box{
     top: 36vw;
   }
@@ -2687,6 +2706,9 @@ footer pre{
   }
   .panels a p{
     font-size: 1.5vh;
+  }
+  .img::after{
+    font-size: 3vh;
   }
   .r-panel {
     height: 23vh;
@@ -2859,6 +2881,9 @@ footer pre{
     top: 0vh;
     color: red;
   }
+  .search-lines a p{
+    font-size: 3.5vh;
+  }
   #title{
     font-size: 12vh;
     width: 70vw;
@@ -3012,7 +3037,10 @@ footer pre{
     border-radius: 0.3em;
   }
   .panels a p{
-    font-size: 0.45em;
+    font-size: 0.6em;
+  }
+  .img::after{
+    font-size: 1.2em;
   }
   .view-tiles, .r-view-tile,.s-r-view-tile {
     margin: 3.5vh 0 1vh 0;
@@ -3542,6 +3570,9 @@ footer pre{
     top: 0vh;
     color: red;
   }
+  .search-lines a p{
+    font-size: 1.75vh;
+  }
   #no-search-result{
     height:17.5vh;
     width: 60vw;
@@ -3591,6 +3622,9 @@ footer pre{
   }
   .panels a p{
     font-size: 0.6em;
+  }
+  .img::after{
+    font-size: 1.2em;
   }
   .panel-toggler{
     font-size: 1em;
