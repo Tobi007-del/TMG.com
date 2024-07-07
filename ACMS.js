@@ -531,12 +531,16 @@ function movingPicture(){
     
     function playTrailer(i){
         t=i;
-        movingPictureImageCoversLeft[i].classList.add('inactive');
-        movingPictureImageCoversRight[i].classList.add('inactive');
-        watchTrailerButtons[i].style.display = "none";
-        mousedownCounter++;
         header.style.display = "none";
         movingLine.style.display = "none";
+        movingPictureImageCoversLeft[i].style.zIndex = "1";
+        movingPictureImageCoversRight[i].style.zIndex = "1";
+        setTimeout(()=>{
+            movingPictureImageCoversLeft[i].classList.add('inactive');
+            movingPictureImageCoversRight[i].classList.add('inactive');
+        },1000)
+        watchTrailerButtons[i].style.display = "none";
+        mousedownCounter++;
         if (mousedownCounter == 1){
         previewButtons[i].style.display = "block";
         }
@@ -556,12 +560,18 @@ function movingPicture(){
     }
     
     function reversePlayTrailer(x){
-        movingPictureImageCoversLeft[x].classList.remove('inactive');
-        movingPictureImageCoversRight[x].classList.remove('inactive');
+        setTimeout(()=>{
+            header.style.display = "block";
+            movingLine.style.display = "block";
+            movingPictureImageCoversLeft[x].classList.remove('inactive');
+            movingPictureImageCoversRight[x].classList.remove('inactive');
+        },250)
         watchTrailerButtons[x].style.display = "flex";
         mousedownCounter = 0;
-        setTimeout(()=>{header.style.display = "block";},1000)
-        setTimeout(()=>{movingLine.style.display = "block";},1000)
+        setTimeout(()=>{
+            movingPictureImageCoversLeft[x].style.zIndex = "0";
+            movingPictureImageCoversRight[x].style.zIndex = "0";
+        },1000)
         previewButtons[x].style.display = "none";
         endPreviewButtons[x].style.display = "none";
         movingVideos[x].style.height = "0%";
@@ -581,7 +591,7 @@ function movingPicture(){
             document.getElementById("left-arrow").style.display = "block";
         }
     
-        if(movingPictures[x].computedStyleMap().get("transform")[0].x.value == mFa){
+        if(movingPictures[x].computedStyleMap().get("transform")[0].x.value == -4700){
             document.getElementById("right-arrow").style.display="none";
         } else {
             document.getElementById("right-arrow").style.display = "block";

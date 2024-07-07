@@ -828,7 +828,7 @@ footer pre.light{
   position: absolute;
   height: 0;
   width: 100%;
-  transition: all 1s ease-in-out;
+  transition: all .75s ease-in-out;
   object-fit: fill;
   z-index: 1;
 }
