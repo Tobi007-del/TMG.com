@@ -530,19 +530,16 @@ function movingPicture(){
     })
     
     function playTrailer(i){
+        movingPictureImageCoversLeft[i].classList.add('inactive');
+        movingPictureImageCoversRight[i].classList.add('inactive');
         t=i;
+        mousedownCounter++;
+        setTimeout(()=>{
         header.style.display = "none";
         movingLine.style.display = "none";
-        movingPictureImageCoversLeft[i].style.zIndex = "1";
-        movingPictureImageCoversRight[i].style.zIndex = "1";
-        setTimeout(()=>{
-            movingPictureImageCoversLeft[i].classList.add('inactive');
-            movingPictureImageCoversRight[i].classList.add('inactive');
-        },1000)
         watchTrailerButtons[i].style.display = "none";
-        mousedownCounter++;
         if (mousedownCounter == 1){
-        previewButtons[i].style.display = "block";
+            previewButtons[i].style.display = "block";
         }
         endPreviewButtons[i].style.display = "block";
         movingVideos[i].style.height = "100%";
@@ -557,6 +554,7 @@ function movingPicture(){
         previewButtons[i].classList.add("trailer");
         LeftArrow.style.display = "none";
         RightArrow.style.display = "none";
+        },1000)
     }
     
     function reversePlayTrailer(x){
