@@ -566,10 +566,6 @@ function movingPicture(){
         },250)
         watchTrailerButtons[x].style.display = "flex";
         mousedownCounter = 0;
-        setTimeout(()=>{
-            movingPictureImageCoversLeft[x].style.zIndex = "0";
-            movingPictureImageCoversRight[x].style.zIndex = "0";
-        },1000)
         previewButtons[x].style.display = "none";
         endPreviewButtons[x].style.display = "none";
         movingVideos[x].style.height = "0%";

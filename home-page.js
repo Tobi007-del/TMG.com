@@ -568,7 +568,31 @@ movingVideos.forEach((movingVideo)=>{
 })
 
 function playTrailer(i){
-   cd 
+    movingPictureImageCoversLeft[i].classList.add('inactive');
+    movingPictureImageCoversRight[i].classList.add('inactive');
+    t=i;
+    mousedownCounter++;
+    setTimeout(()=>{
+    header.style.display = "none";
+    movingLine.style.display = "none";
+    watchTrailerButtons[i].style.display = "none";
+    if (mousedownCounter == 1){
+        previewButtons[i].style.display = "block";
+    }
+    endPreviewButtons[i].style.display = "block";
+    movingVideos[i].style.height = "100%";
+    movingVideos[i].play();
+    movingTitles[i].classList.add("trailer");
+    movingAbouts[i].classList.add("trailer");
+    movingButtons[i].classList.add("trailer");
+    movingPictures[i].classList.add("trailer");
+    movingVideos[i].classList.add("trailer");
+    movingLinks[i].classList.add("trailer");
+    endPreviewButtons[i].classList.add("trailer");
+    previewButtons[i].classList.add("trailer");
+    LeftArrow.style.display = "none";
+    RightArrow.style.display = "none";
+    },1000)
 }
 
 function reversePlayTrailer(x){
@@ -580,10 +604,6 @@ function reversePlayTrailer(x){
     },250)
     watchTrailerButtons[x].style.display = "flex";
     mousedownCounter = 0;
-    setTimeout(()=>{
-        movingPictureImageCoversLeft[x].style.zIndex = "0";
-        movingPictureImageCoversRight[x].style.zIndex = "0";
-    },1000)
     previewButtons[x].style.display = "none";
     endPreviewButtons[x].style.display = "none";
     movingVideos[x].style.height = "0%";
