@@ -554,7 +554,7 @@ function movingPicture(){
         previewButtons[i].classList.add("trailer");
         LeftArrow.style.display = "none";
         RightArrow.style.display = "none";
-        },1000)
+        },250)
     }
     
     function reversePlayTrailer(x){
