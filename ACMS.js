@@ -585,7 +585,7 @@ function movingPicture(){
             document.getElementById("left-arrow").style.display = "block";
         }
     
-        if(movingPictures[x].computedStyleMap().get("transform")[0].x.value == -4700){
+        if(movingPictures[x].computedStyleMap().get("transform")[0].x.value == mFa){
             document.getElementById("right-arrow").style.display="none";
         } else {
             document.getElementById("right-arrow").style.display = "block";
