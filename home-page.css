@@ -45,8 +45,8 @@ button,input,p{
   position: fixed;
   bottom: 7.5vh;
   right: 0;
-  height: calc(4.05vh + 2.5vw);
-  width: calc(4.05vh + 2.5vw);
+  height: calc(5vh + 2vw);
+  width: calc(5vh + 2vw);
   border-radius: 50% 0 0 50%;
   background-color: var(--lighter-brand-color);
   display: flex;
@@ -58,7 +58,7 @@ button,input,p{
   display: flex;
 }
 #quick-scroll-show{
-  font-size: calc(1.5vw + 2.5vh);
+  font-size: calc(1.5vw + 3vh);
   color: white;
   z-index: 1;
   width: 90%;
@@ -75,9 +75,9 @@ button,input,p{
 #quick-scrolls{
   display: none;
   position: absolute;
-  right: calc(1.51vh + .51vw);
+  right: calc(2vh + .5vw);
   height: calc(12vh + 6vw);
-  min-width: calc(6vh + 3.5vw);
+  min-width: calc(7vh + 3vw);
   flex-direction: column;
   justify-content: space-between;
 }
@@ -3241,14 +3241,6 @@ footer pre{
     font-size: 2.45vh;
     color: var(--brand-color);
   }
-  #menu-search-icon.attention{
-    animation: magnify 2s infinite ease-in-out normal;
-  }
-  @keyframes magnify{
-    to{
-      transform: scale(1.05) rotate(15deg);
-    }
-  }
   #demo{
     font-size: 1.95vh;
     text-wrap: nowrap;
@@ -3659,4 +3651,7 @@ footer pre{
   #about-site{
     margin-top: 6vh;
   }
+  #quick-scroll-wrapper{
+    opacity: 1!important;
   }
+}

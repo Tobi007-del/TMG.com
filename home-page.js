@@ -154,7 +154,6 @@ document.addEventListener('scroll', debounce(function(e){
 if((window.innerWidth <= 499) && (window.scrollY > 0)){
     searchClickCounter = 0;
     searchBar.style.display = "none";
-    menuSearchIcon.classList.add('attention');
   }
 }))}
 searchScroll()
@@ -163,11 +162,9 @@ menuSearchIcon.addEventListener('click',()=>{
     searchClickCounter++;
     if(searchClickCounter == 1){
         searchBar.style.display = "flex";
-        menuSearchIcon.classList.remove('attention');
     } else{
         searchClickCounter = 0;
         searchBar.style.display = "none";
-        menuSearchIcon.classList.add('attention');
     }
 })
 
