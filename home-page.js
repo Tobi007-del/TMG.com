@@ -989,6 +989,6 @@ pager()
   s1.src='https://embed.tawk.to/66aca05b32dca6db2cb91c87/1i4954q1f';
   s1.charset='UTF-8';
   s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
+  s0.parentNode.insertBefore(s1,null);
   })();
-//End of Tawk.to Script
+  //End of Tawk.to Script
