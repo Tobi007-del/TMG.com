@@ -52,7 +52,6 @@ button,input,p{
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.6;
 }
 #quick-scrolls.show{
   display: flex;
@@ -84,7 +83,6 @@ button,input,p{
 #quick-scroll-wrapper:hover{
   cursor: pointer;
   background-color: var(--brand-color);
-  opacity: 0.9;
 }
 #quick-scroll-wrapper.light{
   background-color: var(--light-lighter-brand-color)
@@ -3650,8 +3648,5 @@ footer pre{
   }
   #about-site{
     margin-top: 6vh;
-  }
-  #quick-scroll-wrapper{
-    opacity: 1!important;
   }
 }
