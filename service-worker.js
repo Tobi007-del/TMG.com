@@ -18,13 +18,13 @@ self.addEventListener('notificationclick', (event) => {
   
       for (let i = 0; i < windowClients.length; i++) {
         const windowClient = windowClients[i];
-        if (String(windowClient.url) === sitePageUrl) {
+        if (String(windowClient.url) == sitePageUrl) {
           matchingClient = windowClient;
           break;
         }
       }
   
-      if (matchingClient) {
+      if (matchingClient !== null) {
         return matchingClient.focus();
       } else {
         return clients.openWindow(sitePageUrl);
