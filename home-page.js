@@ -539,8 +539,7 @@ function movingPicture(){
 let mousedownCounter = 0;
 const header = document.getElementById("title");
 const movingPictures = document.querySelectorAll(".moving-picture");
-const movingVideoContainers = document.getElementsByClassName("T_M_G-video-container");
-const movingVideos = document.querySelectorAll(".moving-picture-video");
+const movingVideos = document.querySelectorAll(".moving-picture-video")
 const previewButtons = document.querySelectorAll(".preview-button");
 const endPreviewButtons = document.querySelectorAll(".end-preview-button");
 const watchTrailerButtons = document.querySelectorAll(".watch-trailer-buttons");
@@ -551,6 +550,19 @@ const movingButtons = document.querySelectorAll(".moving-picture-button");
 const movingLinks = document.querySelectorAll(".moving-picture-link");
 const movingPictureImageCoversLeft = document.getElementsByClassName("moving-picture-image-cover-left");
 const movingPictureImageCoversRight = document.getElementsByClassName("moving-picture-image-cover-right");
+
+movingVideos.forEach((movingVideo)=>{
+    movingVideo.onwaiting = function(){
+        loadingPage.classList.add('buffering');
+        preloaderTextContainer.classList.add('buffering');
+        skipWaitBtn.classList.add('buffering');
+    }
+    movingVideo.onplaying = function(){
+        loadingPage.classList.remove('buffering');
+        preloaderTextContainer.classList.remove('buffering');
+        skipWaitBtn.classList.remove('buffering');
+    }
+})
 
 function playTrailer(i){
     movingPictureImageCoversLeft[i].classList.add('inactive');
@@ -565,7 +577,7 @@ function playTrailer(i){
         previewButtons[i].style.display = "block";
     }
     endPreviewButtons[i].style.display = "block";
-    movingVideoContainers[i].style.height = "100%";
+    movingVideos[i].style.height = "100%";
     movingVideos[i].play();
     movingTitles[i].classList.add("trailer");
     movingAbouts[i].classList.add("trailer");
@@ -591,7 +603,7 @@ function reversePlayTrailer(x){
     mousedownCounter = 0;
     previewButtons[x].style.display = "none";
     endPreviewButtons[x].style.display = "none";
-    movingVideoContainers[x].style.height = "0%";
+    movingVideos[x].style.height = "0%";
     movingVideos[x].pause();
     movingTitles[x].classList.remove("trailer");
     movingAbouts[x].classList.remove("trailer");
