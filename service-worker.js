@@ -1,21 +1,21 @@
-console.log('reached service-worker.js successfully');
+console.log("reached service-worker.js successfully");
 
-self.addEventListener('install', () => {
+self.addEventListener("install", () => {
   self.skipWaiting();
-})
+});
 
-self.addEventListener('notificationclick', (event) => {
-    console.log('click received');
-    const sitePageUrl = new URL('TMG.com',self.location.origin).href;
-    console.log(sitePageUrl);
-    const promiseChain = clients
+self.addEventListener("notificationclick", (event) => {
+  console.log("click received");
+  const sitePageUrl = new URL("TMG.com", self.location.origin).href;
+  console.log(sitePageUrl);
+  const promiseChain = clients
     .matchAll({
-      type: 'window',
+      type: "window",
       includeUncontrolled: true,
     })
     .then((windowClients) => {
       let matchingClient = null;
-  
+
       for (let i = 0; i < windowClients.length; i++) {
         const windowClient = windowClients[i];
         if (String(windowClient.url) == sitePageUrl) {
@@ -23,80 +23,79 @@ self.addEventListener('notificationclick', (event) => {
           break;
         }
       }
-  
+
       if (matchingClient !== null) {
         return matchingClient.focus();
       } else {
         return clients.openWindow(sitePageUrl);
       }
     });
-  
-  event.waitUntil(promiseChain);
-})
 
+  event.waitUntil(promiseChain);
+});
 
 // Web-Push
 // Public base64 to Unit
 
+const urlBase64ToUint8Array = (base64String) => {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding)
+    .replace(/\-/g, "+")
+    .replace(/_/g, "/");
 
-const urlBase64ToUint8Array = base64String => {
-    const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
-    const base64 = (base64String + padding)
-        .replace(/\-/g, '+')
-        .replace(/_/g, '/');
+  const rawData = atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
 
-    const rawData = atob(base64);
-    const outputArray = new Uint8Array(rawData.length);
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
 
-    for (let i = 0; i < rawData.length; ++i) {
-        outputArray[i] = rawData.charCodeAt(i);
-    }
-
-    return outputArray;
-}
+  return outputArray;
+};
 
 const saveSubscription = async (subscription) => {
-  const response = await fetch('http://localhost:7000/save-subscription', {
-      method: 'post',
-      headers: { 'Content-type': "application/json" },
-      body: JSON.stringify(subscription)
-  })
+  const response = await fetch("http://localhost:7000/save-subscription", {
+    method: "post",
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify(subscription),
+  });
 
-  return response.json()
-}
+  return response.json();
+};
 
 self.addEventListener("activate", async (e) => {
   const subscription = await self.registration.pushManager.subscribe({
-      userVisibleOnly: true,
-      applicationServerKey: urlBase64ToUint8Array("BHhhIKiRh-QaGYkFZOD-uPOPTKd63KDN2HICwUiOqLBgJpQEvImPj74YTzbLrph5ctjonFz_izVCT0byTDAUbA0")
-  })
+    userVisibleOnly: true,
+    applicationServerKey: urlBase64ToUint8Array(
+      "BHhhIKiRh-QaGYkFZOD-uPOPTKd63KDN2HICwUiOqLBgJpQEvImPj74YTzbLrph5ctjonFz_izVCT0byTDAUbA0",
+    ),
+  });
 
-  const response = await saveSubscription(subscription)
-  console.log(response)
-})
+  const response = await saveSubscription(subscription);
+  console.log(response);
+});
 
-
-self.addEventListener("push", e => {
-    const data = e.data.json();
-    const pushTitle = data.title;
-    const pushOptions = {
-        body: `Dear Gardener, movies will be available soon!!!, ready your seatbelts and anticipate our official launch` , 
-        icon: "/TMG.com/SPARE-PICS/movieicon-two.jpeg",
-        badge: "/TMG.com/SPARE-PICS/icons8-clapperboard-100.png", 
-        image: "/TMG.com/SPARE-PICS/tape-2.png",
-        actions: [
-            {
-                action: 'open-site',
-                title: 'Visit The Garden',
-                type: 'button',
-                icon: '/TMG.com/THE_MOVIE_ItNITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png'
-            }
-        ],
-        tag: 'push',
-        renotify: true,
-    };
-    self.registration.showNotification(pushTitle, pushOptions)
-})
+self.addEventListener("push", (e) => {
+  const data = e.data.json();
+  const pushTitle = data.title;
+  const pushOptions = {
+    body: `Dear Gardener, movies will be available soon!!!, ready your seatbelts and anticipate our official launch`,
+    icon: "/TMG.com/SPARE-PICS/movieicon-two.jpeg",
+    badge: "/TMG.com/SPARE-PICS/icons8-clapperboard-100.png",
+    image: "/TMG.com/SPARE-PICS/tape-2.png",
+    actions: [
+      {
+        action: "open-site",
+        title: "Visit The Garden",
+        type: "button",
+        icon: "/TMG.com/THE_MOVIE_ItNITIATIVE_PROJECT/SPARE-PICS/icons8-clapperboard-100.png",
+      },
+    ],
+    tag: "push",
+    renotify: true,
+  };
+  self.registration.showNotification(pushTitle, pushOptions);
+});
 
 // Public Key:
 //BHhhIKiRh-QaGYkFZOD-uPOPTKd63KDN2HICwUiOqLBgJpQEvImPj74YTzbLrph5ctjonFz_izVCT0byTDAUbA0
